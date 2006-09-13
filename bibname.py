@@ -19,7 +19,7 @@ For example, the name {\AA}s currently fails.  The current version
 problem with BibName.parse_raw_names_parts and populating the
 names_groups structure.
 
-FIXED: (but a bit of a hack) Was not working on capitalized vons parts
+FIXED by dschwilk: (but a bit of a hack) Was not working on capitalized vons parts 
 such as 'Von der Burg, S.'  This capitalized von part was not being
 captured into the names_groups structure, so I did an extra check for
 it.  This could still be cleaned up.
@@ -28,7 +28,7 @@ it.  This could still be cleaned up.
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
-__version__ =    '$Revision: 1.8 $'
+__version__ =    '$Rev$'
 __needs__ = '2.4'
 
 ################ IMPORTS #############################
@@ -90,6 +90,7 @@ bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 
 
 #KEEP! and keep as separate bibname function
+# dschwilk 2006-09-13: can we delete this now?
 # still used by bibname.py and bibstyle.py (and tf addrefs.py)
 def format_names_parts(names_parts, name_name_sep = (', ',' and '), formatter=None, template = 'v |l,| j,| f{. }.' , initials = True):
 	"""Format a list of names:  `format_name_parts` is applied to each name in list
@@ -193,7 +194,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
                     the names_groups structure is not being populated
                     correctly for all types of names.  This may need a
                     more detailed function than the nice on-liner
-                    below.
+                    used below.
 		"""
 		tuple_list = []
 		for n in self.raw_names_parts :
@@ -216,7 +217,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 						l = n[0]
 					elif len(name_groups) == 2:  # von parts captured correctly
                                                 v,l = name_groups
-                                        else : # von parts in upper-level list --
+                                        else : # von parts in upper-level list (multi-part last names) --
                                                 # should be caught by
                                                 # parser, but this hack for
                                                 # now
