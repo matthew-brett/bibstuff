@@ -9,7 +9,7 @@ necessity of sending a huge bibtex database along with a manuscript
 when submitting to a journal.
 
 :author: Dylan Schwilk
-:contact:http://www.pricklysoft.org
+:contact: http://www.schwilk.org
 :author: Alan G Isaac (small changes)
 :copyright: 2006 by Dylan Schwilk
 :license: MIT (see `license.txt`_)

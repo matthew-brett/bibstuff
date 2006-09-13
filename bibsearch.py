@@ -20,7 +20,7 @@ Example::
 
 
 :author: Dylan Schwilk
-:contact: http://www.pricklysoft.org
+:contact: http://www.schwilk.org
 :author: Alan G Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :license: MIT (see `license.txt`_)

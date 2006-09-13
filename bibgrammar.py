@@ -9,7 +9,7 @@ and also from
 Greg Ward's btOOL_ documentation.
 
 :author: Dylan Schwilk
-:contact: try@schwilk.org
+:contact: http://www.schwilk.org
 :author: Alan G Isaac (minor edits)
 :copyright: 2006 by Dylan Schwilk
 :license: MIT (see `license.txt`_)
@@ -18,7 +18,7 @@ Greg Ward's btOOL_ documentation.
 
 .. _license.txt: ./license.txt
 .. _`Lex/Yacc parser`: http://www.math.utah.edu/~beebe/
-.. _btooL: http://starship.python.net/~gward/btOOL/
+.. _btooL: http://www.tug.org/tex-archive/biblio/bibtex/utils/btOOL/
 """
 __docformat__ = "restructuredtext en"
 __needs__ = '2.4'
@@ -81,8 +81,8 @@ def Parse(src, processor = None) :
 
 ## self-test
 if __name__ =="__main__":
-    import sys, pprint
-    if len(sys.argv) > 1 :
-        src = open(sys.argv[1]).read()
-        taglist = Parse(src)
-        pprint.pprint(taglist)
+	import sys, pprint
+	if len(sys.argv) > 1 :
+		src = open(sys.argv[1]).read()
+		taglist = Parse(src)
+		pprint.pprint(taglist)

@@ -19,8 +19,9 @@ Bibstuff is pure Python_ and in that sense will run on any platform.
 .. _`MIT license`: http://www.opensource.org/licenses/mit-license.php
 .. _license.txt: ./license.txt
 .. _Python: http://www.python.org 
-""" 
+"""
+
 __docformat__ = "restructuredtext en"
 
-__version__ =    '1.9'
+__version__ =  '1.9'
 

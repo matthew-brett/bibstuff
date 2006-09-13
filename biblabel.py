@@ -7,7 +7,7 @@ Default format produces citekeys like:
 Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 
 :author: Dylan Schwilk
-:contact: http://www.pricklysoft.org
+:contact: http://www.schwilk.org
 :author: Alan G Isaac (esp. refactoring)
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Dylan Schwilk
@@ -120,4 +120,3 @@ def main():
 
 if __name__ == '__main__':
 	main()
-

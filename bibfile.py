@@ -347,7 +347,7 @@ class BibFile( DispatchProcessor ):
 		the_type = getString(subtags[0], buffer)
 		lineno = lines(0,start,buffer)+1
 		if  the_type.upper() != 'PREAMBLE' :
-                        bibfile_logger.warning("Entry at line %d has preamble syntax but type is %s" % (lineno,the_type))
+			bibfile_logger.warning("Entry at line %d has preamble syntax but type is %s" % (lineno,the_type))
 		else :
 			bibfile_logger.warning("Preamble entry on line %d:" % lineno + "\n" + buffer[start:stop])
 

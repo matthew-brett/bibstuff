@@ -5,7 +5,7 @@ Parses bibtex-formatted author/editor names lists and provides
 formatting functions (often via bibstyles/shared.NamesFormatter).
 
 :author: Dylan W. Schwilk
-:contact: http://www.pricklysoft.org
+:contact: http://www.schwilk.org
 :author: Alan G. Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Dylan Schwilk and Alan G Isaac
@@ -190,11 +190,9 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		Parts are classified as first, von, last, jr.
 		The 'von' part is determined by lack of capitalization.
 
-                :todo:
-                    the names_groups structure is not being populated
-                    correctly for all types of names.  This may need a
-                    more detailed function than the nice on-liner
-                    used below.
+		:todo: the names_groups structure is not being populated
+		correctly for all types of names.  This may need a more
+		detailed function than the nice on-liner used below.
 		"""
 		tuple_list = []
 		for n in self.raw_names_parts :
@@ -216,12 +214,10 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 					if len(name_groups) == 1: #-> no v part
 						l = n[0]
 					elif len(name_groups) == 2:  # von parts captured correctly
-                                                v,l = name_groups
-                                        else : # von parts in upper-level list (multi-part last names) --
-                                                # should be caught by
-                                                # parser, but this hack for now
-                                                for g in name_groups[0:-1] : v.extend(g)
-                                                l = name_groups[-1]
+						v,l = name_groups
+					else: # von parts in upper-level list (multi-part last names) --
+						for g in name_groups[0:-1] : v.extend(g)
+						l = name_groups[-1]
 					if len(n) == 3:
 						j = n[1]
 
@@ -233,7 +229,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
                                                 
 			except:
 				bibname_logger.error("Unrecognized name format for "+str(n))
- 				raise 
+				raise
 			tuple_list.append((f,v,l,j))
 		#:TODO: ? move entirely to use of names_dicts ?
 		#put parts in name dict, with empty string for missing part
@@ -308,10 +304,10 @@ if __name__ =="__main__":
 	bfile = bibfile.BibFile()
 	bibgrammar.Parse(src, bfile)
 
-        if options.initials :
-                initials = 'f'  # only first names.  Does any style ever use initials for anything else?
-        else :
-                initials = ''
+	if options.initials :
+		initials = 'f'  # only first names.  Does any style ever use initials for anything else?
+	else :
+		initials = ''
 
 	names_formatter = bibstyles.shared.NamesFormatter(template_list=[options.template]*2,initials=initials)
 	for entry in bfile.entries:
