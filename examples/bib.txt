@@ -1,0 +1,3240 @@
+@inproceedings{
+LABEL,
+   Author = {Adams, Ted E. Jr. and Sands, Peter B. and Weitkamp, William H. and McDougald, Neil K. and Bartolome, James},
+   Title = {Enemies of white oak regeneration in California},
+   BookTitle = {Symposium on multiple-use management of California's hardwood resources},
+   Address= {San Luis Obispo, CA, Nov. 12-14},
+   Year = {1986} }
+
+
+
+@phdthesis{
+LABEL,
+   Author = {Agee, James K.},
+   Title = {Prescribed fire effects on physical and hydrological properties of mixed-conifer forest floor and soil},
+   School = {University of California Berkeley},
+   Year = {1973} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Agee, James K.},
+   Title = {The influence of prescribed fires on water-repellency of mixed conifer forest floor},
+   BookTitle = {Proceedings of the first conference on scientific research in the National Parks},
+   Editor = {Linn, R.},
+   Series= {USDI National Park Service Transmissions and Proceedings.  Series No. 5, Vol. II},
+   Address= {Washington D.C.},
+   Pages = {695-701},
+   Year = {1979} }
+
+
+
+@article{
+LABEL,
+   Author = {Agee, James K. and Bahro, Berni and Finney, Mark A. and Omi, Philip N. and Sapsis, David B. and Skinner, Carl N. and van Wagtendonk, J.W. and Weatherspoon, C. Phillip},
+   Title = {The use of shaded fuelbreaks in landscape fire management},
+   Journal = {Forest Ecology and Management},
+   Volume = {127},
+   Pages = {55-66},
+   Keywords = {prescribed fire, thinning, forest fire, western United States},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Agee, James K. and Wakimoto, Ronald H. and Biswell, Harold H.},
+   Title = {Fire and fuel dynamics of Sierra Nevada conifers},
+   Journal = {Forest Ecology and Management},
+   Volume = {1},
+   Pages = {255-265},
+   Year = {1978} }
+
+@article{
+LABEL,
+   Author = {Agee, James K. and Wright, Clinton S. and Williamson, Nathan and Huff, Mark H.},
+   Title = {Foliar moisture content of Pacific Northwest vegetation and its relation to wildland fire behavior},
+   Journal = {Forest Ecology and Management},
+   Volume = {167},
+   Pages = {57-66},
+   Keywords = {crown fire},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Alexander, Martin E.},
+   Title = {Calculating and interpreting forest fire intensities},
+   Journal = {Canadian Journal of Botany},
+   Volume = {60},
+   Pages = {349-357},
+   Year = {1982} }
+
+@article{
+LABEL,
+   Author = {Allen-Diaz, Barbara H. and Bartolome, James W.},
+   Title = {Survival of Quercus douglasii (Fagaceae) seedlings under the influence of fire and grazing},
+   Journal = {Madrono},
+   Volume = {39},
+   Number = {1},
+   Pages = {47-53},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Allison, Taber D.},
+   Title = {Pollen production and plant density affect pollination and seed production in Taxus canadensis},
+   Journal = {Ecology},
+   Volume = {71},
+   Number = {2},
+   Pages = {516-522},
+   Keywords = {Apostle islands, pollen availability, pollination efficiency, wind pollination},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Alonso, M and Rozados, M.J. and Vega, J.A. and Perez-Gorostiaga, P. and Cuinas, P. and Fonturbel, M.T. and Fernandez, C.},
+   Title = {Biochemical responses of Pinus pinaster trees to fire-induced trunk girdling and crown scorch: secondary metabolites and pigments and needle indicators},
+   Journal = {Journal of Chemical Ecology},
+   Volume = {28},
+   Number = {4},
+   Pages = {687-700},
+   Keywords = {fire effects, needles,},
+   Year = {2002} }
+
+@phdthesis{
+LABEL,
+   Author = {Anderson, John M.},
+   Title = {Effects of prescribed burning on shrub seeds stored in the duff and soil of a Sierra Nevada mixed-conifer forest},
+   School = {University of California Berkeley},
+   Type = {Master of Science},
+   Year = {1982} }
+
+
+
+@article{
+LABEL,
+   Author = {Andrew, N. and Rodgerson, L. and York, A.},
+   Title = {Frequent fuel-reduction burning: the role of logs and associated leaf litter in the conservation of ant biodiversity},
+   Journal = {Australian Ecology},
+   Volume = {25},
+   Pages = {99-107},
+   Keywords = {community structure, fire management, forests, functional groups, logging, Tullgren funnels},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Ansley, Jolie-Anne S. and Battles, John J.},
+   Title = {Forest composition, structure, and change in an old-growth mixed conifer forest in the northern Sierra Nevada},
+   Journal = {Journal of the Torrey Botanical Society},
+   Volume = {125},
+   Number = {4},
+   Pages = {297-308},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Arno, Stephen F. and Gruell, George E.},
+   Title = {Fire history at the forest-grassland ecotone in southwestern Montana},
+   Journal = {Journal of Range Management},
+   Volume = {36},
+   Number = {3},
+   Pages = {332-336},
+   Year = {1983} }
+
+@article{
+LABEL,
+   Author = {Baker, William L.},
+   Title = {Effect of scale and spatial heterogeneity on fire-interval distributions},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {19},
+   Pages = {700-706},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Baker, William L.},
+   Title = {Restoration of landscape structure altered by fire suppression},
+   Journal = {Conservation Biology},
+   Volume = {8},
+   Number = {3},
+   Pages = {763-769},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Barlow, Jos and Haugaasen, Tor and Peres, Carlos A.},
+   Title = {Effects of ground fires on understory bird assemblages in Amazonian forests},
+   Journal = {Biological Conservation},
+   Volume = {105},
+   Pages = {157-169},
+   Keywords = {understory wildfire, fire disturbance, habitat structure, tropical forests, amazonia},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Beaty, R. Matthew and Taylor, Alan H.},
+   Title = {Spatial and temporal variation of fire regimes in a mixed conifer forest landscape, Southern Cascades, California, USA},
+   Journal = {Journal of Biogeography},
+   Volume = {28},
+   Pages = {955-966},
+   Keywords = {dendrochronology, disturbance},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Bekker, Matthew F. and Taylor, Alan H.},
+   Title = {Gradient analysis of fire regimes in montane forests of the southern Cascade range, Thousand Lakes Wilderness, California, USA},
+   Journal = {Plant Ecology},
+   Volume = {155},
+   Pages = {15-28},
+   Keywords = {dendrochronology, disturbance, fire regimes, landscape ecology, vegetation dynamics},
+   Year = {2001} }
+
+@techreport{
+LABEL,
+   Author = {Bell, Monty},
+   Title = {Grass not oaks makes 'em fat},
+   Institution = {University of California Cooperative Extension},
+   Year = {1963} }
+
+
+
+@article{
+LABEL,
+   Author = {Benavides-Solorio, Juan and MacDonald, Lee H.},
+   Title = {Post-fire runoff and erosion from simulated rainfall on small plots, Colorado Front Range},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {2931-2952},
+   Keywords = {fire, rainfall simulator, pine forests},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Berverly, Jennifer L. and Martell, David L.},
+   Title = {Modeling Pinus strobus mortality following prescribed fire in Quetico Provincial Park, northwestern Ontario},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {33},
+   Pages = {740-751},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Bessie, W.C. and Johnson, E. A},
+   Title = {The relative importance of fuels and weather on fire behavior in subalpine forests},
+   Journal = {Ecology},
+   Volume = {76},
+   Number = {3},
+   Pages = {747-762},
+   Keywords = {Abies lasiocarpa, crown fire initiation, fire behavior, fire ecology, fire weather, fuel accumulation, Picea engelmannii, Pinus contorta var. latifolia, Populus tremuloides, Rothermel's fire behavior model, surface fire intensity, Van Wagner's crown fire model},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Biswell, Harold H.},
+   Title = {Danger of wildfires reduced by prescribed burning in ponderosa pine},
+   Journal = {California Agriculture},
+   Volume = {14},
+   Number = {10},
+   Pages = {5-6},
+   Year = {1960} }
+
+@article{
+LABEL,
+   Author = {Biswell, Harold H. and Gibbens, R. P. and Buchanan, Hayle},
+   Title = {Fuel conditions and fire hazard reduction costs in a giant sequoia forest},
+   Journal = {National Parks Magazine},
+   Year = {1968} }
+
+@article{
+LABEL,
+   Author = {Bock, Carl E. and Lynch, James F.},
+   Title = {Breeding bird populations of burned and unburned conifer forest in the Sierra Nevada},
+   Journal = {The Condor},
+   Volume = {72},
+   Pages = {182-189},
+   Year = {1970} }
+
+@inproceedings{
+LABEL,
+   Author = {Bock, Jane H. and Bock, Carl E.},
+   Title = {Natural reforestation in the northern Sierra Nevada-Donner Ridge burn},
+   BookTitle = {Tall Timbers Fire Ecology Conference},
+   Volume = {9},
+   Pages = {119-126},
+   Year = {1969} }
+
+
+
+@article{
+LABEL,
+   Author = {Bonnicksen, Thomas M. and Stone, Edward C.},
+   Title = {The giant sequoia-mixed conifer forest community characterized through pattern analysis as a mosaic of aggregations},
+   Journal = {Forest Ecology and Management},
+   Volume = {3},
+   Number = {307-328},
+   Year = {1981} }
+
+@article{
+LABEL,
+   Author = {Bonnicksen, Thomas M. and Stone, Edward C.},
+   Title = {Managing vegetation within U.S. National Parks: a policy analysis},
+   Journal = {Environmental Management},
+   Volume = {6},
+   Number = {2},
+   Pages = {101-102 and 109-122},
+   Keywords = {vegetation management policy, fire management, mixed conifer forest, presettlement vegetation, aggregation, forest simulation, forest succession},
+   Year = {1982} }
+
+@article{
+LABEL,
+   Author = {Bonnicksen, Thomas M. and Stone, Edward C.},
+   Title = {Reconstruction of a presettlement giant sequoia-mixed conifer forest community using the aggregation approach},
+   Journal = {Ecology},
+   Volume = {63},
+   Number = {4},
+   Pages = {1134-1148},
+   Keywords = {aggregations, fire management, forest ecology, forest succession, presettlement forest community, vegetation mosaic, vegetation reconstruction},
+   Year = {1982} }
+
+@article{
+LABEL,
+   Author = {Bonnicksen, Thomas M. and Stone, Edward C.},
+   Title = {Restoring naturalness to National Parks},
+   Journal = {Environmental Management},
+   Volume = {9},
+   Pages = {479-486},
+   Keywords = {fire management, rescue ecology, standards for naturalness},
+   Year = {1985} }
+
+@article{
+LABEL,
+   Author = {Borchert, Mark I. and Davis, Frank W. and Michaelsen, Joel and Oyler, Lynn D.},
+   Title = {Interactions of factors affecting seedling recruitment of blue oak (Quercus douglasii) in California},
+   Journal = {Ecology},
+   Volume = {70},
+   Number = {2},
+   Pages = {389-404},
+   Keywords = {acorn, cattle, exclosure, gophers, mice, predation, seedling, woodland},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Bradley, Tim and Tueller, Paul},
+   Title = {Effects of fire on bark beetle presence on Jeffrey pine in the Lake Tahoe Basin},
+   Journal = {Forest Ecology and Management},
+   Volume = {142},
+   Pages = {205-214},
+   Keywords = {prescribed burning, prescription fire, Dendroctonus, logistic regression},
+   Year = {2001} }
+
+@techreport{
+LABEL,
+   Author = {Brown, James K.},
+   Title = {Handbook for inventorying downed woody material},
+   Year = {1974} }
+
+
+
+@techreport{
+LABEL,
+   Author = {Brown, James K. and Marsden, Michael A. and Ryan, Kevin C. and Reinhardt, Elizabeth D.},
+   Title = {Predicting duff and woody fuel consumed by prescribed fire in the northern Rocky Mountains},
+   Institution = {U.S. Department of Agriculture, Forest Service, Intermountain Forest and Range Experiment Station},
+   Year = {1985} }
+
+
+
+@article{
+LABEL,
+   Author = {Brown, James K. and Reinhardt, Elizabeth D. and Fischer, William C.},
+   Title = {Predicting duff and woody fuel consumption in northern Idaho prescribed fires},
+   Journal = {Forest Science},
+   Volume = {37},
+   Number = {6},
+   Pages = {1550-1566},
+   Keywords = {fire effects, logging slash, fuel moisture},
+   Year = {1991} }
+
+@techreport{
+LABEL,
+   Author = {Brown, James K. and Reinhardt, Elizabeth D. and Kramer, Kylie A.},
+   Title = {Coarse woody debris: managing benefits and fire hazard in the recovering forest},
+   Institution = {United States Department of Agriculture},
+   Number = {RMMS-GTR-105},
+   Year = {2003} }
+
+
+
+@techreport{
+LABEL,
+   Author = {Brown, James K. and See, Thomas E.},
+   Title = {Downed dead woody fuel and biomass in the northern Rocky Mountains},
+   Institution = {U.S. Department of Agriculture, Forest Service, Intermountain Forest and Range Experiment Station},
+   Annote = {In PSW Redding library},
+   Year = {1981} }
+
+
+
+@article{
+LABEL,
+   Author = {Brown, Peter M. and Kaufmann, Merrill R. and Shepperd, Wayne D.},
+   Title = {Long-term, landscape patterns of past fire events in a montane ponderosa pine forest of central Colorado},
+   Journal = {Landscape Ecology},
+   Volume = {14},
+   Pages = {513-532},
+   Keywords = {cross dating, dendrochrology, fire chronology, fire extent, fire frequency, fire scars, fire regimes, fire seasonality, fire severity},
+   Year = {1999} }
+
+@techreport{
+LABEL,
+   Author = {Brown, Rick},
+   Title = {Thinning, fire and forest restoration: A science-based approach for National Forests of the interior northwest},
+   Institution = {Defenders of Wildlife},
+   Year = {2000} }
+
+
+
+@article{
+LABEL,
+   Author = {Bull, Evelyn L. and Wales, Barbara C.},
+   Title = {Effects of disturbance on amphibians of conservation concern in eastern Oregon and Washington},
+   Journal = {Northwest Science},
+   Volume = {75},
+   Number = {Special Issue},
+   Pages = {174-179},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Busse, Matt D. and Simon, Steven A. and Riegel, Gregg M.},
+   Title = {Tree-growth and understory responses to low-severity prescribed burning in thinned Pinus ponderosa forests of central Oregon},
+   Journal = {Forest Science},
+   Volume = {46},
+   Number = {2},
+   Pages = {258-268},
+   Keywords = {ponderosa pine, spring underburning, site productivity, crown scorch, root mortality, Purshia tridentata, plant diversity},
+   Year = {2000} }
+
+@techreport{
+LABEL,
+   Author = {Cahill, Thomas A. and Carroll, John J. and Campbell, Dave and Gill, Thomas E.},
+   Title = {Air quality},
+   Institution = {University of California Davis, Centers for Water and Wildland Resources},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Callaway, Ragan M. and Nadkarni, Nalini M. and Mahall, Bruce E.},
+   Title = {Facilitation and interference of Quercus douglasii on understory productivity in central California},
+   Journal = {Ecology},
+   Volume = {72},
+   Number = {4},
+   Pages = {1484-1499},
+   Keywords = {allelopathy, canopy effect, competition, grassland, interactions, oak woodland, roots, savanna, soil nutrients},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {Campbell, Elizabeth M. and Antos, Joseph A.},
+   Title = {Distribution and severity of white pine blister rust and mountain pine beetle on whitebark pine in British Columbia},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {30},
+   Year = {2000} }
+
+@inproceedings{
+LABEL,
+   Author = {Caprio, Anthony C. and Graber, David M.},
+   Title = {Returning fire to the mountains: can we successfully restore the ecological role of pre-Euroamerican fire regimes in the Sierra Nevada?},
+   BookTitle = {Proceedings: Wilderness science in a time of change},
+   Publisher = {US Department of Agriculture, Forest Service, Rocky Mountain Research Station},
+   Volume = {GTR RMRS-????},
+   Year = {2000} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Caprio, Anthony C. and Swetnam, Thomas W.},
+   Title = {Historic fire regimes along an elevational gradient on the west slope of the Sierra Nevada, California},
+   BookTitle = {Proceedings: Symposium on fire in wilderness and park management, March 30-April 1, 1993},
+   Editor = {Brown, James K. and Mutch, Robert W. and Spoon, Charles W. and Wakimoto, Ronald H.},
+   Address= {Missoula, MT},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Intermountain Research Station},
+   Volume = {General Technical Report INT-GTR 320},
+   Year = {1995} }
+
+
+
+@techreport{
+LABEL,
+   Author = {Chang, Chi-Ru},
+   Title = {Ecosystem responses to fire and variations in fire regimes},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Chappell, Christopher B. and Agee, James K.},
+   Title = {Fire severity and tree seedling establishment in Abies magnifica forests, southern Cascades, Oregon},
+   Journal = {Ecological Applications},
+   Volume = {6},
+   Number = {2},
+   Pages = {628-640},
+   Keywords = {disturbance, fire history and severity, landscape ecology, Pinus contorta, Pinus monticola, seedling survival, stand dynamics, succession, Tsuga mertensiana},
+   Year = {1996} }
+
+@article{
+LABEL,
+   Author = {Chorover, Jon and Vitousek, Peter M. and Everson, Daniel A. and Esperanza, Annie M. and Turner, Douglas},
+   Title = {Solution chemistry profiles of mixed-conifer forests before and after fire},
+   Journal = {Biogeochemistry},
+   Volume = {26},
+   Pages = {115-144},
+   Keywords = {element fluxes, prescribed burning, throughfall, water chemistry},
+   Year = {1994} }
+
+@inproceedings{
+LABEL,
+   Author = {Christensen, Norman L.},
+   Title = {Wilderness and high intensity fire: how much is enough?},
+   BookTitle = {High intensity fire in wildlands: management challenges and options},
+   Publisher = {Tall Timbers Research Station, Tallahassee Fl},
+   Volume = {17},
+   Pages = {9-24},
+   Year = {1991} }
+
+
+
+@article{
+LABEL,
+   Author = {Cissel, John H. and Swanson, Frederick J. and Weisberg, PeterJ.},
+   Title = {Landscape management using historical fire regimes: Blue River, Oregon},
+   Journal = {Ecological Applications},
+   Volume = {9},
+   Number = {4},
+   Pages = {1217-1231},
+   Keywords = {adaptive management, disturbance ecology, historical fire regime, landscape analysis, landscape plan, landscape structure, late-successional habitat, Northwest Forest Plan},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Clark, Deborah L. and Wilson, Mark V.},
+   Title = {Heat-treatment effects on seed bank species of an old-growth Douglas fir forest},
+   Journal = {Northwest Science},
+   Volume = {68},
+   Number = {1},
+   Pages = {1-5},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Conard, Susan G. and Hartzell, Timothy and Hilbruner, Michael W. and Zimmerman, G. Thomas},
+   Title = {Changing fuel management strategies - the challenge of meeting new information and analysis needs},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {10},
+   Pages = {267-275},
+   Keywords = {fuel treatment, remote sensing, GIS, mapping, models},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Cooper, Charles F.},
+   Title = {Changes in vegetation, structure, and growth of southwestern pine forests since white settlement},
+   Journal = {Ecological Monographs},
+   Volume = {30},
+   Number = {2},
+   Pages = {129-164},
+   Year = {1960} }
+
+@article{
+LABEL,
+   Author = {Cooper, Charles F.},
+   Title = {The ecology of fire},
+   Journal = {Scientific American},
+   Volume = {204},
+   Pages = {150-160},
+   Year = {1961} }
+
+@article{
+LABEL,
+   Author = {Cooper, Charles F.},
+   Title = {Pattern in ponderosa pine forests},
+   Journal = {Ecology},
+   Volume = {42},
+   Number = {3},
+   Pages = {493-499},
+   Year = {1961} }
+
+@article{
+LABEL,
+   Author = {Copes, Donald L. and Sniezko, Richard A.},
+   Title = {The influence of floral bud phenology on the potential mating system of a wind-pollinated Douglas fir orchard},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {21},
+   Pages = {813-820},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {Covington, W. Wallace and Fule, Peter Z. and Hart, Stephen C. and Weaver, Robert P},
+   Title = {Modeling ecological restoration effects on ponderosa pine forest structure},
+   Journal = {Restoration Ecology},
+   Volume = {9},
+   Number = {4},
+   Pages = {421-431},
+   Keywords = {presettlement, Arizona, Gus Pearson Natural Area, FIRESUM, process model, fire regime, biomass},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Covington, W. Wallace and Moore, Margaret M.},
+   Title = {Southwestern ponderosa forest structure: changes since Euro-american settlement},
+   Journal = {Journal of Forestry},
+   Volume = {92},
+   Pages = {39-47},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Cunningham, Stan C. and Babb, Randall D. and Jones, Thomas R. and Taubert, Bruce D. and Vega, Raul},
+   Title = {Reaction of lizard populations to a catastrophic wildfire in a central Arizona mountain range},
+   Journal = {Biological Conservation},
+   Volume = {107},
+   Pages = {193-201},
+   Keywords = {Crotophytidae, chaparral, fire, lizards, madrean evergreen forest, Phrynosomatidae, sky island, succession, Teiidae},
+   Year = {2002} }
+
+@incollection{
+LABEL,
+   Author = {Dickinson, M.B. and Johnson, E. A},
+   Title = {Fire effects on trees},
+   BookTitle = {Forest fires: behavior and ecological effects},
+   Editor = {Johnson, E. A and Miyanishi, K.},
+   Publisher = {Academic Press},
+   Address = {San Diego},
+   Pages = {477-525},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Dickman, Alan and Cook, Stanton},
+   Title = {Fire and fungus in a mountain hemlock forest},
+   Journal = {Canadian Journal of Botany},
+   Volume = {67},
+   Pages = {2005-2016},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Dieterich, John H.},
+   Title = {Fire history of southwestern mixed conifer: a case study},
+   Journal = {Forest Ecology and Management},
+   Volume = {6},
+   Pages = {13-31},
+   Year = {1983} }
+
+@article{
+LABEL,
+   Author = {Eberhart, Kevin E. and Woodard, Paul M.},
+   Title = {Distribution of residual vegetation associated with large fires in Alberta},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {17},
+   Pages = {1207-1212},
+   Keywords = {unburned islands, fire size, understory vegetation recruitment, reforestation},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Ehnstrom, Bengt and Langstrom, Bo and Hellqvist, Claes},
+   Title = {Insects in burned forests - forest protection and faunal conservation (preliminary results)},
+   Journal = {Entomologica Fennica},
+   Volume = {6},
+   Pages = {109-117},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Farris, Kerry L. and Huss, Martin J. and Zack, Steve},
+   Title = {The role of foraging woodpeckers in the decomposition of ponderosa pine snags},
+   Journal = {The Condor},
+   Volume = {106},
+   Pages = {50-59},
+   Keywords = {cavity nesters, fungi, picoides, Pinus ponderosa, sapwood},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Fernandes, Paulo M and Botelho, Herminio S.},
+   Title = {A review of prescribed burning effectiveness in fire hazard reduction},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {12},
+   Pages = {117-128},
+   Keywords = {fuel management, fire management, forest protection},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Filip, Gregory M. and Yang-Erve, Lisa},
+   Title = {Effects of prescribed burning on the viability of Armillaria ostoyae in mixed-conifer forest soils in the Blue Mountains of Oregon},
+   Journal = {Northwest Science},
+   Volume = {71},
+   Number = {2},
+   Pages = {137-144},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Finney, Mark A.},
+   Title = {Design of regular landscape fuel treatment patterns for modifying fire growth and behavior},
+   Journal = {Forest Science},
+   Volume = {47},
+   Number = {2},
+   Pages = {219-228},
+   Keywords = {fuels, fire behavior, landscape patterns, fire modeling},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Finney, Mark A.},
+   Title = {Calculation of fire spread rates across random landscapes},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {12},
+   Pages = {167-174},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Fonda, R.W. and Belanger, L.A. and Burley, L.L.},
+   Title = {Burning characteristics of western conifer needles},
+   Journal = {Northwest Science},
+   Volume = {72},
+   Number = {1},
+   Pages = {1-9},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Fox, John F.},
+   Title = {Pollen limitation of reproductive effort in willows},
+   Journal = {Oecologia},
+   Volume = {90},
+   Pages = {283-287},
+   Keywords = {entomophily, pollination, reproduction, Salix, seed set},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Frandsen, William H.},
+   Title = {The influence of moisture and mineral soil on the combustion limits of smoldering forest duff},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {17},
+   Pages = {1540-1544},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Franklin, Jerry F. and Shugart, H. H. and Harmon, M.E.},
+   Title = {Tree death as an ecological process},
+   Journal = {Bioscience},
+   Volume = {37},
+   Number = {8},
+   Pages = {550-556},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Fule, Peter Z. and Covington, W. Wallace and Moore, Margaret M. and Heinlein, Thomas A. and Walz, Amy E.M.},
+   Title = {Natural variability in forests of the Grand Canyon, USA},
+   Journal = {Journal of Biogeography},
+   Volume = {29},
+   Pages = {31-47},
+   Keywords = {forest structure, fire, Arizona, ponderosa pine, mixed conifer, aspen, reference conditions},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Fule, Peter Z. and Covington, W. Wallace and Smith, H.B. and Springer, Judith D. and Heinlein, Thomas A. and Huisinga, Kristin D. and Moore, Margaret M.},
+   Title = {Comparing ecological restoration alternatives: Grand Canyon, Arizona},
+   Journal = {Forest Ecology and Management},
+   Volume = {170},
+   Pages = {19-41},
+   Keywords = {fire, ponderosa pine, gambel oak, pre-settlement, Kaibob, plant community},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Fule, Peter Z. and Crouse, Joseph E. and Heinlein, Thomas A. and Moore, Margaret M. and Covington, W. Wallace and Verkamp, Greg},
+   Title = {Mixed-severity fire regime in a high-elevation forest of Grand Canyon, Arizona, USA},
+   Journal = {Landscape Ecology},
+   Volume = {18},
+   Pages = {465-486},
+   Keywords = {Abies, age structure, fire ecology, fire scars, Kaibab Plateau, Picea, Pinus, Populus, Pseudotsuga},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Fule, Peter Z. and Heinlein, Thomas A. and Covington, W. Wallace and Moore, Margaret M.},
+   Title = {Assessing fire regimes on Grand Canyon landscapes with fire-scar and fire-record data},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {12},
+   Pages = {129-145},
+   Keywords = {ponderosa pine, gambel oak, mixed conifer, Kaibab Plateau, Coconino Plateau, modern calibration},
+   Year = {2003} }
+
+@inproceedings{
+LABEL,
+   Author = {Fule, Peter Z. and McHugh, Charles W. and Heinlein, Thomas A. and Covington, W. Wallace},
+   Title = {Potential fire behavior is reduced following forest restoration treatments},
+   BookTitle = {Ponderosa pine ecosystems restoration and conservation: steps toward stewardship},
+   Editor = {Vance, Regina K. and Edminster, Carleton B. and Covington, W. Wallace and Blake, Julie A. (comps.)},
+   Address= {Flagstaff, AZ},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station},
+   Volume = {RMRS-P-22},
+   Pages = {28-35},
+   Year = {2001} }
+
+
+
+@article{
+LABEL,
+   Author = {Garbeletto, Matteo and Slaughter, Garey and Popenuck, Tina and Cobb, Fields, W. and Bruns, Thomas D.},
+   Title = {Secondary spread of Heterobasidion annosum in white fire root-disease centers},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {27},
+   Pages = {766-773},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Garrison, Barrett A. and Wachs, Robin L. and Jones, James S. and Triggs, Matthew L.},
+   Title = {Some factors influencing seedling density of California black oak (Quercus kelloggii) in the central Sierra Nevada, California},
+   Journal = {Madrono},
+   Volume = {49},
+   Number = {2},
+   Pages = {115-121},
+   Keywords = {recruitment, seedlings},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Ghazoul, Jaboury and Liston, Katherine A. and Boyles, T.J.B.},
+   Title = {Disturbance-induced density-dependent seed set in Shorea siamensis (Dipterocarpaceae), a tropical forest tree},
+   Journal = {Journal of Ecology},
+   Volume = {86},
+   Pages = {462-473},
+   Keywords = {Allee effect, forest regeneration, gene flow, outcrossing, pollination, population viability},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Gordon, Doria R. and Rice, Kevin J.},
+   Title = {Competitive effects of grassland annuals on soil water and blue oak (Quercus douglasii) seedlings},
+   Journal = {Ecology},
+   Volume = {74},
+   Number = {1},
+   Pages = {68-82},
+   Keywords = {annual grassland, California, competitive equivalence, competitive neighborhood, drought, phenology, root morphology, soil water potential},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Gordon, Doria R. and Welker, J.M. and Menke, J.W. and Rice, K.J.},
+   Title = {Competition for soil water between annual plants and blue oak (Quercus douglasii) seedlings},
+   Journal = {Oecologia},
+   Volume = {79},
+   Pages = {533-541},
+   Keywords = {neighborhood competition, root morphology, soil water potential, plant water relations},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Grissino-Mayer, Henri D.},
+   Title = {A manual and tutorial for the proper use of an increment borer},
+   Journal = {Tree-Ring Research},
+   Volume = {59},
+   Number = {2},
+   Pages = {63-79},
+   Keywords = {damage from increment borers, field methods, increment borer maintenance},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Grogan, P. and Bruns, T.D. and Chapin, F.S., III},
+   Title = {Fire effects on ecosystem nitrogen cycling in a Californian bishop pine forest},
+   Journal = {Oecologia},
+   Volume = {122},
+   Pages = {537-544},
+   Keywords = {ash, primary production, natural abundance, N15, nitrate, Pinus muricata},
+   Year = {2000} }
+
+@inproceedings{
+LABEL,
+   Author = {Haase, Sally M. and Sackett, Stephen S.},
+   Title = {Effects of prescribed fire in giant sequoia-mixed conifer stands in Sequoia and Kings Canyon National Parks},
+   BookTitle = {Tall Timbers fire ecology conference. Fire in ecosystem management: shifting the paradigm from suppression to prescription},
+   Editor = {Pruden, Teresa L. and Brennan, Leonard A.},
+   Address= {Tallahassee, FL},
+   Publisher = {Tall Timbers Research Station},
+   Pages = {236-243},
+   Year = {1998} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Habeck, James R.},
+   Title = {Impact of fire suppression on forest succession and fuel accumulations in long-fire-interval wilderness habitat types},
+   BookTitle = {Wilderness fire symposium},
+   Address= {Nov. 15-18, Missoula, MT},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Intermountain Forest and Range Experiment Station},
+   Volume = {General Technical Report INT-182},
+   Pages = {110-118},
+   Year = {1985} }
+
+
+
+@article{
+LABEL,
+   Author = {Haggerty, P.K.},
+   Title = {Damage and recovery in southern Sierra Nevada foothill oak woodland after a severe ground fire},
+   Journal = {Madrono},
+   Volume = {41},
+   Number = {3},
+   Pages = {185-198},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Halpern, Charles B. and Spies, Thomas A.},
+   Title = {Plant species diversity in natural and managed forests of the pacific northwest},
+   Journal = {Ecological Applications},
+   Volume = {5},
+   Number = {4},
+   Pages = {913-934},
+   Keywords = {disturbance, diversity, forest management, forest structure, logging, old growth, overstory, Psuedotsuga menziesii, species heterogeneity, species richness, succession, understory},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Hargrove, William W. and Gardner, Robert H. and Turner, Monica G. and Romme, William H. and Despain, D.G.},
+   Title = {Simulating fire patterns in heterogenous landscapes},
+   Journal = {Ecological Modelling},
+   Volume = {135},
+   Pages = {243-263},
+   Keywords = {fire model, fire effects, cellular automaton, EMBYR, landscape model, patch formation, pattern, simulation, wildfire, Yellowstone National Park},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Harmon, M.E. and Cromack, K., Jr. and Smith, B. G.},
+   Title = {Coarse woody debris in mixed-conifer forests, Sequoia National Park, California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {17},
+   Pages = {1265-1272},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Harmon, M.E. and Franklin, J.F. and Swanson, Frederick J. and Sollins, P. and Gregory, S.V. and Lattin, J.D. and Anderson, N.H. and Cline, S.P. and Aumen, N.G. and Sedell, J.R. and Lienkaemper, G.W. and Cromack, K., Jr. and Cummins, K.W.},
+   Title = {Ecology of coarse woody debris in temperate ecosystems},
+   Journal = {Advances in Ecological Research},
+   Volume = {15},
+   Pages = {133-302},
+   Year = {1986} }
+
+@techreport{
+LABEL,
+   Author = {Harmon, Mark E. and Sexton, Jay},
+   Title = {Guidelines for measurements of woody detritus in forest ecosystems},
+   Institution = {U.S. LTER Network},
+   Number = {Publication No. 20},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Harrington, M.G.},
+   Title = {Predicting Pinus ponderosa mortality from dormant season and growing season fire injury},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {3},
+   Number = {2},
+   Pages = {65-72},
+   Keywords = {fire effects, crown scorch, Colorado, mortality prediction model},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Hart, Stephen C. and Firestone, Mary K. and Eldor, A. Paul},
+   Title = {Decomposition and nutrient dynamics of ponderosa pine needles in a Mediterranean-type climate},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {22},
+   Pages = {306-314},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Hartford, Roberta A. and Frandsen, William F.},
+   Title = {When it's hot, It's hot... or maybe it's not! (Surface flaming may not portend extensive soil heating)},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {2},
+   Number = {3},
+   Pages = {139-144},
+   Keywords = {temperatures, duff, smoldering, Northern Rocky Mountains, Larix occidentalis, Abies lasiocarpa},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Harvey, H. Thomas and Shellhammer, Howard S.},
+   Title = {Survivorship and growth of giant sequoia (Sequoiadendron giganteum (Lindl.) Buchh.) seedlings after fire},
+   Journal = {Madrono},
+   Volume = {38},
+   Number = {1},
+   Pages = {14-20},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {He, Fangliang and Duncan, Richard P.},
+   Title = {Density-dependent effects on tree survival in an old-growth Douglas fir forest},
+   Journal = {Journal of Ecology},
+   Volume = {88},
+   Pages = {676-688},
+   Keywords = {competition, confounding effect, neighborhood analysis, population dynamics, Ripley's K function, logistic regression, spatial pattern, stand mapping},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Healy, William M.},
+   Title = {Thinning New England oak stands to enhance acorn production},
+   Journal = {NJAF},
+   Volume = {14},
+   Number = {3},
+   Pages = {152-156},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Hely, Christelle and Flannigan, Mike and Bergeron, Yves and McRae, Douglas},
+   Title = {Role of vegetation and weather on fire behavior in the Canadian mixedwood boreal forest using two fire behavior prediction systems},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {31},
+   Pages = {430-441},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Heyerdahl, Emily K. and Brubaker, Linda B. and Agee, James K.},
+   Title = {Spatial controls of historical fire regimes: a multiscale example from the interior west, USA},
+   Journal = {Ecology},
+   Volume = {82},
+   Number = {3},
+   Pages = {660-678},
+   Keywords = {bottom-up, climate, dendrochonology, fire history, landscape ecology, local scale, Oregon, regional scale, top-down, topography, Washington},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Hobbs, Richard J. and Atkins, Lyn},
+   Title = {Spatial variability of experimental fires in south-west Western Australia},
+   Journal = {Australian Journal of Ecology},
+   Volume = {13},
+   Pages = {295-299},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Holah, Jenny C. and Wilson, Mark V. and Hansen, Everett M.},
+   Title = {Impacts of a native root-rotting pathogen on successional development of old-growth Douglas fir forests},
+   Journal = {Oecologia},
+   Volume = {111},
+   Pages = {429-433},
+   Keywords = {disease, succession, biotic disturbance, Phellinus weirii},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Holm, Stig-Olov},
+   Title = {Reproductive variability and pollen limitation in three Betula taxa in northern Sweden},
+   Journal = {Ecography},
+   Volume = {17},
+   Pages = {73-81},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Huffman, Edward L. and MacDonald, Lee H. and Stednick, John D.},
+   Title = {Strength and persistence of fire-induced soil hydrophobicity under ponderosa and lodgepole pine, Colorado Front Range},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {2877-2892},
+   Keywords = {water repellency, burn severity, soil texture, critical surface tension},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Huntsinger, L. and Bartolome, J. W.},
+   Title = {Ecological dynamics of Quercus dominated woodlands in California and southern Spain: a state-transition model},
+   Journal = {Vegetatio},
+   Volume = {99-100},
+   Pages = {299-305},
+   Keywords = {agroforestry, Dehesa, Mediterranean climate, succession, sustainability, wildlife},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Hutto, Richard L.},
+   Title = {Composition of bird communities following stand-replacement fires in Northern Rocky Mountain (U.S.A.) conifer forests},
+   Journal = {Conservation Biology},
+   Volume = {9},
+   Number = {5},
+   Pages = {1041-1058},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {James, Sarah E. and M'Closkey, Robert T.},
+   Title = {Lizard microhabitat and fire fuel management},
+   Journal = {Biological Conservation},
+   Volume = {114},
+   Pages = {293-297},
+   Keywords = {dead vegetation, fuel reduction},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Johansen, Matthew P. and Hakonson, Thomas E. and Breshears, David D.},
+   Title = {Post-fire runoff and erosion from rainfall simulations: contrasting forests with shrublands and grasslands},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {2953-2965},
+   Keywords = {sediment transport, fire, wildfire, hydrologic response, surficial processes},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Johnson, E. A and Miyanishi, K.},
+   Title = {The need for consideration of fire behavior and effects in prescribed burning},
+   Journal = {Restoration Ecology},
+   Volume = {3},
+   Pages = {271-278},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Jurgensen, M.F. and Harvey, A.E. and Graham, R.T. and Page-Dumroese, D. S. and Tonn, J.R. and Larsen, M.J. and Jain, T.B.},
+   Title = {Impacts of timber harvesting on soil organic matter, nitrogen, productivity, and health of inland northwest forests},
+   Journal = {Forest Science},
+   Volume = {43},
+   Number = {2},
+   Pages = {234-251},
+   Keywords = {mounding, mycorrhizae,nitrogen fixation, scalping, site preparation, woody residue},
+   Year = {1997} }
+
+@incollection{
+LABEL,
+   Author = {Kauffman, J. Boone},
+   Title = {Ecological relationships of vegetation and fire in Pacific Northwest forests},
+   BookTitle = {Natural and prescribed fire in Pacific Northwest forests},
+   Editor = {Walsted, John D. and Radosevich, Steven R. and Sandberg, David V. (tech. coords.)},
+   Publisher = {Oregon State University Press},
+   Address = {Corvallis, OR},
+   Pages = {39-52},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Kauffman, J. Boone and Martin, R. E.},
+   Title = {Fire behavior, fuel consumption, and forest-floor changes following prescribed understory fires in Sierra Nevada mixed conifer forests},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {19},
+   Number = {455-462},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Kauffman, J. Boone and Martin, R. E.},
+   Title = {Sprouting shrub response to different seasons and fuel seasons and fuel consumption levels of prescribed fire in Sierra Nevada mixed conifer ecosystems},
+   Journal = {Forest Science},
+   Volume = {36},
+   Number = {3},
+   Pages = {748-764},
+   Keywords = {Ceanothus cordulatus, Lithocarpus densiflorus, Quercus kelloggii, fire-adaptation, understory burning},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Kauffman, J. Boone and Martin, R. E.},
+   Title = {Factors influencing the scarification and germination of three montane Sierra Nevada shrubs},
+   Journal = {Northwest Science},
+   Volume = {65},
+   Number = {4},
+   Pages = {180-187},
+   Year = {1991} }
+
+@inproceedings{
+LABEL,
+   Author = {Keeley, Jon E.},
+   Title = {Fire and invasive species in mediterranean-climate ecosystems of California},
+   BookTitle = {Proceedings of the invasive species workshop: the role of fire in the control and spread of invasive species. The first national congress on fire ecology, prevention, and management},
+   Editor = {Galley, K.E.M. and Wilson, T.P.},
+   Address= {Tallahassee, FL},
+   Publisher = {Tall Timbers Research Station},
+   Volume = {Miscellaneous Publication No. 11},
+   Year = {2001} }
+
+
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E.},
+   Title = {Fire management of California shrubland landscapes},
+   Journal = {Environmental Management},
+   Volume = {29},
+   Number = {3},
+   Pages = {395-408},
+   Keywords = {buffer zones, chaparral, ecosystem management, fire management, fuel breaks, prescription burning},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E.},
+   Title = {Native american impacts on fire regimes of the California coastal ranges},
+   Journal = {Journal of Biogeography},
+   Volume = {29},
+   Pages = {303-320},
+   Keywords = {burning, fire, chaparral, coastal sage scrub, lightning, landscape history, type conversion},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Bond, William J.},
+   Title = {On incorporating fire into our thinking about natural ecosystems: a response to Saha and Howe},
+   Journal = {American Naturalist},
+   Volume = {158},
+   Number = {6},
+   Pages = {664-670},
+   Keywords = {bamboo, delayed reproduction, fuels, India, mass flowering, monocarpic, seedling recruitment, wildfire},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J.},
+   Title = {Trace gas emissions and smoke-induced seed germination},
+   Journal = {Science},
+   Volume = {276},
+   Pages = {1248-1250},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J.},
+   Title = {Smoke-induced seed germination in California chaparral},
+   Journal = {Ecology},
+   Volume = {79},
+   Number = {7},
+   Pages = {2320-2336},
+   Keywords = {fire, gibberellin, hard-seeded plant taxa, NO2, scarification, seed coat, stimulation of germination},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J.},
+   Title = {Historic fire regime in southern California shrublands},
+   Journal = {Conservation Biology},
+   Volume = {15},
+   Number = {6},
+   Pages = {1536-1548},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J.},
+   Title = {History and management of crown-fire ecosystems: a summary and response},
+   Journal = {Conservation Biology},
+   Volume = {15},
+   Number = {6},
+   Pages = {1561-1567},
+   Year = {2001} }
+
+@incollection{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J.},
+   Title = {Impact of past, present, and future fire regimes on North American mediterranean shrublands},
+   BookTitle = {Fire and Climate Change in Temperate Ecosystems of the Western Americas},
+   Editor = {Veblen, Thomas T. and Baker, W.L. and Montenegro, G. and Swetnam, Thomas W.},
+   Publisher = {Springer},
+   Address = {New York},
+   Pages = {218-262},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Keeley, Jon E. and Fotheringham, C.J. and Morais, Marco},
+   Title = {Reexamining fire suppression impacts on brushland fire regimes},
+   Journal = {Science},
+   Volume = {284},
+   Pages = {1829-1832},
+   Year = {1999} }
+
+@inproceedings{
+LABEL,
+   Author = {Keeley, Jon E. and Stephenson, Nathan L.},
+   Title = {Restoring natural fire regimes to the Sierra Nevada in an era of global climate change},
+   BookTitle = {Wilderness science in a time of change conference - Volume 5: Wilderness ecosystems, threats, and management},
+   Editor = {Cole, David N. and McCool, Stephen F. and Borrie, William T. and O'Loughlin, Jennifer, comps.},
+   Address= {May 23-27, Missoula, MT},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station},
+   Volume = {Proceedings RMRS-P-15-Vol. 5},
+   Pages = {255-265},
+   Year = {2000} }
+
+
+
+@incollection{
+LABEL,
+   Author = {Keeley, Jon E. and Zedler, Paul H.},
+   Title = {Evolution of life histories in Pinus},
+   BookTitle = {Ecology and Biogeography of Pinus},
+   Editor = {Richardson, D.M.},
+   Publisher = {Cambridge University Press},
+   Pages = {219-250},
+   Year = {1998} }
+
+@inproceedings{
+LABEL,
+   Author = {Keifer, MaryBeth},
+   Title = {Fuel load and tree density changes following prescribed fire in the giant sequoia-mixed conifer forest: the first 14 years of fire effects monitoring},
+   BookTitle = {Fire in ecosystem management: shifting the paradigm from suppression to prescription},
+   Editor = {Brennan, Leonard A. and Pruden, Teresa L.},
+   Publisher = {Tall Timbers Research Station, Tallahassee, FL},
+   Volume = {20},
+   Pages = {306-309},
+   Year = {1998} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Keifer, MaryBeth and Stephenson, Nathan L. and Manley, Jeff},
+   Title = {Prescribed fire as the minimum tool for wilderness forest and fire regime restoration: a case study from the Sierra Nevada, CA},
+   BookTitle = {Proceedings: Wilderness science in a time of change.},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station},
+   Volume = {GTR-RMRS-????},
+   Year = {2000} }
+
+
+
+@article{
+LABEL,
+   Author = {Kercher, J.R. and Axelrod, M.C.},
+   Title = {A process model of fire ecology and succession in a mixed-conifer forest},
+   Journal = {Ecology},
+   Volume = {65},
+   Number = {6},
+   Pages = {1725-1742},
+   Keywords = {community, competition, establishment, scorch height, SILVA, simulation, tree growth, tree mortality},
+   Year = {1984} }
+
+@article{
+LABEL,
+   Author = {Kilgore, B.M.},
+   Title = {Response of breeding bird populations to habitat changes in a giant sequoia forest},
+   Journal = {The American Midland Naturalist},
+   Volume = {85},
+   Number = {1},
+   Pages = {135-152},
+   Year = {1971} }
+
+@article{
+LABEL,
+   Author = {Kilgore, B.M.},
+   Title = {Impact of prescribed burning on a sequoia-mixed conifer forest},
+   Journal = {Proceedings Tall Timbers Fire Ecology Conference},
+   Volume = {12},
+   Pages = {345-375},
+   Year = {1972} }
+
+@article{
+LABEL,
+   Author = {Kilgore, B.M.},
+   Title = {The ecological role of fire in Sierran conifer forests: Its application to National Park management},
+   Journal = {Quaternary Research},
+   Volume = {3},
+   Pages = {496-513},
+   Year = {1973} }
+
+@article{
+LABEL,
+   Author = {Kilgore, Bruce M. and Sando, Rodney W.},
+   Title = {Crown-fire potential in a Sequoia forest after prescribed burning},
+   Journal = {Forest Science},
+   Volume = {21},
+   Number = {1},
+   Pages = {83-87},
+   Keywords = {fire spread, fuel reduction, crown fuels},
+   Year = {1975} }
+
+@article{
+LABEL,
+   Author = {Kilgore, Bruce M. and Taylor, Dan},
+   Title = {Fire history of a sequoia-mixed conifer forest},
+   Journal = {Ecology},
+   Volume = {60},
+   Number = {1},
+   Pages = {129-142},
+   Keywords = {California, fire frequency, fire intensity, indian burning, Pinus ponderosa, Sequoiadendron giganteum},
+   Year = {1979} }
+
+@article{
+LABEL,
+   Author = {Kittredge, Joseph},
+   Title = {Some characteristics of forest floors from a variety of forest types in California},
+   Journal = {Journal of Forestry},
+   Volume = {53},
+   Number = {9},
+   Pages = {645-647},
+   Year = {1955} }
+
+@article{
+LABEL,
+   Author = {Koenig, Walter D. and Ashley, Mary V.},
+   Title = {Is pollen limited? The answer is blowin' in the wind},
+   Journal = {Trends in Ecology and Evolution},
+   Year = {2003?} }
+
+@article{
+LABEL,
+   Author = {Krajick, Kevin},
+   Title = {Defending deadwood},
+   Journal = {Science},
+   Volume = {293},
+   Pages = {1579-1581},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Lambert, Sherman and Stohlgren, Thomas J.},
+   Title = {Giant sequoia mortality in burned and unburned stands},
+   Journal = {Journal of Forestry},
+   Volume = {86},
+   Number = {2},
+   Pages = {44-46},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Lawrence, George and Biswell, Harold H.},
+   Title = {Effect of forest manipulation on deer habitat in giant sequoia},
+   Journal = {The Journal of Wildllife Management},
+   Volume = {36},
+   Number = {2},
+   Pages = {595-605},
+   Year = {1972} }
+
+@article{
+LABEL,
+   Author = {Lindh, Briana C. and Muir, Patricia S.},
+   Title = {Understory vegetation in young Douglas-fir forests: does thinning help restore old-growth composition?},
+   Journal = {Forest Ecology and Management},
+   Volume = {192},
+   Pages = {285-296},
+   Keywords = {Pseudotsuga menziesii, pre-commercial thinning, Oregon cascades, herbs, shrubs, community composition},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Lloyd, Andrea H.},
+   Title = {Response of tree-line populations of foxtail pine (Pinus balfouriana) to climate variation over the last 1000 years},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {27},
+   Pages = {936-942},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Lloyd, Andrea H. and Graumlich, Lisa J.},
+   Title = {Holcene dynamics of treeline forests in the Sierra Nevada},
+   Journal = {Ecology},
+   Volume = {78},
+   Number = {4},
+   Pages = {1199-1210},
+   Keywords = {climate change, dendrochronology, foxtail pine, paleoclimate, stand dynamics, subalpine forests},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Loeb, Susan C.},
+   Title = {Responses of small mammals to coarse woody debris in a southeastern pine forest},
+   Journal = {Journal of Mammology},
+   Volume = {80},
+   Number = {2},
+   Pages = {460-471},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Mac Nally, Ralph and Horrocks, Gregory and Pettifer, Lorna},
+   Title = {Experimental evidence for potential beneficial effects of fallen timber in forests},
+   Journal = {Ecological Applications},
+   Volume = {12},
+   Number = {6},
+   Pages = {1588-1594},
+   Keywords = {Australia, Bayesian analyses, brown treecreeper, woody debris},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Madany, Michael H. and West, Neil E.},
+   Title = {Livestock grazing-fire regime interactions within montane forests of Zion National Park, Utah},
+   Journal = {Ecology},
+   Volume = {64},
+   Number = {4},
+   Pages = {661-667},
+   Keywords = {fire history, grazing effects, Pinus ponderosa, Quercus gambelii, relict mesas, savanna},
+   Year = {1983} }
+
+@article{
+LABEL,
+   Author = {Malanson, George P. and Butler, David R.},
+   Title = {Ordinations of species and fuel arrays and their use in fire management},
+   Journal = {Forest Ecology and Management},
+   Volume = {12},
+   Pages = {65-71},
+   Year = {1985} }
+
+@article{
+LABEL,
+   Author = {Marks, P.L.},
+   Title = {The role of pin cherry (Prunus pensylvanica L.) in the maintenance of stability in northern hardwood ecosystems},
+   Journal = {Ecological Monographs},
+   Volume = {44},
+   Pages = {73-88},
+   Keywords = {biomass, nutrient cycling, primary productivity, revegetation, succession},
+   Year = {1974} }
+
+@inproceedings{
+LABEL,
+   Author = {Martin, Robert E. and Sapsis, David B.},
+   Title = {Fires as agents of biodiversity: pyrodiversity promotes biodiversity},
+   BookTitle = {Symposium on biodiversity of northwestern California},
+   Editor = {Harris, Richard R. and Erman, Don C. and Kerner, Hannah M.},
+   Address= {Oct. 28-30, 1991, Santa Rosa, California},
+   Publisher = {Wildland Resources Center, University of California Berkeley},
+   Year = {1992} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Martinson, Erik J. and Omi, Philip N.},
+   Title = {Performance of fuel treatments subjected to wildfires},
+   BookTitle = {Fire, fuel treatments, and ecological restoration},
+   Editor = {Omi, Philip N. and Joyce, Linda A.},
+   Address= {Fort Collins, CO},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Rocky Mountain Research Station},
+   Volume = {RMRS-P-29},
+   Pages = {7-13},
+   Year = {2003} }
+
+
+
+@article{
+LABEL,
+   Author = {McCay, Timothy S. and Komoroski, Mark J.},
+   Title = {Demographic responses of shrews to removal of coarse woody debris in a managed pine forest},
+   Journal = {Forest Ecology and Management},
+   Volume = {189},
+   Pages = {387-395},
+   Keywords = {Blarina, Cryptotis, plantation, small mammals, Sorex},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {McClaran, Mitchel P. and Bartolome, James W.},
+   Title = {Fire-related recruitment in stagnant Quercus douglasii populations},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {19},
+   Pages = {580-585},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {McClaran, Mitchel P. and Bartolome, James W.},
+   Title = {Comparison of actual and predicted blue oak age structures},
+   Journal = {Journal of Range Management},
+   Volume = {43},
+   Number = {1},
+   Pages = {61-63},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {McCune, Bruce and Keon, Dylan},
+   Title = {Equations for potential annual direct incident radiation and heat load},
+   Journal = {Journal of Vegetation Science},
+   Volume = {13},
+   Pages = {603-606},
+   Keywords = {aspect, azimuth, latitude, light, slope, temperature, topography},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {McDonald, Philip M.},
+   Title = {Estimating seed crops of conifer and hardwood species},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {22},
+   Pages = {832-838},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {McHugh, Charles W. and Kolb, Tom E.  and Wilson, Jill L.},
+   Title = {Bark beetle attacks on ponderosa pine following fire in northern Arizona.},
+   Journal = {Environmental Entomology},
+   Volume = {32},
+   Number = {3},
+   Pages = {510-522},
+   Keywords = {logistic regression, pinus ponderosa, tree mortality, Dendroctonus, Ips},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {McIver, James D. and Starr, Lynn},
+   Title = {A literature review on the environmental effects of postfire logging},
+   Journal = {Western Journal of Applied Forestry},
+   Volume = {16},
+   Number = {4},
+   Pages = {159-168},
+   Year = {2001} }
+
+@techreport{
+LABEL,
+   Author = {McKelvey, Kevin S. and Skinner, Carl N. and Chang, Chi-Ru and Erman, Don C. and Husari, Susan J. and Parsons, David J. and van Wagtendonk, Jan W. and Weatherspoon, C. Phillip},
+   Title = {An overview of fire in the Sierra Nevada},
+   Institution = {University of California Davis, Centers for Water and Wildland Resources},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {McKenzie, Donald and Gedalof, Ze'ev and Peterson, David L. and Mote, Phillip},
+   Title = {Climatic change, wildfire, and conservation},
+   Journal = {Conservation Biology},
+   Volume = {18},
+   Number = {4},
+   Pages = {1-13},
+   Keywords = {fire history, general circulation models, weather, precipitation, temperature},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Mellman-Brown, Sabine and Barbour, Michael G.},
+   Title = {Understory/ overstory species patterns through a Sierra Nevada ecotone},
+   Journal = {Phytocoenologia},
+   Volume = {25},
+   Number = {1},
+   Pages = {89-106},
+   Keywords = {ABies concolor, Abies magnifica, conifer, herbs, litter, montane forest, soil chemistry},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Mensing, Scott A.},
+   Title = {The impact of European settlement on blue oak (Quercus douglasii) regeneration and recruitment in the Tehachapi Mountains, California},
+   Journal = {Madrono},
+   Volume = {39},
+   Number = {1},
+   Pages = {36-46},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Meyer, G. A. and Pierce, J.L. and Wood, S.H. and Jull, A.J.T.},
+   Title = {Fire, storms, and erosional events in the Idaho batholith},
+   Journal = {Hydrological Processes},
+   Volume = {154},
+   Pages = {3025-3038},
+   Keywords = {wildfire, debris flows, sheetfloods, infiltration, runoff, erosion, sediment yield, Holocene climate},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Miller, Carol and Urban, Dean L.},
+   Title = {Forest pattern, fire, and climatic change in the Sierra Nevada},
+   Journal = {Ecosystems},
+   Volume = {2},
+   Pages = {76-87},
+   Keywords = {climatic change, forest gap model, fire regime, spatial pattern connectivity},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Miller, Carol and Urban, Dean L.},
+   Title = {Interactions between forest heterogeneity and surface fire regimes in the southern Sierra Nevada},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {29},
+   Pages = {202-212},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Miller, Carol and Urban, Dean L.},
+   Title = {Connectivity of forest fuels and surface fire regimes},
+   Journal = {Landscape Ecology},
+   Volume = {15},
+   Pages = {145-154},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Miller, Carol and Urban, Dean L.},
+   Title = {Modeling the effects of fire management alternatives on Sierra Nevada mixed-conifer forests},
+   Journal = {Ecological Applications},
+   Volume = {10},
+   Number = {1},
+   Pages = {85-94},
+   Keywords = {fire exclusion, fire reintroduction, fire suppression, forest gap model, fuel treatment, mixed conifer forest, prescribed fires and forest restoration, Sierra Nevada, California, spatial autocorrelation, structure vs. process debate},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Momen, B and Menke, J.W. and Welker, J.M. and Rice, K.J. and Chapin, F.S., III},
+   Title = {Blue-oak regeneration and seedling water relations in four sites within a California oak savanna},
+   Journal = {International Journal of Plant Sciences},
+   Volume = {155},
+   Number = {6},
+   Pages = {744-749},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Moody, John A. and Martin, Deborah A.},
+   Title = {Post-fire, rainfall intensity-peak discharge relations for three mountainous watersheds in the western USA},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {2981-2993},
+   Keywords = {wilfire, rainfall, runoff, rainfall intensity, peak discharge},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Moore, Margaret M. and Covington, W. Wallace and Fule, Peter Z.},
+   Title = {Reference conditions and ecological restoration: a southwestern ponderosa pine perspective},
+   Journal = {Ecological Applications},
+   Volume = {9},
+   Number = {4},
+   Pages = {1266-1277},
+   Keywords = {ecosystem management, evolutionary environment, Pinus ponderosa, range of variability},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Moreno, Jose M. and Oechel, Walter C.},
+   Title = {Fire intensity effects on germination of shrubs and herbs in southern California chaparral},
+   Journal = {Ecology},
+   Volume = {72},
+   Number = {6},
+   Pages = {1993-2004},
+   Keywords = {Adenostoma, Ceanothus, disturbance regime, facultative seeders, obligate seeders, opportunistic annuals, post-fire regeneration},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {Morgan, Penelope and Neuenschwander, Leon F},
+   Title = {Shrub response to high and low severity burns following clearcutting in northern Idaho},
+   Journal = {Western Journal of Applied Forestry},
+   Volume = {3},
+   Number = {1},
+   Pages = {5-9},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Moritz, Max A. and Keeley, Jon E. and Johnson, Edward A. and Shaffner, Andrew A.},
+   Title = {Testing a basic assumption of shrubland fire management: how important is fuel age?},
+   Journal = {Frontiers in Ecology and the Environment},
+   Volume = {2},
+   Number = {2},
+   Pages = {67-72},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Morretti, Marco and Obrist, Martin K. and Duelli, Peter},
+   Title = {Arthropod biodiversity after forest fires: winners and losers in the winter fire regime of the southern Alps},
+   Journal = {Ecography},
+   Volume = {27},
+   Pages = {173-186},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Murkowski, Darlyne A. and Hamrick, J.L.},
+   Title = {The effect of the density of flowering individuals on the mating systems of nine tropical tree species},
+   Journal = {Heredity},
+   Volume = {67},
+   Pages = {167-174},
+   Keywords = {allozyme analysis, Panama, tree density, pollination},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {Murkowski, Darlyne A. and Hamrick, J.L.},
+   Title = {The mating system of Cavanillesia platanifolia under extremes of flowering-tree density: a test of predictions},
+   Journal = {Biotropica},
+   Volume = {24},
+   Number = {1},
+   Pages = {99-101},
+   Year = {1992} }
+
+@article{
+LABEL,
+   Author = {Mutch, Linda S. and Parsons, David J.},
+   Title = {Mixed conifer forest mortality and establishment before and after prescribed fire in Sequoia National Park, California},
+   Journal = {Forest Science},
+   Volume = {44},
+   Number = {3},
+   Pages = {341-355},
+   Keywords = {Percent crown volume scorched, fire severity, logistic regression, demography},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Negron, Jose F. and Popp, John B.},
+   Title = {Probability of ponderosa pine infestation by mountain pine beetle in the Colorado Front Range},
+   Journal = {Forest Ecology and Management},
+   Volume = {191},
+   Pages = {17-27},
+   Keywords = {dendroctonus ponderosae, mountain pine beetle, bark beetles, Pinus ponderosa},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Nichols, Howard T.},
+   Title = {Managing fire in Sequoia and Kings Canyon National Parks},
+   Journal = {Fremontia},
+   Volume = {16},
+   Number = {4},
+   Pages = {11-14},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Nilsson, Sven G. and Niklasson, Mats and Hedin, Jonas and Aronsson, Gillis and Gutowski, Jerzy M. and Linder, Per and Ljungberg, Hakan and Mikusinski, Grzegorz  and Ranius, Thomas},
+   Title = {Densities of large living and dead trees in old-growth temperate and boreal forests},
+   Journal = {Forest Ecology and Management},
+   Volume = {161},
+   Pages = {189-204},
+   Keywords = {tree size, snag densities, log densities, coarse woody debris, reference values, forest ecology, old-growth forest},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Nilsson, Sven G. and Wastljung, Urban},
+   Title = {Seed predation and cross-pollination in mast-seeding beech (Fagus sylvatica) patches},
+   Journal = {Ecology},
+   Volume = {68},
+   Number = {2},
+   Pages = {260-265},
+   Keywords = {Cydia, forest fragmentation, germination, granivory, patch size, tree size},
+   Year = {1987} }
+
+@inproceedings{
+LABEL,
+   Author = {Nixon, Kevin C.},
+   Title = {The oak (Quercus) biodiversity of California and adjacent regions},
+   BookTitle = {Fifth symposium on oak woodlands: oaks in California's changing landscape},
+   Address= {San Diego, CA, Octover 22-25, 2001},
+   Publisher = {USDA Forest Service},
+   Volume = {General Technical Report PSW-GTR-184},
+   Pages = {3-20},
+   Year = {2002} }
+
+
+
+@article{
+LABEL,
+   Author = {Norman, S.P. and Taylor, Alan H.},
+   Title = {Tropical and north Pacific teleconnections influence fire regimes in pine-dominated forests of north-eastern California, USA},
+   Journal = {Journal of Biogeography},
+   Volume = {30},
+   Pages = {1081-1092},
+   Keywords = {fire, climate variability, ponderosa pine, Pacific Decadal Oscillation, El Nino/ Southern Oscillation},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Odion, Dennis C.},
+   Title = {Seed banks of long-unburned stands of maritime chaparral: composition, germination behavior, and survival without fire},
+   Journal = {Madrono},
+   Volume = {47},
+   Number = {3},
+   Pages = {195-203},
+   Year = {2000} }
+
+@inproceedings{
+LABEL,
+   Author = {Oliver, William W.},
+   Title = {Can we create and sustain late-successional attributes in interior ponderosa pine stands? Large-scale ecological research studies in northeastern California},
+   BookTitle = {Proceedings of the IUFRO interdisciplinary uneven-aged management symposium},
+   Publisher = {U.S. Department of Agriculture, Forest Service},
+   Volume = {RMRS-P-22},
+   Pages = {99-103},
+   Year = {2001} }
+
+
+
+@article{
+LABEL,
+   Author = {Packer, Alissa and Clay, Keith},
+   Title = {Soil pathogens and spatial patterns of seedling mortality in a temperate tree},
+   Journal = {Nature},
+   Volume = {404},
+   Pages = {278-281},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Parker, Albert J.},
+   Title = {Environmental and compositional ordinations of conifer forests in Yosemite National Park, California},
+   Journal = {Madrono},
+   Volume = {29},
+   Number = {2},
+   Pages = {109-118},
+   Year = {1982} }
+
+@article{
+LABEL,
+   Author = {Parker, V. Thomas},
+   Title = {Can native flora survive prescribed burns?},
+   Journal = {Fremontia},
+   Volume = {15},
+   Number = {2},
+   Pages = {3-6},
+   Keywords = {chaparral, burning season, soil moisture},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Parsons, David J.},
+   Title = {Fire and fuel accumulation in a giant sequoia forest},
+   Journal = {Journal of Forestry},
+   Volume = {76},
+   Pages = {104-105},
+   Year = {1978} }
+
+@article{
+LABEL,
+   Author = {Parsons, David J.},
+   Title = {The historical role of fire in the foothill communities of Sequoia National Park},
+   Journal = {Madrono},
+   Volume = {28},
+   Number = {3},
+   Pages = {111-120},
+   Year = {1981} }
+
+@article{
+LABEL,
+   Author = {Parsons, David J. and DeBennedetti, Steven H.},
+   Title = {Impact of fire suppression on a mixed-conifer forest},
+   Journal = {Forest Ecology and Management},
+   Volume = {2},
+   Pages = {21-33},
+   Year = {1979} }
+
+@article{
+LABEL,
+   Author = {Parsons, David J. and Graber, David M. and Agee, James K. and van Wagtendonk, Jan W.},
+   Title = {Natural fire management in National Parks},
+   Journal = {Environmental Management},
+   Volume = {10},
+   Number = {1},
+   Pages = {21-24},
+   Keywords = {fire history, fire management, natural fire, National Park Service, resource management policy},
+   Year = {1986} }
+
+@article{
+LABEL,
+   Author = {Peek, James M. and Korol, Jerome J. and Gay, Donald and Hershey, Terry},
+   Title = {Overstory-understory biomass changes over a 35-year period in southcentral Oregon},
+   Journal = {Forest Ecology and Management},
+   Volume = {150},
+   Pages = {267-277},
+   Keywords = {canopy closure, forage biomass, mule deer,},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Perry, Daniel J. and Knowles, Peggy},
+   Title = {Evidence of high self-fertilization in natural populations of eastern white cedar (Thuja occidentalis)},
+   Journal = {Canadian Journal of Botany},
+   Volume = {68},
+   Pages = {663-668},
+   Keywords = {mating system, outcrossing rate, pollination},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Peterson, David L.},
+   Title = {Crown scorch volume and scorch height: estimates of postfire tree condition},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {15},
+   Pages = {596-598},
+   Year = {1985} }
+
+@article{
+LABEL,
+   Author = {Peterson, David L. and Sackett, Stephen S. and Robinson, Lindsay J. and Haase, Sally M.},
+   Title = {The effects of repeated prescribed burning on Pinus ponderosa growth},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {4},
+   Number = {4},
+   Pages = {239-247},
+   Keywords = {dendrochronology, Pinus ponderosa, prescribed fire, tree growth},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Pierson, Frederick B. and Robichaud, Peter R. and Spaeth, Kenneth E.},
+   Title = {Spatial and temporal effects of wildfire on the hydrology of a steep rangeland watershed},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {2905-2916},
+   Keywords = {fire, infiltration, runoff, erosion, water-repellent, rainfall simulation},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Pietikainen, Janna and Fritze, Hannu},
+   Title = {Clear-cutting and prescribed burning in coniferous forest: comparison of effects on soil fungal and total microbial biomass, respiration activity, and nitrification},
+   Journal = {Soil Biology and Biochemistry},
+   Volume = {27},
+   Number = {1},
+   Pages = {101-109},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Pilliod, David S. and Bury, R. Bruce and Hyde, Erin J. and Pearl, Christopher A. and Corn, Paul S.},
+   Title = {Fire and amphibians in North America},
+   Journal = {Forest Ecology and Management},
+   Volume = {178},
+   Pages = {163-181},
+   Keywords = {aquatic ecosystems, fuel reduction, prescribed fire, wildland fire},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Pitcher, D.C.},
+   Title = {Fire history and age structure in red fir forests of Sequoia National Park, California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {17},
+   Pages = {582-587},
+   Year = {1987} }
+
+@article{
+LABEL,
+   Author = {Pollet, Julie and Omi, Philip N.},
+   Title = {Effect of thinning and prescribed burning on crown fire severity in ponderosa pine forests},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {11},
+   Pages = {1-10},
+   Keywords = {Pinus ponderosa, Montana, Washington, California, 
+Arizona, fuel treatment, crown fire},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Powers, Robert F. and Ferrell, George T.},
+   Title = {Moisture, nutrient, and insect contraints on plantation growth: the "garden of eden" study},
+   Journal = {New Zealand Journal of Forestry Science},
+   Volume = {26},
+   Number = {1/2},
+   Pages = {126-144},
+   Year = {1996} }
+
+@article{
+LABEL,
+   Author = {Regelbrugge, Jon C. and Conard, Susan G.},
+   Title = {Modeling tree mortality following wildfire in Pinus ponderosa forests in the central Sierra Nevada of California},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {3},
+   Number = {3},
+   Pages = {139-148},
+   Keywords = {fire effects, logistic regression},
+   Year = {1993} }
+
+@techreport{
+LABEL,
+   Author = {Reinhardt, Elizabeth D. and Brown, James K. and Fisher, William C. and Graham, Russell T.},
+   Title = {Woody fuel and duff consumption by prescribed fire in northern Idaho mixed conifer logging slash},
+   Institution = {U.S. Department of Agriculture, Forest Service, Intermountain Research Station},
+   Year = {1991} }
+
+
+
+@article{
+LABEL,
+   Author = {Ripple, William J. and Hershey, K.T. and Anthony, Robert G.},
+   Title = {Historical forest patterns of Oregon's central Coast Range},
+   Journal = {Biological Conservation},
+   Volume = {93},
+   Pages = {127-133},
+   Keywords = {historical landscapes, forest fragmentation, biological diversity, landscape patterns},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Rizzo, David M. and Slaughter, G.W. and Parmeter, J.R., Jr.},
+   Title = {Enlargement of canopy gaps associated with a fungal pathogen in Yosemite Valley, California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {30},
+   Pages = {1501-1510},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Robertson, Philip A. and Bowser, Yvonne Hall},
+   Title = {Coarse woody debris in mature Pinus ponderosa stands in Colorado},
+   Journal = {journal of the Torrey Botanical Society},
+   Volume = {126},
+   Number = {3},
+   Pages = {255-267},
+   Keywords = {old-growth forests, standing dead},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Roy, D. Graham and Vankat, John L.},
+   Title = {Reversal of human-induced vegetation changes in Sequoia National Park, California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {29},
+   Pages = {399-412},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Rundel, Phillip W.},
+   Title = {Community structure and stability in the giant sequoia groves of the Sierra Nevada, California},
+   Journal = {The American Midland Naturalist},
+   Volume = {85},
+   Number = {2},
+   Pages = {478-492},
+   Year = {1971} }
+
+@article{
+LABEL,
+   Author = {Russell, Kevin R. and Van Lear, David H. and Guynn, David C., Jr.},
+   Title = {Prescribed fire effects on herpetofauna: review and management implications},
+   Journal = {Wildlife Society Bulletin},
+   Volume = {27},
+   Number = {2},
+   Pages = {374-384},
+   Keywords = {Amphibians, disturbance, habitat diversity, prescribed burning, reptiles},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Russell, William H. and McBride, Joe R.},
+   Title = {Revegetation after four stand-replacing fires in the Lake Tahoe Basin},
+   Journal = {Madrono},
+   Volume = {45},
+   Number = {1},
+   Pages = {40-46},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Russell, William H. and McBride, Joe R.},
+   Title = {The relative importance of fire and watercourse proximity in determining stand composition in mixed conifer riparian forests},
+   Journal = {Forest Ecology and Management},
+   Volume = {150},
+   Pages = {259-265},
+   Keywords = {fire history, riparian, species composition},
+   Year = {2001} }
+
+@inproceedings{
+LABEL,
+   Author = {Ryan, K.C.},
+   Title = {Techniques for assessing fire damage to trees},
+   BookTitle = {Symposium on fire - it's field effects},
+   Publisher = {Intermountain Fire Council, Missoula MT, and
+the Rocky Mountain Fire Council, Pierre, SD},
+   Pages = {1-10},
+   Year = {1982} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Ryan, K.C.},
+   Title = {Analysis of the relative value of morphological variables in predicting fire-caused tree mortality},
+   BookTitle = {III International conference on forest fire research and 14th Conference on fire and forest meteorology},
+   Address= {Nov. 16-20, Luso, Portugal},
+   Year = {1998} }
+
+
+
+@article{
+LABEL,
+   Author = {Ryan, K.C. and Frandsen, W.F.},
+   Title = {Basal injury from smoldering fires in mature Pinus ponderosa Laws.},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {1},
+   Number = {2},
+   Pages = {107-118},
+   Year = {1991} }
+
+@inproceedings{
+LABEL,
+   Author = {Ryan, K.C. and Noste, Nonan V.},
+   Title = {Evaluating prescribed fire},
+   BookTitle = {Proceedings of the Symposium and workshop on wilderness fire},
+   Address= {Missoula MT, Nov. 15-18, 1983},
+   Publisher = {U.S. Department of Agriculture, Forest Service, Intermountain Forest and Range Experiment Station},
+   Volume = {General Technical Report INT-182},
+   Pages = {230-238},
+   Year = {1985} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Ryan, Kevin C.},
+   Title = {Predicting prescribed fire effects on trees in the interior west},
+   BookTitle = {The art and science of fire management, Proceedings of the interior west fire council annual meeting and workshop},
+   Editor = {Alexander, Martin E. and Bisgrove, G.F.},
+   Address= {Kananaskis Village, Alberta, Oct. 24-27, 1988},
+   Publisher = {Forestry Canada, Northwest Region, Northern Forestry Centre},
+   Volume = {Information report NOR-X-309},
+   Year = {1990} }
+
+
+
+@article{
+LABEL,
+   Author = {Ryan, Kevin C. and Peterson, David L. and Reinhardt, Elizabeth D.},
+   Title = {Modeling long-term fire-caused mortality of Douglas fir},
+   Journal = {Forest Science},
+   Volume = {34},
+   Number = {1},
+   Pages = {190-199},
+   Keywords = {fire effects, logistic regression, prescribed fire, Pseudotsuga menziesii},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Ryan, Kevin C. and Reinhardt, Elizabeth D.},
+   Title = {Predicting postfire mortality of seven western conifers},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {18},
+   Pages = {1291-1297},
+   Keywords = {logistic regression},
+   Year = {1988} }
+
+@techreport{
+LABEL,
+   Author = {Sackett, Stephen S.},
+   Title = {Natural fuel loadings in ponderosa pine and mixed conifer forests of the southwest},
+   Institution = {U.S. Department of Agriculture, Forest Service, Rocky Mountain Forest and Range Experiment Station},
+   Year = {1979} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Sackett, Stephen S. and Haase, Sally M.},
+   Title = {Two case histories for using prescribed fire to restore ponderosa pine ecosystems in northern Arizona},
+   BookTitle = {Fire in ecosystem management: shifting the paradigm from suppression to prescription.  Tall Timbers Fire Ecology Conference Proceedings},
+   Editor = {Pruden, Teresa L. and Brennan, Leonard A.},
+   Volume = {20},
+   Pages = {380-389},
+   Year = {1998} }
+
+
+
+@article{
+LABEL,
+   Author = {Sanchez-Martinez, Guillermo and Wagner, Michael R.},
+   Title = {Bark beetle community structure under four ponderosa pine stand conditions in northern Arizona},
+   Journal = {Forest Ecology and Management},
+   Volume = {170},
+   Pages = {145-160},
+   Keywords = {Dendroctonus spp., stand structure, forest health, indicator species},
+   Year = {2002} }
+
+@techreport{
+LABEL,
+   Author = {Sandberg, David},
+   Title = {Duff reduction by prescribed underburning in douglas-fir},
+   Institution = {U.S. Department of Agriculture, Forest Service, Pacific Northwest Forest and Range Experiment Station},
+   Year = {1980} }
+
+
+
+@article{
+LABEL,
+   Author = {Sartz, Richard S.},
+   Title = {Soil erosion on a fire-denuded forest area in the douglas-fir region},
+   Journal = {Journal of Soil and Water Conservation},
+   Volume = {8},
+   Pages = {279-281},
+   Year = {1953} }
+
+@article{
+LABEL,
+   Author = {Savage, Melissa},
+   Title = {The role of anthropogenic influences in a mixed-conifer forest mortality episode},
+   Journal = {Journal of Vegetation Science},
+   Volume = {8},
+   Pages = {95-104},
+   Keywords = {Abies concolor, air pollution, disturbance, drought, fire suppression, forest decline, Pinus jeffreyi, tree mortality},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Schoennagel, Tania L. and Waller, Donald M.},
+   Title = {Understory responses to fire and artificial seeding in an eastern Cascades Abies grandis forest, U.S.A.},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {29},
+   Pages = {1393-1401},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Schurbon, Jamie M. and Fauth, John E.},
+   Title = {Effects of prescribed burning on amphibian diversity in a southeastern U.S. National Forest},
+   Journal = {Conservation Biology},
+   Volume = {17},
+   Number = {5},
+   Pages = {1338-1349},
+   Year = {2003} }
+
+@incollection{
+LABEL,
+   Author = {Scott, D.F. and van Wyk, D.B.},
+   Title = {The effects of fire on soil water repellency, catchment sediment yields and streamflow},
+   BookTitle = {Fire in South African mountain fynbos: ecosystem, community, and species response at Swartboskloof.},
+   Editor = {Van Wilgen, B.W. and Richardson, D.M. and Kruger, F.J. and van Hensbergen, H.J.},
+   Publisher = {Springer},
+   Address = {Heidelberg},
+   Volume = {Ecological Series 93},
+   Year = {1992} }
+
+@techreport{
+LABEL,
+   Author = {Shea, Patrick J. and Laudenslayer, William F., Jr. and Ferrell, George T. and Borys, Robert},
+   Title = {Girdled versus bark beetle-created ponderosa pine snags: utilization by cavity-dependent species and differences in decay rate and insect diversity},
+   Institution = {U.S. Department of Agriculture, Forest Service},
+   Year = {2002} }
+
+
+
+@article{
+LABEL,
+   Author = {Sherman, Robert J. and Warren, R. Keith},
+   Title = {Factors in Pinus ponderosa and Calocedrus decurrens mortality in Yosemite Valley, USA},
+   Journal = {Vegetatio},
+   Volume = {77},
+   Pages = {79-85},
+   Keywords = {bark beetle, drought, fire exclusion, Heterobasidion annosum, root rot},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Siegel, R.B. and DeSante, D.F.},
+   Title = {Bird communities in thinned versus unthinned Sierran mixed conifer stands},
+   Journal = {The Wilson Bulletin},
+   Volume = {115},
+   Number = {2},
+   Pages = {155-165},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Simon, N.P.P. and Stratton, C.B. and Forbes, G.J. and Schwab, F.E.},
+   Title = {Similarity of small mammal abundance in post-fire and clearcut forests},
+   Journal = {Forest Ecology and Management},
+   Volume = {165},
+   Pages = {163-172},
+   Keywords = {clearcuts, coarse-filter, fire, natural disturbance},
+   Year = {2002} }
+
+@article{
+LABEL,
+   Author = {Skinner, Carl N.},
+   Title = {Change in spatial characteristics of forest openings in the Klamath Mountains of northwestern California, USA},
+   Journal = {Landscape Ecology},
+   Volume = {10},
+   Number = {4},
+   Pages = {219-228},
+   Keywords = {spatial attributes, landscape change, landscape ecology},
+   Year = {1995} }
+
+@inproceedings{
+LABEL,
+   Author = {Skinner, Carl N.},
+   Title = {Influence of fire on the dynamics of dead woody material in forests of California and Southwestern Oregon},
+   BookTitle = {Symposium on the ecology and management of dead wood in western forests},
+   Series= {USDA Forest Service General Technical Report PSW-GTR-181},
+   Address= {November 2-4, 1999, Reno, Nevada},
+   Pages = {445-454},
+   Year = {2002} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Skinner, Carl N.},
+   Title = {A tree-ring based fire history of riparian reserves in the Klamath Mountains},
+   BookTitle = {California riparian systems: processes and floodplain management, ecology, and restoration},
+   Editor = {Faber, P.M.},
+   Address= {Sacramento CA},
+   Volume = {2001 Riparian habitat and floodplains conference proceedings, Riparian habitat joint venture},
+   Year = {2003} }
+
+
+
+@techreport{
+LABEL,
+   Author = {Skinner, Carl N. and Chang, Chi-Ru},
+   Title = {Fire regimes, past and present},
+   Institution = {University of California Davis, Centers for Water and Wildland Resources},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Slaughter, Garey W. and Parmeter, J.R., Jr.},
+   Title = {Enlargement of tree-mortality centers surrounding pine stumps infected by Heterobasidion annosum in northeastern California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {25},
+   Pages = {244-252},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Slaughter, Garey W. and Rizzo, David M.},
+   Title = {Past forest management promoted root disease in Yosemite Valley},
+   Journal = {California Agriculture},
+   Volume = {53},
+   Number = {3},
+   Pages = {17-24},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Slocum, Matthew G. and Platt, William J. and Cooley, Hillary C.},
+   Title = {Effects of differences in prescribed fire regimes on patchiness and intensity of fires in subtropical savannas of Everglades National Park, Florida},
+   Journal = {Restoration Ecology},
+   Volume = {11},
+   Number = {1},
+   Pages = {91-102},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Smith, Christopher C. and Hamrick, J.L. and Kramer, Charles L},
+   Title = {The effects of stand density on frequency of filled seeds and fecundity in lodgepole pine (Pinus contorta Dougl.)},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {18},
+   Pages = {453-460},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Sork, Victoria L. and Bramble, Judy},
+   Title = {Ecology of mast-fruiting in three species of North American deciduous oaks},
+   Journal = {Ecology},
+   Volume = {74},
+   Number = {2},
+   Pages = {528-541},
+   Keywords = {acorn production, masting, Missouri, predator satiation, resource allocation, wind pollination},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Spears, J.D.H. and Holub, S.M. and Harmon, M.E. and Lajtha, K},
+   Title = {The influence of decomposing logs on soil biology and nutrient cycling in an old-growth mixed coniferous forest in Oregon, U.S.A.},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {33},
+   Pages = {2193-2201},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Spies, Thomas A. and Franklin, Jerry F. and Thomas, Ted B.},
+   Title = {Coarse woody debris in douglas-fir forests of western Oregon and Washington},
+   Journal = {Ecology},
+   Volume = {69(6)},
+   Pages = {1689-1702},
+   Keywords = {decay rate, fire, old-growth stands, Pacific Northwest, Pseudotsuga menziesii, succession},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {St. John, Theodore V. and Rundel, Phillip W.},
+   Title = {The role of fire as a mineralizing agent in a Sierran coniferous forest},
+   Journal = {Oecologia},
+   Volume = {25},
+   Pages = {35-45},
+   Year = {1976} }
+
+@article{
+LABEL,
+   Author = {Stage, A.R.},
+   Title = {An expression for the effect of aspect, slope, and habitat type on tree growth},
+   Journal = {Forest Science},
+   Volume = {22},
+   Number = {4},
+   Pages = {457-460},
+   Keywords = {site, Pinus monticola, western white pine},
+   Year = {1976} }
+
+@techreport{
+LABEL,
+   Author = {Standiford, Richard B. and Klein, Julia and Garrison, Barry},
+   Title = {Sustainability of Sierra Nevada hardwood rangelands},
+   Institution = {Centers for Water and Wildland Resources},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Stendell, Eric R. and Horton, Thomas R. and Bruns, Thomas D.},
+   Title = {Early effects of prescribed fire on the structure of the ectomycorrhizal fungus community in a Sierra Nevada ponderosa pine forest},
+   Journal = {Mycological Research},
+   Volume = {103},
+   Number = {10},
+   Pages = {1353-1359},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L.},
+   Title = {Evaluation of the effects of silvicultural and fuels treatments on potential fire behaviour in Sierra Nevada mixed-conifer forests},
+   Journal = {Forest Ecology and Management},
+   Volume = {105},
+   Pages = {21-35},
+   Keywords = {FARSITE, fire hazard, landscape fire modeling},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L.},
+   Title = {Mixed conifer and red fir forest structure and uses in 1899 from the central and northern Sierra Nevada, California},
+   Journal = {Madrono},
+   Volume = {47},
+   Number = {1},
+   Pages = {43-52},
+   Keywords = {historical vegetation, succession,},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L.},
+   Title = {Fire history differences in adjacent Jeffrey pine and upper montane forests in the eastern Sierra Nevada},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {10},
+   Pages = {161-167},
+   Keywords = {fuel load, spatial fire history, tree canopy cover, flammability, California red fir, lodgepole pine},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L. and Collins, Brandon M.},
+   Title = {Fire regime of mixed conifer forests in the north-central Sierra Nevada at multiple spatial scales},
+   Journal = {Northwest Science},
+   Volume = {78},
+   Number = {1},
+   Pages = {12-23},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L. and Dulitz, David J. and Martin, Robert E.},
+   Title = {Giant sequoia regeneration in group selection openings in the southern Sierra Nevada},
+   Journal = {Forest Ecology and Management},
+   Volume = {120},
+   Pages = {89-95},
+   Keywords = {silvulture, uneven-aged management, fire ecology, Sequoiadendron giganteum},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L. and Elliott-Fisk, Deborah L.},
+   Title = {Sequoiadendron giganteum-mixed conifer forest structure in 1900-1901 from the southern Sierra Nevada, CA},
+   Journal = {Madrono},
+   Volume = {45},
+   Number = {3},
+   Pages = {45},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Stephens, Scott L. and Finney, Mark A.},
+   Title = {Prescribed fire mortality of Sierra Nevada mixed conifer tree species: effects of crown damage and forest floor combustion},
+   Journal = {Forest Ecology and Management},
+   Volume = {162},
+   Pages = {261-271},
+   Keywords = {logistic regression, giant sequoia, mortality models, fuel loads, fire effects, California black oak},
+   Year = {2002} }
+
+@inproceedings{
+LABEL,
+   Author = {Stephenson, Nathan L.},
+   Title = {Long-term dynamics of giant sequoia populations: implications for managing a pioneer species},
+   BookTitle = {Symposium on giant sequoias: their place in the ecosystem and society},
+   Address= {June 23-25, Visalia, CA},
+   Publisher = {USDA Forest Service},
+   Volume = {Gen. Tech. Rep. PSW-151},
+   Pages = {56-63},
+   Year = {1994} }
+
+
+
+@techreport{
+LABEL,
+   Author = {Stephenson, Nathan L.},
+   Title = {Ecology and management of giant sequoia groves},
+   Institution = {Centers for Water and Wildland Resources},
+   Year = {1996} }
+
+
+
+@article{
+LABEL,
+   Author = {Stephenson, Nathan L.},
+   Title = {Actual evapotranspiration and deficit: biologically meaningful correlates of vegetation distribution across  spatial scales},
+   Journal = {Journal of Biogeography},
+   Volume = {25},
+   Pages = {855-870},
+   Keywords = {bioclimatology, climate, climatic indices, forest physiognomy, moisture scalars, Sierra Nevada, water balance},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Stephenson, Nathan L.},
+   Title = {Reference conditions for giant sequoia forest restoration: structure, process, and precision},
+   Journal = {Ecological Applications},
+   Volume = {9},
+   Number = {4},
+   Pages = {1253-1265},
+   Keywords = {conifer forest, fire ecology, Sequoiadendron giganteum, Sierra Nevada, California,},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Stephenson, Nathan L.},
+   Title = {Estimated ages of some large giant sequoias: General Sherman keeps getting younger},
+   Journal = {Madrono},
+   Volume = {47},
+   Number = {1},
+   Pages = {61-67},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Stephenson, Nathan L. and Demetry, Athena},
+   Title = {Estimating ages of giant sequoias},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {25},
+   Pages = {223-233},
+   Year = {1995} }
+
+@inproceedings{
+LABEL,
+   Author = {Stephenson, Nathan L. and Parsons, David J. and Swetnam, Thomas W.},
+   Title = {Restoring natural fire to the sequoia-mixed conifer foerst: should intense fire play a role?},
+   BookTitle = {High intensity fire in wildlands: Management challenges and options},
+   Address= {Tall Timbers Research Station, Tallahassee FL},
+   Volume = {17},
+   Pages = {321-337},
+   Year = {1991} }
+
+
+
+@article{
+LABEL,
+   Author = {Stewart, Glenn H.},
+   Title = {The dynamics of old-growth Pseudotsuga forests in the western Cascade Range, Oregon, USA},
+   Journal = {Vegetatio},
+   Volume = {82},
+   Pages = {79-94},
+   Keywords = {Abies amabilis, Abies procera, age structure, disturbance, fire history, size structure, spatial pattern, Tsuga heterophylla},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Stohlgren, Thomas J.},
+   Title = {Litter dynamics in two Sierran mixed conifer forests. I. Litterfall and decomposition rates},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {18},
+   Pages = {1127-1135},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Stohlgren, Thomas J.},
+   Title = {Litter dynamics in two Sierran mixed conifer forests: II. Nutrient release in decomposing leaf litter},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {18},
+   Pages = {1136-1144},
+   Year = {1988} }
+
+@article{
+LABEL,
+   Author = {Stuart, John D. and Grifantini, Michael C. and Fox, Lawrence III},
+   Title = {Early successional pathways following wildfire and subsequent silvicultural treatments in douglas-fir/ hardwood forests, NW California},
+   Journal = {Forest Science},
+   Volume = {39},
+   Number = {3},
+   Pages = {561-572},
+   Keywords = {salvage logging, diversity, disturbance, old-growth},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Stuart, John D. and Salazar, Lucy A.},
+   Title = {Fire history of white fir forests in the coastal mountains of northwestern California},
+   Journal = {Northwest Science},
+   Volume = {74},
+   Number = {4},
+   Pages = {280-285},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Sullivan, Brian T. and Fettig, Christopher J. and Otrosina, William J. and Dalusky, Mark J. and Berisford, C. Wayne},
+   Title = {Association between severity of prescribed burns and subsequent activity of conifer-infesting beetles in stands of longleaf pine},
+   Journal = {Forest Ecology and Management},
+   Volume = {185},
+   Pages = {327-340},
+   Keywords = {Pinus palustris, Buprestidae, Curulionidae, Scolytidae, prescribed fire, semiochemicals},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Swetnam, Thomas W.},
+   Title = {Fire history and climate change in giant sequoia groves},
+   Journal = {Science},
+   Volume = {262},
+   Pages = {885-889},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Swezy, D. Michael and Agee, James K.},
+   Title = {Prescribed fire effects on fine-root and tree mortality in old-growth ponderosa pine},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {21},
+   Pages = {626-634},
+   Year = {1991} }
+
+@article{
+LABEL,
+   Author = {Swiecki, Tedmund J. and Bernhardt, Elizabeth},
+   Title = {Understanding blue oak regeneration},
+   Journal = {Fremontia},
+   Volume = {26},
+   Number = {1},
+   Pages = {19-26},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H.},
+   Title = {Habitat segregation and regeneration patterns of red fir and mountain hemlock in ecotonal forests, Lassen Volcanic National Park, California},
+   Journal = {Physical Geography},
+   Volume = {11},
+   Number = {1},
+   Pages = {36-48},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H.},
+   Title = {Tree invasion in meadows of Lassen Volcanic National Park, California},
+   Journal = {Professional Geographer},
+   Volume = {42},
+   Number = {4},
+   Pages = {457-470},
+   Keywords = {landscape change, grazing,},
+   Year = {1990} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H.},
+   Title = {Fire history and structure of red fir (Abis magnifica) forests, Swain Mountain Experimental Forest, Cascade Range, northeastern California},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {23},
+   Pages = {1672-1678},
+   Year = {1993} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H.},
+   Title = {Forest expansion and climate change in the mountain hemlock (Tsuga mertensiana) zone, Lassen Volcanic National Park, California, U.S.A.},
+   Journal = {Arctic and Alpine Research},
+   Volume = {27},
+   Number = {3},
+   Pages = {207-216},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H.},
+   Title = {Fire regimes and forest changes in mid and upper montane forests of the southern Cascades, Lassen Volcanic National Park, California, U.S.A.},
+   Journal = {Journal of Biogeography},
+   Volume = {27},
+   Pages = {87-104},
+   Keywords = {dendrochronology, disturbance},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H. and Halpern, Charles B.},
+   Title = {The structure and dynamics of Abies magnifica forests in the southern Cascade Range, USA},
+   Journal = {Journal of Vegetation Science},
+   Volume = {2},
+   Pages = {189-200},
+   Keywords = {Abies concolor, age structure, canopy gap, disturbance, fire, red fir, regeneration, size structure, spatial pattern, white fir, windthrow},
+   Year = {1991} }
+
+@inproceedings{
+LABEL,
+   Author = {Taylor, Alan H. and Skinner, Carl N.},
+   Title = {Fire regimes and management of old-growth douglas fir forests in the Klamath Mountains of northwestern California},
+   BookTitle = {Fire effects on rare and endangered species and habitats},
+   Address= {Nov. 13-16, Coeur d'Alene, ID},
+   Year = {1997} }
+
+
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H. and Skinner, Carl N.},
+   Title = {Fire history and landscape dynamics in a late-successional reserve, Klamath Mountains, California, USA},
+   Journal = {Forest Ecology and Management},
+   Volume = {111},
+   Pages = {285-301},
+   Keywords = {age classes, douglas fir, fire ecology, fire regime, landscape ecology, stand structure},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H. and Skinner, Carl N.},
+   Title = {Spatial patterns and controls on historical fire regimes and forest structure in the Klamath Mountains},
+   Journal = {Ecological Applications},
+   Volume = {13},
+   Number = {3},
+   Pages = {704-719},
+   Keywords = {dendrochronology, fire history, forest age structure, landscape ecology, landscape structure, mixed conifer forest},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Taylor, Alan H. and Solem, Michael N.},
+   Title = {Fire regimes and stand dynamics in an upper montane forest landscape in the southern Cascades, Caribou Wilderness, California},
+   Journal = {journal of the Torrey Botanical Society},
+   Volume = {128},
+   Number = {4},
+   Pages = {350-361},
+   Keywords = {fire history, lodgepole pine, red fir, landscape ecology, stand structure, fire ecology},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Thomas, Sean C. and Halpern, Charles B. and Falk, Donald A. and Liguori, Denise A. and Austin, Kelly A.},
+   Title = {Plant diversity in managed forests: understory responses to thinning and fertilization},
+   Journal = {Ecological Applications},
+   Volume = {9},
+   Number = {3},
+   Pages = {864-879},
+   Keywords = {disturbance, diversity, fertilization, forest management, forest understory, plant diversity, Pseudotsuga menziesii, silvicultural thinning,},
+   Year = {1999} }
+
+@article{
+LABEL,
+   Author = {Thomas, Terri L. and Agee, James K.},
+   Title = {Prescribed fire effects on mixed conifer forest structure at Crater Lake, Oregon},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {16},
+   Pages = {1082-1087},
+   Year = {1986} }
+
+@article{
+LABEL,
+   Author = {Tiedemann, Arthur R. and Klemmedson, James O. and Bull, Evelyn L.},
+   Title = {Solution of forest health problems with prescribed fire: are forest productivity and wildlife at risk?},
+   Journal = {Forest Ecology and Management},
+   Volume = {127},
+   Pages = {1-18},
+   Keywords = {biomass, decomposition, down wood, forest floor, fuels, nutrients (soil and biomass), snags},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Tinker, Daniel B. and Knight, Dennis H.},
+   Title = {Coarse woody debris following fire and logging in Wyoming lodgepole pine forests},
+   Journal = {Ecosystems},
+   Volume = {3},
+   Pages = {472-483},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Torgersen, Torolf R. and Bull, Evelyn L.},
+   Title = {Down logs as habitat for forest-dwelling ants - the primary prey of pileated woodpeckers in northeastern Oregon},
+   Journal = {Northwest Science},
+   Volume = {69},
+   Number = {4},
+   Pages = {294-303},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Turner, Monica G. and Hargrove, William W. and Gardner, Robert H. and Romme, William H.},
+   Title = {Effects of fire on landscape heterogeneity in Yellowstone National Park, Wyoming},
+   Journal = {Journal of Vegetation Science},
+   Volume = {5},
+   Pages = {731-742},
+   Keywords = {GIS, landscape ecology, Landsat Thematic Mapper},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {Turner, Monica G. and Romme, William H. and Gardner, Robert H. and Hargrove, William W.},
+   Title = {Effects of fire size and pattern on early succession in Yellowstone National Park},
+   Journal = {Ecological Monographs},
+   Volume = {67},
+   Number = {4},
+   Pages = {411-433},
+   Keywords = {disturbance, fire ecology, landscape ecology, patch size, Pinus contorta, secondary succession, spatial heterogeneity, spatial pattern, Wyoming},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Ucitel, Dalit and Christian, Donald P. and Graham, Jonathan M.},
+   Title = {Vole use of coarse woody debris and implications for habitat and fuel management},
+   Journal = {Journal of Wildlife Management},
+   Volume = {67},
+   Number = {1},
+   Pages = {65-72},
+   Keywords = {Clethrionomys gapperi, forest management, Montana, redbacked vole},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Urban, Dean L. and Miller, Carol and Halpin, Patrick N. and Stephenson, Nathan L.},
+   Title = {Forest gradient response in Sierran landscapes: the physical template},
+   Journal = {Landscape Ecology},
+   Volume = {15},
+   Pages = {603-620},
+   Keywords = {gap model, gradient analysis, landscape pattern, sensitivity analysis, Sierra Nevada, spatial scale, water balance},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Vallette, Jean-Charles and Gomendy, Veronique and Marechal, Joel and Houssard, Claudie and Gillon, Dominique},
+   Title = {Heat transfer in the soil during very low-intensity experimental fires: the role of duff and soil moisture content},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {4},
+   Number = {4},
+   Pages = {225-237},
+   Keywords = {prescribed burning, Pinus pinaster, temperature},
+   Year = {1994} }
+
+@article{
+LABEL,
+   Author = {van Mantgem, Phillip and Schwartz, Mark},
+   Title = {Bark heat resistance of small trees in Californian mixed conifer forests: testing some model assumptions},
+   Journal = {Forest Ecology and Management},
+   Volume = {178},
+   Pages = {341-352},
+   Keywords = {cambial damage, fire effects, mortality models, prescribed fire,},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {van Mantgem, Phillip and Stephenson, Nathan L. and Mutch, Linda S. and Johnson, Veronica G. and Esperanza, Annie M. and Parsons, David J.},
+   Title = {Growth rate predicts mortality of Abies concolor in both burned and unburned stands},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {33},
+   Pages = {1029-1038},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {Van Wagner, C.E.},
+   Title = {Duff consumption by fire in eastern pine stands},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {2},
+   Pages = {34-39},
+   Year = {1972} }
+
+@techreport{
+LABEL,
+   Author = {van Wagtendonk, J.W.},
+   Title = {Refined burning prescriptions for Yosemite National Park},
+   Institution = {U.S. Department of the Interior},
+   Year = {} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {van Wagtendonk, J.W.},
+   Title = {Fire suppression effects on fuels and succession in short-fire-interval wilderness ecosystems},
+   BookTitle = {Symposium and Workshop of Wilderness Fire},
+   Editor = {Lotan, J. E. et al. (tech. coords.)},
+   Address= {Missoula, MT},
+   Pages = {119-126},
+   Year = {1985} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {van Wagtendonk, J.W.},
+   Title = {Fuel accumulation rates after prescribed fires in Yosemite National Park},
+   BookTitle = {Proceedings of the 9th Conference on Fire and Forest Meteorology},
+   Volume = {9},
+   Pages = {101-105},
+   Year = {1987} }
+
+
+
+@article{
+LABEL,
+   Author = {van Wagtendonk, J.W. and Benedict, J.M. and Sydoriak, W.M.},
+   Title = {Physical  properties of woody fuel particles of Sierra Nevada conifers},
+   Journal = {International Journal of Wildland Fire},
+   Volume = {6},
+   Number = {3},
+   Pages = {117-123},
+   Year = {1996} }
+
+@article{
+LABEL,
+   Author = {van Wagtendonk, J.W. and Benedict, J.M. and Sydoriak, W.M.},
+   Title = {Fuel bed characteristics of Sierra Nevada conifers},
+   Journal = {Western Journal of Applied Forestry},
+   Volume = {13},
+   Number = {3},
+   Pages = {73-84},
+   Year = {1998} }
+
+@article{
+LABEL,
+   Author = {Vankat, John L. and Major, Jack},
+   Title = {Vegetation changes in Sequoia National Park, California},
+   Journal = {Journal of Biogeography},
+   Volume = {5},
+   Pages = {377-402},
+   Year = {1978} }
+
+@article{
+LABEL,
+   Author = {Veblen, Thomas T. and Kitzberger, Thomas and Donnegan, Joseph},
+   Title = {Climatic and human influences on fire regimes in ponderosa pine forests in the Colorado front range},
+   Journal = {Ecological Applications},
+   Volume = {10},
+   Number = {4},
+   Pages = {1178-1195},
+   Keywords = {climatic variation, El-nino southern occillation, fire regime, forest dynamics, forest health,},
+   Year = {2000} }
+
+@article{
+LABEL,
+   Author = {Verbyla, David L. and Fisher, Richard F},
+   Title = {Effect of aspect on ponderosa pine height and diameter growth},
+   Journal = {Forest Ecology and Management},
+   Volume = {27},
+   Pages = {93-98},
+   Year = {1989} }
+
+@article{
+LABEL,
+   Author = {Wallin, David O. and Swanson, Frederick J. and Marks, Barbara and Cissel, John H. and Kertis, Jane},
+   Title = {Comparison of managed and pre-settlement landscape dynamics in forests of the Pacific Northwest, USA},
+   Journal = {Forest Ecology and Management},
+   Volume = {85},
+   Pages = {291-309},
+   Keywords = {rotation},
+   Year = {1996} }
+
+@article{
+LABEL,
+   Author = {Waltz, Amy E. M. and Covington, W. Wallace},
+   Title = {Ecological restoration treatments increase butterfly richness and abundance: mechanisms of response},
+   Journal = {Restoration Ecology},
+   Volume = {12},
+   Number = {1},
+   Pages = {85-96},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Weatherspoon, C. Phillip and Almond, George A. and Skinner, Carl N.},
+   Title = {Tree-centered spot firing - a technique for prescribed burning beneath standing trees},
+   Journal = {Western Journal of Applied Forestry},
+   Volume = {4},
+   Number = {1},
+   Pages = {29-31},
+   Year = {1989} }
+
+@techreport{
+LABEL,
+   Author = {Weatherspoon, C. Phillip and Husari, Susan J. and van Wagtendonk, J.W.},
+   Title = {Fire and fuels management in relation to owl habitat in forests of the Sierra Nevada and Southern California},
+   Year = {1992} }
+
+
+
+@article{
+LABEL,
+   Author = {Weatherspoon, C. Phillip and Skinner, Carl N.},
+   Title = {An assessment of factors associated with damage to tree crowns from the 1987 wildfires in northern California},
+   Journal = {Forest Science},
+   Volume = {41},
+   Number = {3},
+   Pages = {430-451},
+   Keywords = {fire damage, plantation protection, site preparation, fuels managment, ordinal logistic regression},
+   Year = {1995} }
+
+@article{
+LABEL,
+   Author = {Weikel, Jennifer M and Hayes, John P.},
+   Title = {The foraging ecology of cavity-nesting birds in young forests of the northern coast range of Oregon},
+   Journal = {The Condor},
+   Volume = {101},
+   Pages = {58-66},
+   Keywords = {Certhia americana, habitat selection, Poecile rufescens, Picoides villosus, Sitta canadensis},
+   Year = {1999} }
+
+@techreport{
+LABEL,
+   Author = {Wells, Carol G. and Campbell, Ralph E. and DeBano, Leonard F. and Lewis, Clifford E. and Fredriksen, Richard L. and Franklin, E. Carlyle and Froelich, Ronald C. and Dunn, Paul H.},
+   Title = {Effect of fire on soil: a state-of-knowledge review},
+   Number = {U.S. Department of Agriculture Forest Service General Technical Report WO-7},
+   Month= {April 10-14, 1978},
+   Year = {1979} }
+
+
+
+@article{
+LABEL,
+   Author = {Westerling, Anthony L. and Swetnam, Thomas W.},
+   Title = {Interannual to decadal drought and wildfire in the western United States},
+   Journal = {EOS},
+   Volume = {84},
+   Number = {49},
+   Pages = {545, 554-555},
+   Year = {2003} }
+
+@article{
+LABEL,
+   Author = {White, Keith L.},
+   Title = {Structure and composition of foothill woodland in central coastal California},
+   Journal = {Ecology},
+   Number = {47},
+   Pages = {77-87},
+   Year = {1966} }
+
+@article{
+LABEL,
+   Author = {Wienk, Cody L. and Sieg, Carolyn Hull and McPherson, Guy R.},
+   Title = {Evaluating the role of cutting treatments, fire, and soil seed banks in an experimental framework in ponderosa pine forests of the Black Hills, South Dakota},
+   Journal = {Forest Ecology and Management},
+   Volume = {192},
+   Pages = {375-393},
+   Keywords = {fire history, overstory, Pinus ponderosa, prescribed fire, stand age, understory},
+   Year = {2004} }
+
+@article{
+LABEL,
+   Author = {Williams, Michael R. and Melack, John M.},
+   Title = {Effects of prescribed burning and drought on the solute chemistry of mixed-conifer forest streams of the Sierra Nevada, California},
+   Journal = {Biogeochemistry},
+   Volume = {39},
+   Pages = {225-253},
+   Keywords = {catchments, drought, mass balances, prescribed, solutes, Sierra Nevada, stream water},
+   Year = {1997} }
+
+@article{
+LABEL,
+   Author = {Wohlgemuth, Peter G. and Hubbert, Ken R. and Robichaud, Peter R.},
+   Title = {The effects of log erosion barriers on post-fire hydrologic response and sediment yield in small forested watersheds, southern California},
+   Journal = {Hydrological Processes},
+   Volume = {15},
+   Pages = {3053-3066},
+   Keywords = {fire, erosion control, upland watersheds, soil depth, water repellency},
+   Year = {2001} }
+
+@article{
+LABEL,
+   Author = {Woinarski, J.C.Z. and Recher, H.F.},
+   Title = {Impact and response: a review of the effects of fire on the Australian avifauna},
+   Journal = {Pacific Conservation Biology},
+   Volume = {3},
+   Pages = {183-205},
+   Keywords = {birds, extinction, fire regime, fire effects, control burning},
+   Year = {1997} }
+
+@techreport{
+LABEL,
+   Author = {Wright, Jonathon W.},
+   Title = {Pollen dispersion distance of some forest trees},
+   Institution = {U.S. Forest Service Northeastern Forest Experiment Station},
+   Year = {1952} }
+
+
+
+@article{
+LABEL,
+   Author = {Wyant, James G. and Laven, Richard D. and Omi, Philip N.},
+   Title = {Fire effects on shoot growth characteristics of ponderosa pine in Colorado},
+   Journal = {Canadian Journal of Forest Research},
+   Volume = {13},
+   Pages = {620-625},
+   Year = {1983} }
+
+@article{
+LABEL,
+   Author = {York, Robert A. and Battles, John J. and Heald, Robert C.},
+   Title = {Edge effects in mixed conifer group selection openings: tree height response to resource gradients},
+   Journal = {Forest Ecology and Management},
+   Volume = {179},
+   Pages = {107-121},
+   Keywords = {silvicultural systems},
+   Year = {2003} }
+
+@inproceedings{
+LABEL,
+   Author = {Youngblood, Andrew},
+   Title = {Reintroducing fire in eastside ponderosa pine forests: a long-term test of fuel treatments},
+   BookTitle = {Proceedings of the Joint Fire Science Conference and Workshop},
+   Address= {Boise, ID, June 15-17, 1999},
+   Publisher = {University of Idaho and the International Association of Wildland Fire},
+   Year = {2000} }
+
+
+
+@inproceedings{
+LABEL,
+   Author = {Zack, Steve and Laudenslayer, William F. and George, T. Luke and Skinner, Carl N. and Oliver, William},
+   Title = {A prospectus on restoring late-successional forest structure to eastside pine ecosystems through large-scale interdisciplinary research},
+   BookTitle = {First biennial North American forest ecology workshop},
+   Editor = {Cook, J.E. and Oswald, B.P.},
+   Address= {North Carolina State University, Raleigh NC},
+   Year = {1997} }
+
+

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>bibstuff_dev.bib4txt</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff_dev-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="bibstuff_dev-module.html">Package&nbsp;bibstuff_dev</a> ::
+        Module&nbsp;bib4txt
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript: void(0);" class="privatelink"
+    onclick="toggle_private();">hide private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="bibstuff_dev.bib4txt-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h2 class="module">Module bib4txt
+<br/><span class="codelink"><a href="bibstuff_dev.bib4txt-pysrc.html">source&nbsp;code</a></span></h2>
+<p>Creates formatted references for a text document (useful for reStructuredText documents).
+Interacts with a Bibtex style database file
+(without using LaTeX or bibtex).</p>
+<p>The source text file should include citation references in reStructuredText format:
+a citation key enclosed in brackets, followed by an underscore.
+Citation keys cannot be all digits.
+The source document can be output with formatted citation references substituted for the citation keys.
+In this case, the reference list is added to the end of the file.</p>
+<p>A slight modification of the reStructuredText <tt class="docutils literal"><span class="pre">cite</span></tt> directive is currently allowed:</p>
+<ul class="rst-simple">
+<li>Most characters are permitted.
+E.g., <tt class="docutils literal"><span class="pre">[Schwilk+Isaac:2006]_</span></tt> is not currently legal in reST but will be recognized.</li>
+<li>Comma separted multiple keys are permitted in a cite:  e.g., <tt class="docutils literal"><span class="pre">[Schwilk1999,Isaac2000]_</span></tt></li>
+</ul>
+<p>The intent is for the formatted references to be written to a separate file.
+You can then include this in your reST document with an <tt class="docutils literal"><span class="pre">include</span></tt> directive.</p>
+<p>How it works:</p>
+<ul class="rst-simple">
+<li>Uses <a class="rst-reference" href="http://simpleparse.sourceforge.net/" target="_top">SimpleParse</a> to convert an <a class="rst-reference" href="http://www.garshol.priv.no/download/text/bnf.html" target="_top">EBNF</a> grammar into an object for scanning reST files for citation references.</li>
+<li>Uses <a class="rst-reference" href="http://simpleparse.sourceforge.net/" target="_top">SimpleParse</a> to convert an <a class="rst-reference" href="http://www.garshol.priv.no/download/text/bnf.html" target="_top">EBNF</a> grammar into an object for scanning .bib files.  (See Bibstuff's bibgrammar.py.)</li>
+<li>Extracts the citation references from the input document.</li>
+<li>Outputs a sorted list of citation definitions, to be used in the References section of your documents.</li>
+</ul><br /><br />
+
+<hr />
+      <p><strong>Author:</strong>
+        Alan G. Isaac
+      </p>
+      </ul>
+      <p><strong>Date:</strong>
+        2006-07-27
+      </p>
+      </ul>
+      <p><strong>Contact:</strong>
+        <a class="rst-reference" href="http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm" target="_top">http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm</a>
+      </p>
+      </ul>
+      <p><strong>Copyright:</strong>
+        2006 by Alan G. Isaac
+      </p>
+      </ul>
+      <p><strong>License:</strong>
+        MIT (see <a class="rst-reference" href="./license.txt" target="_top">license.txt</a>)
+      </p>
+      </ul>
+      <p><strong>Notes:</strong>
+      <ul>
+        <li>
+        essentially an extensive refactoring and enhancement of addrefs.py, by Dylan Schwilk
+        </li>
+        <li>
+        Python 2.4 dependencies: sets, sorted
+        </li>
+      </ul>
+      <p><strong>To Do:</strong>
+        address the TODOs in the associate BibStuff files, especially in bibstyles/shared.py
+      </p>
+      </ul>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Functions</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bib4txt-module.html#make_text_output" class="sig-name">make_text_output</a>(<span class="sig-arg">src_as_string</span>,
+        <span class="sig-arg">parser</span>,
+        <span class="sig-arg">cite_processor</span>,
+        <span class="sig-arg">style</span>,
+        <span class="sig-arg">citations_only</span>=<span class="sig-default">True</span>)</span>
+    <br />Create intext citations and the bibliography
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bib4txt-module.html#main" class="sig-name">main</a>()</span>
+    <br />Command-line tool.
+  </td>
+</tr>
+</table>
+
+<br />
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Variables</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#__version__">__version__</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#__needs__">__needs__</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#bib4txt_logger">bib4txt_logger</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#ebnf_rest">ebnf_rest</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#ebnf_cites_only">ebnf_cites_only</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bib4txt-module.html#ebnf_xp">ebnf_xp</a></strong></td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+
+<br />
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="details">Function Details</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="make_text_output"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">make_text_output</span>(<span class="sig-arg">src_as_string</span>,
+        <span class="sig-arg">parser</span>,
+        <span class="sig-arg">cite_processor</span>,
+        <span class="sig-arg">style</span>,
+        <span class="sig-arg">citations_only</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bib4txt-pysrc.html#make_text_output">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Create intext citations and the bibliography
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="main"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">main</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bib4txt-pysrc.html#main">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Command-line tool.  See bib4txt.py -h for help
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="details">Variables Details</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__version__"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>__version__</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="'0.4.2'"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<span class="variable-quote">'</span>0.4.2<span class="variable-quote">'</span>                                                                
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="__needs__"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>__needs__</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="'2.4'"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<span class="variable-quote">'</span>2.4<span class="variable-quote">'</span>                                                                  
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="bib4txt_logger"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>bib4txt_logger</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="&lt;logging.Logger instance at 0x00ABECD8&gt;"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;logging.Logger instance at 0x00ABECD8&gt;                                
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="ebnf_rest"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>ebnf_rest</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="&quot;\nsrc                    := plain_or_fn_or_cite*\n&gt;plain_or_fn_or_cite&lt;  := cite / fn_or_plain\ncite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'\n&gt;fn_or_plain&lt;          := fn / plain\nfn                     := '[', ('#' / '*' / [0-9]+), ']_'\nplain                  := noref_brackets / nopunct+ / punct\n&gt;nopunct&lt;              := -punct\n&gt;punct&lt;                :=  '[' / ']'\n&gt;noref_brackets&lt;       := '[', -[]]+, ']', ?-'_'\n&quot;"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<span class="variable-quote">"""</span>
+src                    := plain_or_fn_or_cite*
+&gt;plain_or_fn_or_cite&lt;  := cite / fn_or_plain
+cite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'
+&gt;fn_or_plain&lt;          := fn / plain
+fn                     := '[', ('#' / '*' / [0-9]+), ']_'
+plain                  := noref_brackets / nopunct+ / punct
+&gt;nopunct&lt;              := -punct
+<span class="variable-ellipsis">...</span>                                                                    
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="ebnf_cites_only"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>ebnf_cites_only</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="&quot;\nsrc                    := plain_or_fn_or_cite*\n&gt;plain_or_fn_or_cite&lt;  := cite / fn_or_plain\ncite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'\n&gt;fn_or_plain&lt;          := fn / plain\n&lt;fn&gt;                   := '[', ('#' / '*' / [0-9]+), ']_'\n&lt;plain&gt;                := noref_brackets / nopunct+ / punct\n&gt;nopunct&lt;              := -punct\n&gt;punct&lt;                :=  '[' / ']'\n&gt;noref_brackets&lt;       := '[', -[]]+, ']', ?-'_'\n&quot;"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<span class="variable-quote">"""</span>
+src                    := plain_or_fn_or_cite*
+&gt;plain_or_fn_or_cite&lt;  := cite / fn_or_plain
+cite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'
+&gt;fn_or_plain&lt;          := fn / plain
+&lt;fn&gt;                   := '[', ('#' / '*' / [0-9]+), ']_'
+&lt;plain&gt;                := noref_brackets / nopunct+ / punct
+&gt;nopunct&lt;              := -punct
+<span class="variable-ellipsis">...</span>                                                                    
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="ebnf_xp"></a>
+<div>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>ebnf_xp</h3>
+  
+  <dl><dt></dt><dd>
+    <dl title="&quot;\nsrc                    := plain_or_known*\n&gt;plain_or_known&lt;       := known / plain\n&gt;known&lt;                := inline_literal / cite / fn\ninline_literal         := '``', -'``'+, '``'\ncite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'\nfn                     := '[', ('#' / '*' / [0-9]+), ']_'\nplain                  := noref_brackets / nopunct+ / punct\n&gt;nopunct&lt;              := ?-inline_literal,-punct\n&gt;punct&lt;                :=  '[' / ']'\n&gt;noref_brackets&lt;       := '[', -[]]+, ']', ?-'_'\n&quot;"><dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<span class="variable-quote">"""</span>
+src                    := plain_or_known*
+&gt;plain_or_known&lt;       := known / plain
+&gt;known&lt;                := inline_literal / cite / fn
+inline_literal         := '``', -'``'+, '``'
+cite                   := '[', -([]#] / [0-9]+),-[]]+, ']_'
+fn                     := '[', ('#' / '*' / [0-9]+), ']_'
+plain                  := noref_brackets / nopunct+ / punct
+<span class="variable-ellipsis">...</span>                                                                    
+      </pre></td></tr></table></dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff_dev-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">Generated by Epydoc
+        3.0alpha2 on Thu Aug 03 00:37:23 2006</td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sf.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

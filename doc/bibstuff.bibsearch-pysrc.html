@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>bibstuff.bibsearch</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="bibstuff-module.html">Package&nbsp;bibstuff</a> ::
+        Module&nbsp;bibsearch
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript: void(0);" class="privatelink"
+    onclick="toggle_private();">hide private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="bibstuff.bibsearch-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 class="py-src">Source Code for <a href="bibstuff.bibsearch-module.html">Module bibstuff.bibsearch</a></h2>
+<div class="py-src">
+<pre class="py-src">
+<span class="lineno">  1</span>  <span class="py-line"><span class="py-comment">#! /usr/bin/env python</span> </span>
+<span class="lineno">  2</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment"># File: bibsearch.py</span> </span>
+<span class="lineno">  3</span>  <span class="py-line"><span class="py-comment"></span><span class="py-docstring">"""</span> </span>
+<span class="lineno">  4</span>  <span class="py-line"><span class="py-docstring">Utility for extracting reference(s) from bibtex database file.</span> </span>
+<span class="lineno">  5</span>  <span class="py-line"><span class="py-docstring">The script does some minimal formatting to produce a reference for</span> </span>
+<span class="lineno">  6</span>  <span class="py-line"><span class="py-docstring">pasting into a plain text file. Doesn't yet use bibname module's</span> </span>
+<span class="lineno">  7</span>  <span class="py-line"><span class="py-docstring">formatting capabilities.</span> </span>
+<span class="lineno">  8</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">  9</span>  <span class="py-line"><span class="py-docstring">Extract formatted reference, key, or entry from a bibtex file.</span> </span>
+<span class="lineno"> 10</span>  <span class="py-line"><span class="py-docstring">Search by key or by regular expression. bibsearchy.py -h gives</span> </span>
+<span class="lineno"> 11</span>  <span class="py-line"><span class="py-docstring">usage options.</span> </span>
+<span class="lineno"> 12</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 13</span>  <span class="py-line"><span class="py-docstring">Example::</span> </span>
+<span class="lineno"> 14</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 15</span>  <span class="py-line"><span class="py-docstring">        python bibsearch.py my_database.bib Smith:1998</span> </span>
+<span class="lineno"> 16</span>  <span class="py-line"><span class="py-docstring">           -&gt; produces a formated reference.</span> </span>
+<span class="lineno"> 17</span>  <span class="py-line"><span class="py-docstring">        </span> </span>
+<span class="lineno"> 18</span>  <span class="py-line"><span class="py-docstring">        cat ref_list.txt | python bibsearch.py -l my_database.bib</span> </span>
+<span class="lineno"> 19</span>  <span class="py-line"><span class="py-docstring">                -&gt; produces a bibtex-format file of all</span> </span>
+<span class="lineno"> 20</span>  <span class="py-line"><span class="py-docstring">                   references in list.</span> </span>
+<span class="lineno"> 21</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 22</span>  <span class="py-line"><span class="py-docstring">TODO:</span> </span>
+<span class="lineno"> 23</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 24</span>  <span class="py-line"><span class="py-docstring">    1. allow use of bibname / bibstyle formatting modules for</span> </span>
+<span class="lineno"> 25</span>  <span class="py-line"><span class="py-docstring">       formatting output</span> </span>
+<span class="lineno"> 26</span>  <span class="py-line"><span class="py-docstring">    2. add better searching capabilities</span> </span>
+<span class="lineno"> 27</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 28</span>  <span class="py-line"><span class="py-docstring">:author: Dylan Schwilk</span> </span>
+<span class="lineno"> 29</span>  <span class="py-line"><span class="py-docstring">:contact: try@schwilk.org</span> </span>
+<span class="lineno"> 30</span>  <span class="py-line"><span class="py-docstring">:author: Alan G Isaac (minor changes)</span> </span>
+<span class="lineno"> 31</span>  <span class="py-line"><span class="py-docstring">:copyright: 2006 by Dylan Schwilk</span> </span>
+<span class="lineno"> 32</span>  <span class="py-line"><span class="py-docstring">:license: MIT (see `license.txt`_)</span> </span>
+<span class="lineno"> 33</span>  <span class="py-line"><span class="py-docstring">:date: 2006-08-01</span> </span>
+<span class="lineno"> 34</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 35</span>  <span class="py-line"><span class="py-docstring">.. _license.txt: ./license.txt</span> </span>
+<span class="lineno"> 36</span>  <span class="py-line"><span class="py-docstring">"""</span> </span>
+<span class="lineno"> 37</span>  <span class="py-line"><span class="py-name">__docformat__</span> <span class="py-op">=</span> <span class="py-string">"restructuredtext en"</span> </span>
+<span class="lineno"> 38</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibsearch-module.html#__version__">__version__</a> <span class="py-op">=</span> <span class="py-string">"1.y.1"</span> </span>
+<span class="lineno"> 39</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibsearch-module.html#__needs__">__needs__</a> <span class="py-op">=</span> <span class="py-string">'2.4'</span> </span>
+<span class="lineno"> 40</span>  <span class="py-line"> </span>
+<span class="lineno"> 41</span>  <span class="py-line"><span class="py-comment">###################  IMPORTS  ##################################################</span> </span>
+<span class="lineno"> 42</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment">#import from standard library</span> </span>
+<span class="lineno"> 43</span>  <span class="py-line"><span class="py-comment"></span><span class="py-keyword">import</span> <span id="link-0" class="py-name"><a title="bibstuff.bibfile.BibFile.string
+bibstuff.bibname.BibName.string" class="py-name" href="#" onclick="doclink('link-0', 'string', 'Method bibfile.BibFile.string()=bibstuff.bibfile.BibFile-class.html#string,Method bibname.BibName.string()=bibstuff.bibname.BibName-class.html#string'); return false;">string</a></span></span><span class="py-op">,</span> <span class="py-name">sys</span> </span>
+<span class="lineno"> 44</span>  <span class="py-line"><span class="py-keyword">import</span> <span class="py-name">logging</span> </span>
+<span class="lineno"> 45</span>  <span class="py-line"><span class="py-name">logging</span><span class="py-op">.</span><span class="py-name">basicConfig</span><span class="py-op">(</span><a title="bibstuff.bibname.BibName.format" class="py-name" href="bibstuff.bibname.BibName-class.html#format">format</a><span class="py-op">=</span><span class="py-string">'\n%(levelname)s:\n%(message)s\n'</span><span class="py-op">)</span> </span>
+<span class="lineno"> 46</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibsearch-module.html#bibsearch_logger">bibsearch_logger</a> <span class="py-op">=</span> <span class="py-name">logging</span><span class="py-op">.</span><span class="py-name">getLogger</span><span class="py-op">(</span><span class="py-string">'bibstuff_logger'</span><span class="py-op">)</span> </span>
+<span class="lineno"> 47</span>  <span class="py-line"> </span>
+<span class="lineno"> 48</span>  <span class="py-line"><span class="py-comment">#local imports</span> </span>
+<span class="lineno"> 49</span>  <span class="py-line"><span class="py-comment"></span><span class="py-keyword">import</span> <a class="py-name" href="bibstuff.bibfile-module.html">bibfile</a><span class="py-op">,</span> <a class="py-name" href="bibstuff.bibgrammar-module.html">bibgrammar</a> </span>
+<span class="lineno"> 50</span>  <span class="py-line"><span class="py-keyword">from</span> <a title="bibstuff.bibstyle" class="py-name" href="bibstuff.bibstyle-module.html">bibstyle</a> <span class="py-keyword">import</span> <a class="py-name" href="bibstuff.bibstyle.BibStyle-class.html">BibStyle</a> </span>
+<span class="lineno"> 51</span>  <span class="py-line"><span class="py-comment">################################################################################</span> </span>
+<span class="lineno"> 52</span>  <span class="py-line"><span class="py-comment"></span> </span>
+<a name="get_entries"></a><div id="get_entries-def"><span class="lineno"> 53</span> <a class="pysrc-toggle" href="#" id="get_entries-toggle" onclick="toggle('get_entries'); return false;">-</a><span class="py-line"><span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibsearch-module.html#get_entries">get_entries</a><span class="py-op">(</span><span class="py-param">options</span><span class="py-op">,</span> <span class="py-param">arg</span><span class="py-op">,</span> <span class="py-param">bfile</span><span class="py-op">)</span> <span class="py-op">:</span> </span>
+</div><div id="get_entries-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="get_entries-expanded"><span class="lineno"> 54</span>  <span class="py-line">    <span class="py-keyword">if</span> <span class="py-name">options</span><span class="py-op">.</span><span class="py-name">search_input</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 55</span>  <span class="py-line">        <span class="py-keyword">return</span> <span id="link-1" class="py-name"><a title="bibstuff.bibfile.bfile
+bibstuff.bibname.bfile
+bibstuff.bibstyle.bfile" class="py-name" href="#" onclick="doclink('link-1', 'bfile', 'Variable bibstuff.bibfile.bfile=bibstuff.bibfile-module.html#bfile,Variable bibstuff.bibname.bfile=bibstuff.bibname-module.html#bfile,Variable bibstuff.bibstyle.bfile=bibstuff.bibstyle-module.html#bfile'); return false;">bfile</a></span></span><span class="py-op">.</span><a title="bibstuff.bibfile.BibFile.find" class="py-name" href="bibstuff.bibfile.BibFile-class.html#find">find</a><span class="py-op">(</span><span class="py-name">arg</span><span class="py-op">)</span> </span>
+<span class="lineno"> 56</span>  <span class="py-line">    <span class="py-keyword">else</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 57</span>  <span class="py-line">        <span class="py-keyword">try</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 58</span>  <span class="py-line">            <span class="py-keyword">return</span> <span class="py-op">[</span> <span id="link-2" class="py-name"><a title="bibstuff.bibfile.bfile
+bibstuff.bibname.bfile
+bibstuff.bibstyle.bfile" class="py-name" href="#" onclick="doclink('link-2', 'bfile', 'Variable bibstuff.bibfile.bfile=bibstuff.bibfile-module.html#bfile,Variable bibstuff.bibname.bfile=bibstuff.bibname-module.html#bfile,Variable bibstuff.bibstyle.bfile=bibstuff.bibstyle-module.html#bfile'); return false;">bfile</a></span></span><span class="py-op">.</span><a title="bibstuff.bibfile.BibFile.returnByKey" class="py-name" href="bibstuff.bibfile.BibFile-class.html#returnByKey">returnByKey</a><span class="py-op">(</span><span class="py-name">arg</span><span class="py-op">)</span><span class="py-op">,</span> <span class="py-op">]</span> </span>
+<span class="lineno"> 59</span>  <span class="py-line">        <span class="py-keyword">except</span> <span class="py-name">KeyError</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 60</span>  <span class="py-line">            <span class="py-keyword">return</span> <span class="py-string">''</span> </span>
+</div><span class="lineno"> 61</span>  <span class="py-line"> </span>
+<a name="format_output"></a><div id="format_output-def"><span class="lineno"> 62</span> <a class="pysrc-toggle" href="#" id="format_output-toggle" onclick="toggle('format_output'); return false;">-</a><span class="py-line"><span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibsearch-module.html#format_output">format_output</a><span class="py-op">(</span><span class="py-param">options</span><span class="py-op">,</span> <span class="py-param">entry</span><span class="py-op">)</span> <span class="py-op">:</span> </span>
+</div><div id="format_output-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="format_output-expanded"><span class="lineno"> 63</span>  <span class="py-line">    <span class="py-docstring">'''Output the reference according to options'''</span> </span>
+<span class="lineno"> 64</span>  <span class="py-line">    <span class="py-keyword">if</span> <span class="py-name">options</span><span class="py-op">.</span><span class="py-name">key_output</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 65</span>  <span class="py-line">        <span class="py-keyword">return</span> <a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">.</span><span id="link-3" class="py-name"><a title="bibstuff.bibfile.BibEntry.key
+bibstuff.bibfile.BibFile.key" class="py-name" href="#" onclick="doclink('link-3', 'key', 'Variable bibstuff.bibfile.BibEntry.key=bibstuff.bibfile.BibEntry-class.html#key,Method bibstuff.bibfile.BibFile.key()=bibstuff.bibfile.BibFile-class.html#key'); return false;">key</a></span></span> </span>
+<span class="lineno"> 66</span>  <span class="py-line">    <span class="py-keyword">elif</span> <span class="py-name">options</span><span class="py-op">.</span><span class="py-name">long_output</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 67</span>  <span class="py-line">        <span class="py-keyword">return</span> <a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">.</span><span id="link-4" class="py-name"><a title="bibstuff.addrefs.CitationFormatter.__repr__
+bibstuff.bibfile.BibEntry.__repr__
+bibstuff.bibstyles.shared.CiteRefProcessor.__repr__" class="py-name" href="#" onclick="doclink('link-4', '__repr__', 'Method bibstuff.addrefs.CitationFormatter.__repr__()=bibstuff.addrefs.CitationFormatter-class.html#__repr__,Method bibstuff.bibfile.BibEntry.__repr__()=bibstuff.bibfile.BibEntry-class.html#__repr__,Method bibstuff.bibstyles.shared.CiteRefProcessor.__repr__()=bibstuff.bibstyles.shared.CiteRefProcessor-class.html#__repr__'); return false;">__repr__</a></span></span><span class="py-op">(</span><span class="py-op">)</span> </span>
+<span class="lineno"> 68</span>  <span class="py-line">    <span class="py-keyword">else</span><span class="py-op">:</span> </span>
+<span class="lineno"> 69</span>  <span class="py-line">        <span class="py-name">style</span> <span class="py-op">=</span> <a title="bibstuff.bibstyle.BibStyle" class="py-name" href="bibstuff.bibstyle.BibStyle-class.html">BibStyle</a><span class="py-op">(</span><span class="py-op">)</span> <span class="py-comment"># just use default style</span> </span>
+<span class="lineno"> 70</span>  <span class="py-line">        <span class="py-keyword">return</span> <span class="py-name">style</span><span class="py-op">.</span><a title="bibstuff.bibstyle.BibStyle.formatRef" class="py-name" href="bibstuff.bibstyle.BibStyle-class.html#formatRef">formatRef</a><span class="py-op">(</span><a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">)</span> </span>
+</div><span class="lineno"> 71</span>  <span class="py-line">     </span>
+<a name="main"></a><div id="main-def"><span class="lineno"> 72</span> <a class="pysrc-toggle" href="#" id="main-toggle" onclick="toggle('main'); return false;">-</a><span class="py-line"><span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibsearch-module.html#main">main</a><span class="py-op">(</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="main-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="main-expanded"><span class="lineno"> 73</span>  <span class="py-line">        <span class="py-docstring">'''Command-line tool.  See bibsearch.py -h for help.</span> </span>
+<span class="lineno"> 74</span>  <span class="py-line"><span class="py-docstring">        '''</span> </span>
+<span class="lineno"> 75</span>  <span class="py-line">        <span class="py-keyword">from</span> <span class="py-name">optparse</span> <span class="py-keyword">import</span> <span class="py-name">OptionParser</span> </span>
+<span class="lineno"> 76</span>  <span class="py-line">         </span>
+<span class="lineno"> 77</span>  <span class="py-line">        <span id="link-5" class="py-name"><a title="bibstuff.bibname.usage
+bibstuff.reflist.usage" class="py-name" href="#" onclick="doclink('link-5', 'usage', 'Variable bibname.usage=bibstuff.bibname-module.html#usage,Variable reflist.usage=bibstuff.reflist-module.html#usage'); return false;">usage</a></span></span> <span class="py-op">=</span> <span class="py-string">"usage: %prog [options] FILE [search strings]"</span> </span>
+<span class="lineno"> 78</span>  <span class="py-line">        <span id="link-6" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-6', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span> <span class="py-op">=</span> <span class="py-name">OptionParser</span><span class="py-op">(</span><span id="link-7" class="py-name"><a title="bibstuff.bibname.usage
+bibstuff.reflist.usage" class="py-name" href="#" onclick="doclink('link-7', 'usage', 'Variable bibname.usage=bibstuff.bibname-module.html#usage,Variable reflist.usage=bibstuff.reflist-module.html#usage'); return false;">usage</a></span></span><span class="py-op">=</span><span id="link-8" class="py-name"><a title="bibstuff.bibname.usage
+bibstuff.reflist.usage" class="py-name" href="#" onclick="doclink('link-8', 'usage', 'Variable bibname.usage=bibstuff.bibname-module.html#usage,Variable reflist.usage=bibstuff.reflist-module.html#usage'); return false;">usage</a></span></span><span class="py-op">,</span> <span class="py-name">version</span> <span class="py-op">=</span><span class="py-string">"%prog "</span> <span class="py-op">+</span> <span id="link-9" class="py-name"><a title="bibstuff.addrefs.__version__
+bibstuff.bib4txt.__version__
+bibstuff.bibfile.__version__
+bibstuff.bibgrammar.__version__
+bibstuff.biblabel.__version__
+bibstuff.bibname.__version__
+bibstuff.bibsearch.__version__
+bibstuff.bibstyle.__version__
+bibstuff.bibstyles.default.__version__
+bibstuff.bibstyles.default_templates.__version__
+bibstuff.bibstyles.example_numbered.__version__
+bibstuff.bibstyles.shared.__version__
+bibstuff.jabbrev.__version__
+bibstuff.reflist.__version__" class="py-name" href="#" onclick="doclink('link-9', '__version__', 'Variable addrefs.__version__=bibstuff.addrefs-module.html#__version__,Variable bib4txt.__version__=bibstuff.bib4txt-module.html#__version__,Variable bibfile.__version__=bibstuff.bibfile-module.html#__version__,Variable bibgrammar.__version__=bibstuff.bibgrammar-module.html#__version__,Variable biblabel.__version__=bibstuff.biblabel-module.html#__version__,Variable bibname.__version__=bibstuff.bibname-module.html#__version__,Variable __version__=bibstuff.bibsearch-module.html#__version__,Variable bibstyle.__version__=bibstuff.bibstyle-module.html#__version__,Variable bibstyles.default.__version__=bibstuff.bibstyles.default-module.html#__version__,Variable bibstyles.default_templates.__version__=bibstuff.bibstyles.default_templates-module.html#__version__,Variable bibstyles.example_numbered.__version__=bibstuff.bibstyles.example_numbered-module.html#__version__,Variable bibstyles.shared.__version__=bibstuff.bibstyles.shared-module.html#__version__,Variable jabbrev.__version__=bibstuff.jabbrev-module.html#__version__,Variable reflist.__version__=bibstuff.reflist-module.html#__version__'); return false;">__version__</a></span></span><span class="py-op">)</span> </span>
+<span class="lineno"> 79</span>  <span class="py-line">        <span id="link-10" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-10', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span><span class="py-op">.</span><span class="py-name">add_option</span><span class="py-op">(</span><span class="py-string">"-k"</span><span class="py-op">,</span> <span class="py-string">"--key"</span><span class="py-op">,</span> <span class="py-name">action</span><span class="py-op">=</span><span class="py-string">"store_true"</span><span class="py-op">,</span> <span class="py-name">dest</span><span class="py-op">=</span><span class="py-string">"key_output"</span><span class="py-op">,</span> \ </span>
+<span class="lineno"> 80</span>  <span class="py-line">                                          <a title="bibstuff.bibstyles.default" class="py-name" href="bibstuff.bibstyles.default-module.html">default</a><span class="py-op">=</span><span class="py-number">0</span><span class="py-op">,</span> <span class="py-name">help</span><span class="py-op">=</span><span class="py-string">"Output key rather than reference"</span><span class="py-op">)</span> </span>
+<span class="lineno"> 81</span>  <span class="py-line">        <span id="link-11" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-11', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span><span class="py-op">.</span><span class="py-name">add_option</span><span class="py-op">(</span><span class="py-string">"-l"</span><span class="py-op">,</span> <span class="py-string">"--long"</span><span class="py-op">,</span> <span class="py-name">action</span><span class="py-op">=</span><span class="py-string">"store_true"</span><span class="py-op">,</span> <span class="py-name">dest</span><span class="py-op">=</span><span class="py-string">"long_output"</span><span class="py-op">,</span> \ </span>
+<span class="lineno"> 82</span>  <span class="py-line">                                          <a title="bibstuff.bibstyles.default" class="py-name" href="bibstuff.bibstyles.default-module.html">default</a><span class="py-op">=</span><span class="py-number">0</span><span class="py-op">,</span> <span class="py-name">help</span><span class="py-op">=</span><span class="py-string">"Output entire bibtex entry"</span><span class="py-op">)</span> </span>
+<span class="lineno"> 83</span>  <span class="py-line">        <span id="link-12" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-12', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span><span class="py-op">.</span><span class="py-name">add_option</span><span class="py-op">(</span><span class="py-string">"-s"</span><span class="py-op">,</span> <span class="py-string">"--search"</span><span class="py-op">,</span> <span class="py-name">action</span><span class="py-op">=</span><span class="py-string">"store_true"</span><span class="py-op">,</span> <span class="py-name">dest</span><span class="py-op">=</span><span class="py-string">"search_input"</span><span class="py-op">,</span> \ </span>
+<span class="lineno"> 84</span>  <span class="py-line">                                          <a title="bibstuff.bibstyles.default" class="py-name" href="bibstuff.bibstyles.default-module.html">default</a><span class="py-op">=</span><span class="py-number">0</span><span class="py-op">,</span> <span class="py-name">help</span><span class="py-op">=</span><span class="py-string">"Search for regular expression rather than key"</span><span class="py-op">)</span> </span>
+<span class="lineno"> 85</span>  <span class="py-line">        <span id="link-13" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-13', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span><span class="py-op">.</span><span class="py-name">add_option</span><span class="py-op">(</span><span class="py-string">"-v"</span><span class="py-op">,</span> <span class="py-string">"--verbose"</span><span class="py-op">,</span> <span class="py-name">action</span><span class="py-op">=</span><span class="py-string">"store_true"</span><span class="py-op">,</span> <span class="py-name">dest</span><span class="py-op">=</span><span class="py-string">"verbose"</span><span class="py-op">,</span> <a title="bibstuff.bibstyles.default" class="py-name" href="bibstuff.bibstyles.default-module.html">default</a><span class="py-op">=</span><span class="py-name">False</span><span class="py-op">,</span> </span>
+<span class="lineno"> 86</span>  <span class="py-line">                                          <span class="py-name">help</span><span class="py-op">=</span><span class="py-string">"Print INFO messages to stdout, default=%default"</span><span class="py-op">)</span> </span>
+<span class="lineno"> 87</span>  <span class="py-line">         </span>
+<span class="lineno"> 88</span>  <span class="py-line">        <span class="py-op">(</span><span class="py-name">options</span><span class="py-op">,</span> <span class="py-name">args</span><span class="py-op">)</span> <span class="py-op">=</span> <span id="link-14" class="py-name"><a title="bibstuff.addrefs.parser
+bibstuff.bibgrammar.parser
+bibstuff.bibname.parser
+bibstuff.reflist.parser" class="py-name" href="#" onclick="doclink('link-14', 'parser', 'Variable addrefs.parser=bibstuff.addrefs-module.html#parser,Variable bibgrammar.parser=bibstuff.bibgrammar-module.html#parser,Variable bibname.parser=bibstuff.bibname-module.html#parser,Variable reflist.parser=bibstuff.reflist-module.html#parser'); return false;">parser</a></span></span><span class="py-op">.</span><span class="py-name">parse_args</span><span class="py-op">(</span><span class="py-op">)</span> </span>
+<span class="lineno"> 89</span>  <span class="py-line">        <span class="py-keyword">if</span> <span class="py-name">options</span><span class="py-op">.</span><span class="py-name">verbose</span><span class="py-op">:</span> </span>
+<span class="lineno"> 90</span>  <span class="py-line">                <a title="bibstuff.bibsearch.bibsearch_logger" class="py-name" href="bibstuff.bibsearch-module.html#bibsearch_logger">bibsearch_logger</a><span class="py-op">.</span><span class="py-name">setLevel</span><span class="py-op">(</span><span class="py-name">logging</span><span class="py-op">.</span><span class="py-name">INFO</span><span class="py-op">)</span> </span>
+<span class="lineno"> 91</span>  <span class="py-line"> </span>
+<span class="lineno"> 92</span>  <span class="py-line">        <span class="py-keyword">try</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 93</span>  <span class="py-line">                <span id="link-15" class="py-name"><a title="bibstuff.bibfile.src
+bibstuff.bibgrammar.src
+bibstuff.bibname.src
+bibstuff.bibstyle.src
+bibstuff.reflist.src" class="py-name" href="#" onclick="doclink('link-15', 'src', 'Variable bibstuff.bibfile.src=bibstuff.bibfile-module.html#src,Variable bibstuff.bibgrammar.src=bibstuff.bibgrammar-module.html#src,Variable bibstuff.bibname.src=bibstuff.bibname-module.html#src,Variable bibstuff.bibstyle.src=bibstuff.bibstyle-module.html#src,Variable bibstuff.reflist.src=bibstuff.reflist-module.html#src'); return false;">src</a></span></span> <span class="py-op">=</span> <span class="py-name">open</span><span class="py-op">(</span><span class="py-name">args</span><span class="py-op">[</span><span class="py-number">0</span><span class="py-op">]</span><span class="py-op">)</span><span class="py-op">.</span><span class="py-name">read</span><span class="py-op">(</span><span class="py-op">)</span> </span>
+<span class="lineno"> 94</span>  <span class="py-line">        <span class="py-keyword">except</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 95</span>  <span class="py-line">                <span class="py-keyword">print</span> <span class="py-string">"No bibtex file found."</span> </span>
+<span class="lineno"> 96</span>  <span class="py-line">                <span class="py-name">sys</span><span class="py-op">.</span><span class="py-name">exit</span><span class="py-op">(</span><span class="py-number">1</span><span class="py-op">)</span> </span>
+<span class="lineno"> 97</span>  <span class="py-line">        <span class="py-comment"># If no search string was sepcified was specified, read search strings from sdin</span> </span>
+<span class="lineno"> 98</span>  <span class="py-line"><span class="py-comment"></span>        <span class="py-keyword">if</span> <span class="py-name">len</span><span class="py-op">(</span><span class="py-name">args</span><span class="py-op">)</span> <span class="py-op">&lt;</span> <span class="py-number">2</span> <span class="py-op">:</span> </span>
+<span class="lineno"> 99</span>  <span class="py-line">                <span class="py-name">searches</span> <span class="py-op">=</span> <span id="link-16" class="py-name"><a title="bibstuff.bibfile.BibFile.string
+bibstuff.bibname.BibName.string" class="py-name" href="#" onclick="doclink('link-16', 'string', 'Method bibstuff.bibfile.BibFile.string()=bibstuff.bibfile.BibFile-class.html#string,Method bibstuff.bibname.BibName.string()=bibstuff.bibname.BibName-class.html#string'); return false;">string</a></span></span><span class="py-op">.</span><span class="py-name">split</span><span class="py-op">(</span><span class="py-name">sys</span><span class="py-op">.</span><span class="py-name">stdin</span><span class="py-op">.</span><span class="py-name">read</span><span class="py-op">(</span><span class="py-op">)</span><span class="py-op">)</span> </span>
+<span class="lineno">100</span>  <span class="py-line">        <span class="py-keyword">else</span> <span class="py-op">:</span> </span>
+<span class="lineno">101</span>  <span class="py-line">                <span class="py-name">searches</span> <span class="py-op">=</span> <span class="py-name">args</span><span class="py-op">[</span><span class="py-number">1</span><span class="py-op">:</span><span class="py-op">]</span> </span>
+<span class="lineno">102</span>  <span class="py-line">                 </span>
+<span class="lineno">103</span>  <span class="py-line">        <span id="link-17" class="py-name"><a title="bibstuff.bibfile.bfile
+bibstuff.bibname.bfile
+bibstuff.bibstyle.bfile" class="py-name" href="#" onclick="doclink('link-17', 'bfile', 'Variable bibfile.bfile=bibstuff.bibfile-module.html#bfile,Variable bibname.bfile=bibstuff.bibname-module.html#bfile,Variable bibstyle.bfile=bibstuff.bibstyle-module.html#bfile'); return false;">bfile</a></span></span> <span class="py-op">=</span> <a title="bibstuff.bibfile" class="py-name" href="bibstuff.bibfile-module.html">bibfile</a><span class="py-op">.</span><a title="bibstuff.bibfile.BibFile" class="py-name" href="bibstuff.bibfile.BibFile-class.html">BibFile</a><span class="py-op">(</span><span class="py-op">)</span> </span>
+<span class="lineno">104</span>  <span class="py-line">        <a title="bibstuff.bibgrammar" class="py-name" href="bibstuff.bibgrammar-module.html">bibgrammar</a><span class="py-op">.</span><span id="link-18" class="py-name"><a title="bibstuff.addrefs.Parse
+bibstuff.bibgrammar.Parse" class="py-name" href="#" onclick="doclink('link-18', 'Parse', 'Function addrefs.Parse()=bibstuff.addrefs-module.html#Parse,Function bibgrammar.Parse()=bibstuff.bibgrammar-module.html#Parse'); return false;">Parse</a></span></span><span class="py-op">(</span><span id="link-19" class="py-name"><a title="bibstuff.bibfile.src
+bibstuff.bibgrammar.src
+bibstuff.bibname.src
+bibstuff.bibstyle.src
+bibstuff.reflist.src" class="py-name" href="#" onclick="doclink('link-19', 'src', 'Variable bibfile.src=bibstuff.bibfile-module.html#src,Variable bibgrammar.src=bibstuff.bibgrammar-module.html#src,Variable bibname.src=bibstuff.bibname-module.html#src,Variable bibstyle.src=bibstuff.bibstyle-module.html#src,Variable reflist.src=bibstuff.reflist-module.html#src'); return false;">src</a></span></span><span class="py-op">,</span> <span id="link-20" class="py-name"><a title="bibstuff.bibfile.bfile
+bibstuff.bibname.bfile
+bibstuff.bibstyle.bfile" class="py-name" href="#" onclick="doclink('link-20', 'bfile', 'Variable bibfile.bfile=bibstuff.bibfile-module.html#bfile,Variable bibname.bfile=bibstuff.bibname-module.html#bfile,Variable bibstyle.bfile=bibstuff.bibstyle-module.html#bfile'); return false;">bfile</a></span></span><span class="py-op">)</span> </span>
+<span class="lineno">105</span>  <span class="py-line"> </span>
+<span class="lineno">106</span>  <span class="py-line">        <span class="py-name">result_list</span> <span class="py-op">=</span> <span class="py-op">[</span><span class="py-op">]</span> </span>
+<span class="lineno">107</span>  <span class="py-line">        <span class="py-keyword">from</span> <span class="py-name">pprint</span> <span class="py-keyword">import</span> <span class="py-name">pprint</span> </span>
+<span class="lineno">108</span>  <span class="py-line">        <span class="py-keyword">for</span> <span class="py-name">item</span> <span class="py-keyword">in</span> <span class="py-name">searches</span> <span class="py-op">:</span> </span>
+<span class="lineno">109</span>  <span class="py-line">                <span class="py-keyword">for</span> <a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a> <span class="py-keyword">in</span> <span id="link-21" class="py-name"><a title="bibstuff.bibsearch.get_entries
+bibstuff.bibstyles.shared.CitationManager.get_entries" class="py-name" href="#" onclick="doclink('link-21', 'get_entries', 'Function bibstuff.bibsearch.get_entries()=bibstuff.bibsearch-module.html#get_entries,Method bibstuff.bibstyles.shared.CitationManager.get_entries()=bibstuff.bibstyles.shared.CitationManager-class.html#get_entries'); return false;">get_entries</a></span></span><span class="py-op">(</span><span class="py-name">options</span><span class="py-op">,</span> <span class="py-name">item</span><span class="py-op">,</span> <span id="link-22" class="py-name"><a title="bibstuff.bibfile.bfile
+bibstuff.bibname.bfile
+bibstuff.bibstyle.bfile" class="py-name" href="#" onclick="doclink('link-22', 'bfile', 'Variable bibstuff.bibfile.bfile=bibstuff.bibfile-module.html#bfile,Variable bibstuff.bibname.bfile=bibstuff.bibname-module.html#bfile,Variable bibstuff.bibstyle.bfile=bibstuff.bibstyle-module.html#bfile'); return false;">bfile</a></span></span><span class="py-op">)</span> <span class="py-op">:</span> </span>
+<span class="lineno">110</span>  <span class="py-line">                        <span class="py-keyword">if</span> <a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a> <span class="py-op">:</span> </span>
+<span class="lineno">111</span>  <span class="py-line">                                <span class="py-keyword">print</span> <a title="bibstuff.bibsearch.format_output" class="py-name" href="bibstuff.bibsearch-module.html#format_output">format_output</a><span class="py-op">(</span><span class="py-name">options</span><span class="py-op">,</span> <a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">)</span> </span>
+</div><span class="lineno">112</span>  <span class="py-line">            </span>
+<span class="lineno">113</span>  <span class="py-line">  </span>
+<span class="lineno">114</span>  <span class="py-line"><span class="py-keyword">if</span> <span class="py-name">__name__</span> <span class="py-op">==</span> <span class="py-string">'__main__'</span><span class="py-op">:</span> </span>
+<span class="lineno">115</span>  <span class="py-line">        <span id="link-23" class="py-name"><a title="bibstuff.addrefs.main
+bibstuff.bib4txt.main
+bibstuff.biblabel.main
+bibstuff.bibsearch.main
+bibstuff.jabbrev.main" class="py-name" href="#" onclick="doclink('link-23', 'main', 'Function bibstuff.addrefs.main()=bibstuff.addrefs-module.html#main,Function bibstuff.bib4txt.main()=bibstuff.bib4txt-module.html#main,Function bibstuff.biblabel.main()=bibstuff.biblabel-module.html#main,Function bibstuff.bibsearch.main()=bibstuff.bibsearch-module.html#main,Function bibstuff.jabbrev.main()=bibstuff.jabbrev-module.html#main'); return false;">main</a></span></span><span class="py-op">(</span><span class="py-op">)</span> </span>
+<span class="lineno">116</span>  <span class="py-line"> </span><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">Generated by Epydoc
+        3.0alpha2 on Thu Aug 03 00:57:21 2006</td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sf.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

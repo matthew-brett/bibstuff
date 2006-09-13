@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>bibstuff.bibstyles.example_numbered</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="bibstuff-module.html">Package&nbsp;bibstuff</a> ::
+        <a href="bibstuff.bibstyles-module.html">Package&nbsp;bibstyles</a> ::
+        Module&nbsp;example_numbered
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript: void(0);" class="privatelink"
+    onclick="toggle_private();">hide private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="bibstuff.bibstyles.example_numbered-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h2 class="py-src">Source Code for <a href="bibstuff.bibstyles.example_numbered-module.html">Module bibstuff.bibstyles.example_numbered</a></h2>
+<div class="py-src">
+<pre class="py-src">
+<span class="lineno"> 1</span>  <span class="py-line"><span class="py-comment">#File: example_numbered.py</span> </span>
+<span class="lineno"> 2</span>  <span class="py-line"><span class="py-comment"></span><span class="py-docstring">'''</span> </span>
+<span class="lineno"> 3</span>  <span class="py-line"><span class="py-docstring">Provides an examle of how to easily modify an existing style:</span> </span>
+<span class="lineno"> 4</span>  <span class="py-line"><span class="py-docstring">Just import everything from that style, and then override</span> </span>
+<span class="lineno"> 5</span>  <span class="py-line"><span class="py-docstring">what you wish to change.  In this case, we import from</span> </span>
+<span class="lineno"> 6</span>  <span class="py-line"><span class="py-docstring">default.py, the default style.</span> </span>
+<span class="lineno"> 7</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno"> 8</span>  <span class="py-line"><span class="py-docstring">This style changes to numbered citation references and citations.</span> </span>
+<span class="lineno"> 9</span>  <span class="py-line"><span class="py-docstring">Citation references are numbered like this: (1,2).</span> </span>
+<span class="lineno">10</span>  <span class="py-line"><span class="py-docstring">Citations are numbered like this:</span> </span>
+<span class="lineno">11</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">12</span>  <span class="py-line"><span class="py-docstring">        1. First Citation Definition</span> </span>
+<span class="lineno">13</span>  <span class="py-line"><span class="py-docstring">        2. Second Citation Definition</span> </span>
+<span class="lineno">14</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">15</span>  <span class="py-line"><span class="py-docstring">The numbers reflect the order cited (the 'citation_rank').</span> </span>
+<span class="lineno">16</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">17</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">18</span>  <span class="py-line"><span class="py-docstring">:author: Alan G Isaac</span> </span>
+<span class="lineno">19</span>  <span class="py-line"><span class="py-docstring">:contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm</span> </span>
+<span class="lineno">20</span>  <span class="py-line"><span class="py-docstring">:copyright: 2006 by Alan G Isaac</span> </span>
+<span class="lineno">21</span>  <span class="py-line"><span class="py-docstring">:license: MIT (see `license.txt`_)</span> </span>
+<span class="lineno">22</span>  <span class="py-line"><span class="py-docstring">:date: 2006-08-01</span> </span>
+<span class="lineno">23</span>  <span class="py-line"><span class="py-docstring"></span> </span>
+<span class="lineno">24</span>  <span class="py-line"><span class="py-docstring">.. _license.txt: ./license.txt</span> </span>
+<span class="lineno">25</span>  <span class="py-line"><span class="py-docstring">'''</span> </span>
+<span class="lineno">26</span>  <span class="py-line"><span class="py-name">__docformat__</span> <span class="py-op">=</span> <span class="py-string">"restructuredtext en"</span> </span>
+<span class="lineno">27</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibstyles.example_numbered-module.html#__author__">__author__</a>  <span class="py-op">=</span>   <span class="py-string">"Alan G. Isaac"</span> </span>
+<span class="lineno">28</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibstyles.example_numbered-module.html#__version__">__version__</a> <span class="py-op">=</span> <span class="py-number">0.5</span> </span>
+<span class="lineno">29</span>  <span class="py-line"><a class="py-name" href="bibstuff.bibstyles.example_numbered-module.html#__needs__">__needs__</a> <span class="py-op">=</span> <span class="py-string">'2.4'</span> </span>
+<span class="lineno">30</span>  <span class="py-line"> </span>
+<span class="lineno">31</span>  <span class="py-line"> </span>
+<span class="lineno">32</span>  <span class="py-line"><span class="py-comment"># import everything from a useful style</span> </span>
+<span class="lineno">33</span>  <span class="py-line"><span class="py-comment"></span><span class="py-keyword">from</span> <a title="bibstuff.bibstyles.default" class="py-name" href="bibstuff.bibstyles.default-module.html">default</a> <span class="py-keyword">import</span> <span class="py-op">*</span> </span>
+<span class="lineno">34</span>  <span class="py-line"> </span>
+<span class="lineno">35</span>  <span class="py-line"><span class="py-comment">#####################################################################</span> </span>
+<span class="lineno">36</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment">############  Override the style choices  ###########################</span> </span>
+<span class="lineno">37</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment">#####################################################################</span> </span>
+<span class="lineno">38</span>  <span class="py-line"><span class="py-comment"></span> </span>
+<span class="lineno">39</span>  <span class="py-line"> </span>
+<span class="lineno">40</span>  <span class="py-line"><span class="py-comment">################### CITEREF FORMATTING ##################################</span> </span>
+<span class="lineno">41</span>  <span class="py-line"><span class="py-comment"></span> </span>
+<span class="lineno">42</span>  <span class="py-line"><span class="py-comment"># Redefine the CiteRefFormatter class, even if "unchanged".</span> </span>
+<span class="lineno">43</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment"># (This is necessary if you want to change any of the global formatting functions,</span> </span>
+<span class="lineno">44</span>  <span class="py-line"><span class="py-comment"></span><span class="py-comment">#  and usually you change 'format_inline_cite')</span> </span>
+<a name="CiteRefFormatter"></a><div id="CiteRefFormatter-def"><span class="lineno">45</span> <a class="pysrc-toggle" href="#" id="CiteRefFormatter-toggle" onclick="toggle('CiteRefFormatter'); return false;">-</a><span class="py-line"><span class="py-comment"></span><span class="py-keyword">class</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered.CiteRefFormatter-class.html">CiteRefFormatter</a><span class="py-op">(</span> <span class="py-base-class">shared</span><span class="py-op">.</span><span class="py-base-class">CiteRefProcessor</span> <span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="CiteRefFormatter-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="CiteRefFormatter-expanded"><span class="lineno">46</span>  <span class="py-line"> </span>
+<a name="CiteRefFormatter.format_inline_cite"></a><div id="CiteRefFormatter.format_inline_cite-def"><span class="lineno">47</span> <a class="pysrc-toggle" href="#" id="CiteRefFormatter.format_inline_cite-toggle" onclick="toggle('CiteRefFormatter.format_inline_cite'); return false;">-</a><span class="py-line">        <span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered.CiteRefFormatter-class.html#format_inline_cite">format_inline_cite</a><span class="py-op">(</span><span class="py-param">self</span><span class="py-op">,</span> <span class="py-param">entry_list</span><span class="py-op">,</span> <span class="py-param">cite_key_list</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="CiteRefFormatter.format_inline_cite-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="CiteRefFormatter.format_inline_cite-expanded"><span class="lineno">48</span>  <span class="py-line">                <span class="py-name">all_keys</span> <span class="py-op">=</span> <span class="py-name">self</span><span class="py-op">.</span><span class="py-name">all_cite_keys</span> </span>
+<span class="lineno">49</span>  <span class="py-line">                <span class="py-keyword">return</span> <span id="link-0" class="py-name"><a title="bibstuff.bibstyles.default.CiteRefFormatter.format_inline_cite
+bibstuff.bibstyles.default.format_inline_cite
+bibstuff.bibstyles.example_numbered.CiteRefFormatter.format_inline_cite
+bibstuff.bibstyles.example_numbered.format_inline_cite
+bibstuff.bibstyles.shared.CiteRefProcessor.format_inline_cite" class="py-name" href="#" onclick="doclink('link-0', 'format_inline_cite', 'Method default.CiteRefFormatter.format_inline_cite()=bibstuff.bibstyles.default.CiteRefFormatter-class.html#format_inline_cite,Function default.format_inline_cite()=bibstuff.bibstyles.default-module.html#format_inline_cite,Method format_inline_cite()=bibstuff.bibstyles.example_numbered.CiteRefFormatter-class.html#format_inline_cite,Function format_inline_cite()=bibstuff.bibstyles.example_numbered-module.html#format_inline_cite,Method shared.CiteRefProcessor.format_inline_cite()=bibstuff.bibstyles.shared.CiteRefProcessor-class.html#format_inline_cite'); return false;">format_inline_cite</a></span></span><span class="py-op">(</span><span class="py-name">entry_list</span><span class="py-op">,</span><span class="py-name">cite_key_list</span><span class="py-op">,</span><span class="py-name">all_keys</span><span class="py-op">)</span> </span>
+</div></div><span class="lineno">50</span>  <span class="py-line"> </span>
+<span class="lineno">51</span>  <span class="py-line"> </span>
+<a name="format_inline_cite"></a><div id="format_inline_cite-def"><span class="lineno">52</span> <a class="pysrc-toggle" href="#" id="format_inline_cite-toggle" onclick="toggle('format_inline_cite'); return false;">-</a><span class="py-line"><span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered-module.html#format_inline_cite">format_inline_cite</a><span class="py-op">(</span><span class="py-param">entries</span><span class="py-op">,</span> <span class="py-param">keys</span><span class="py-op">,</span> <span class="py-param">all_keys</span><span class="py-op">)</span> <span class="py-op">:</span> </span>
+</div><div id="format_inline_cite-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="format_inline_cite-expanded"><span class="lineno">53</span>  <span class="py-line">        <span class="py-name">formatted_list</span> <span class="py-op">=</span> <span class="py-op">[</span><span class="py-op">]</span> </span>
+<span class="lineno">54</span>  <span class="py-line">        <span class="py-keyword">assert</span><span class="py-op">(</span><span class="py-name">len</span><span class="py-op">(</span><span class="py-name">entries</span><span class="py-op">)</span><span class="py-op">==</span><span class="py-name">len</span><span class="py-op">(</span><span class="py-name">keys</span><span class="py-op">)</span><span class="py-op">)</span> </span>
+<span class="lineno">55</span>  <span class="py-line">        <span class="py-keyword">for</span> <span class="py-name">i</span> <span class="py-keyword">in</span> <span class="py-name">range</span><span class="py-op">(</span><span class="py-name">len</span><span class="py-op">(</span><span class="py-name">entries</span><span class="py-op">)</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+<span class="lineno">56</span>  <span class="py-line">                <span class="py-keyword">if</span> <span class="py-keyword">not</span> <span class="py-name">entries</span><span class="py-op">[</span><span class="py-name">i</span><span class="py-op">]</span><span class="py-op">:</span> </span>
+<span class="lineno">57</span>  <span class="py-line">                        <span class="py-name">formatted_list</span><span class="py-op">.</span><span class="py-name">append</span><span class="py-op">(</span><span class="py-name">keys</span><span class="py-op">[</span><span class="py-name">i</span><span class="py-op">]</span><span class="py-op">)</span> </span>
+<span class="lineno">58</span>  <span class="py-line">                <span class="py-keyword">else</span><span class="py-op">:</span> </span>
+<span class="lineno">59</span>  <span class="py-line">                        <span class="py-name">formatted_list</span><span class="py-op">.</span><span class="py-name">append</span><span class="py-op">(</span><span class="py-string">'%d'</span><span class="py-op">%</span><span class="py-op">(</span><span class="py-name">all_keys</span><span class="py-op">.</span><span class="py-name">index</span><span class="py-op">(</span><span class="py-name">keys</span><span class="py-op">[</span><span class="py-name">i</span><span class="py-op">]</span><span class="py-op">)</span><span class="py-op">+</span><span class="py-number">1</span><span class="py-op">)</span><span class="py-op">)</span> </span>
+<span class="lineno">60</span>  <span class="py-line">        <span class="py-keyword">return</span> <span class="py-string">'('</span> <span class="py-op">+</span> <span class="py-string">", "</span><span class="py-op">.</span><span class="py-name">join</span><span class="py-op">(</span><span class="py-name">formatted_list</span><span class="py-op">)</span><span class="py-op">+</span><span class="py-string">')'</span> </span>
+</div><span class="lineno">61</span>  <span class="py-line"> </span>
+<span class="lineno">62</span>  <span class="py-line"> </span>
+<span class="lineno">63</span>  <span class="py-line"> </span>
+<span class="lineno">64</span>  <span class="py-line"> </span>
+<span class="lineno">65</span>  <span class="py-line"><span class="py-comment">################### CITATION FORMATTING ##################################</span> </span>
+<span class="lineno">66</span>  <span class="py-line"><span class="py-comment"></span><a title="bibstuff.bibstyles.default.CITATION_TEMPLATE" class="py-name" href="bibstuff.bibstyles.default-module.html#CITATION_TEMPLATE">CITATION_TEMPLATE</a><span class="py-op">.</span><span class="py-name">update</span><span class="py-op">(</span><span class="py-name">dict</span><span class="py-op">(</span> </span>
+<span class="lineno">67</span>  <span class="py-line"><span class="py-name">indent_left</span><span class="py-op">=</span><span class="py-number">0</span><span class="py-op">,</span> </span>
+<span class="lineno">68</span>  <span class="py-line"><span class="py-name">name_formats</span> <span class="py-op">=</span> <span class="py-op">[</span><span class="py-string">'f |v |l|, j'</span><span class="py-op">]</span><span class="py-op">,</span> </span>
+<span class="lineno">69</span>  <span class="py-line"><span class="py-name">initials</span> <span class="py-op">=</span> <span class="py-name">True</span><span class="py-op">,</span> </span>
+<span class="lineno">70</span>  <span class="py-line"><span class="py-name">name_name_sep</span> <span class="py-op">=</span> <span class="py-op">(</span><span class="py-string">'. '</span><span class="py-op">,</span><span class="py-string">'. '</span><span class="py-op">)</span><span class="py-op">,</span> </span>
+<span class="lineno">71</span>  <span class="py-line"><span class="py-op">)</span><span class="py-op">)</span> </span>
+<span class="lineno">72</span>  <span class="py-line"> </span>
+<a name="CitationManager"></a><div id="CitationManager-def"><span class="lineno">73</span> <a class="pysrc-toggle" href="#" id="CitationManager-toggle" onclick="toggle('CitationManager'); return false;">-</a><span class="py-line"><span class="py-keyword">class</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered.CitationManager-class.html">CitationManager</a><span class="py-op">(</span><span class="py-base-class">shared</span><span class="py-op">.</span><span class="py-base-class">CitationManager</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="CitationManager-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="CitationManager-expanded"><span class="lineno">74</span>  <span class="py-line"> </span>
+<a name="CitationManager.get_citation_label"></a><div id="CitationManager.get_citation_label-def"><span class="lineno">75</span> <a class="pysrc-toggle" href="#" id="CitationManager.get_citation_label-toggle" onclick="toggle('CitationManager.get_citation_label'); return false;">-</a><span class="py-line">        <span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered.CitationManager-class.html#get_citation_label">get_citation_label</a><span class="py-op">(</span><span class="py-param">self</span><span class="py-op">,</span><span class="py-param">entry</span><span class="py-op">,</span><span class="py-param">template</span><span class="py-op">=</span><span class="py-name">None</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="CitationManager.get_citation_label-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="CitationManager.get_citation_label-expanded"><span class="lineno">76</span>  <span class="py-line">                <span class="py-keyword">return</span> <span class="py-op">(</span><span class="py-string">"%d."</span><span class="py-op">%</span><span class="py-name">self</span><span class="py-op">.</span><a title="bibstuff.bibstyles.shared.CitationManager.get_citation_rank" class="py-name" href="bibstuff.bibstyles.shared.CitationManager-class.html#get_citation_rank">get_citation_rank</a><span class="py-op">(</span><a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">)</span><span class="py-op">)</span><span class="py-op">.</span><span class="py-name">ljust</span><span class="py-op">(</span><span class="py-number">5</span><span class="py-op">)</span> </span>
+</div><span class="lineno">77</span>  <span class="py-line"> </span>
+<a name="CitationManager.sortkey"></a><div id="CitationManager.sortkey-def"><span class="lineno">78</span> <a class="pysrc-toggle" href="#" id="CitationManager.sortkey-toggle" onclick="toggle('CitationManager.sortkey'); return false;">-</a><span class="py-line">        <span class="py-keyword">def</span> <a class="py-def-name" href="bibstuff.bibstyles.example_numbered.CitationManager-class.html#sortkey">sortkey</a><span class="py-op">(</span><span class="py-param">self</span><span class="py-op">,</span><span class="py-param">bibentry</span><span class="py-op">)</span><span class="py-op">:</span> </span>
+</div><div id="CitationManager.sortkey-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="CitationManager.sortkey-expanded"><span class="lineno">79</span>  <span class="py-line">                <span class="py-keyword">return</span> <span class="py-name">self</span><span class="py-op">.</span><a title="bibstuff.bibstyles.shared.CitationManager.get_citation_rank" class="py-name" href="bibstuff.bibstyles.shared.CitationManager-class.html#get_citation_rank">get_citation_rank</a><span class="py-op">(</span><a title="bibstuff.bibfile.BibFile.entry" class="py-name" href="bibstuff.bibfile.BibFile-class.html#entry">entry</a><span class="py-op">)</span> </span>
+</div></div><span class="lineno">80</span>  <span class="py-line"> </span><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">Generated by Epydoc
+        3.0alpha2 on Thu Aug 03 00:57:32 2006</td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sf.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>bibstuff.bibstyles.shared.CiteRefProcessor</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="bibstuff-module.html">Package&nbsp;bibstuff</a> ::
+        <a href="bibstuff.bibstyles-module.html">Package&nbsp;bibstyles</a> ::
+        <a href="bibstuff.bibstyles.shared-module.html">Module&nbsp;shared</a> ::
+        Class&nbsp;CiteRefProcessor
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript: void(0);" class="privatelink"
+    onclick="toggle_private();">hide private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h2 class="class">Class CiteRefProcessor
+<br/><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor">source&nbsp;code</a></span></h2>
+<pre class="base-tree">
+                           MethodSource --+        
+                                          |        
+                        processor.Processor --+    
+                                              |    
+simpleparse.dispatchprocessor.DispatchProcessor --+
+                                                  |
+                                                 <strong class="uidshort">CiteRefProcessor</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+    <a href="bibstuff.bibstyles.example_numbered.CiteRefFormatter-class.html">example_numbered.CiteRefFormatter</a>,
+    <a href="bibstuff.bibstyles.default.CiteRefFormatter-class.html">default.CiteRefFormatter</a>
+</dd></dl>
+
+<hr />
+Formats inline citations and substitutes them into text.
+Stores all cite keys in <code class="link">all_cite_keys</code>
+Can store <code class="link">result</code> as original text with substituted citation references.<br /><br />
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Instance Methods</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#__init__" class="sig-name">__init__</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">parsed_bibfile_dispatch_processor</span>)</span>
+    
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#__repr__" class="sig-name">__repr__</a>(<span class="sig-arg">self</span>)</span>
+    <br />Return a representation of the class
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#format_inline_cite" class="sig-name">format_inline_cite</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">entry_list</span>,
+        <span class="sig-arg">cite_key_list</span>)</span>
+    
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#log_msg" class="sig-name">log_msg</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">msg</span>)</span>
+    
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#cite" class="sig-name">cite</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+    <br />Return everything.
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#inline_literal" class="sig-name">inline_literal</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+    <br />Return everything.
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#fn" class="sig-name">fn</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+    <br />Return everything.
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff.bibstyles.shared.CiteRefProcessor-class.html#plain" class="sig-name">plain</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+    <br />Return everything.
+  </td>
+</tr>
+  <tr>
+    <td colspan="2">
+    <p class="varlist"><span class="varlist-header">Inherited from <code>simpleparse.dispatchprocessor.DispatchProcessor</code></span>:
+      <code>__call__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<br />
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="details">Method Details</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">parsed_bibfile_dispatch_processor</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.__init__">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="__repr__"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">__repr__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Representation operator)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.__repr__">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Return a representation of the class
+  <dl><dt></dt><dd>
+    <dl><dt>Overrides:
+      simpleparse.processor.Processor.__repr__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt></dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="format_inline_cite"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">format_inline_cite</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">entry_list</span>,
+        <span class="sig-arg">cite_key_list</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.format_inline_cite">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="log_msg"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">log_msg</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">msg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.log_msg">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="cite"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">cite</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.cite">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  <p>Return everything.
+Usually you need to override this method.</p>
+<p>Alternative default def:
+self.result.append( buffer[start:stop])</p>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="inline_literal"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">inline_literal</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.inline_literal">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Return everything.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="fn"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">fn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.fn">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Return everything.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="plain"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">plain</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">(tag, start, stop, subtags)</span>,
+        <span class="sig-arg">buffer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff.bibstyles.shared-pysrc.html#CiteRefProcessor.plain">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Return everything.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">Generated by Epydoc
+        3.0alpha2 on Thu Aug 03 00:57:14 2006</td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sf.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

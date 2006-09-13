@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>bibstuff_dev.bibstyles.shared.NameFormatter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff_dev-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="bibstuff_dev-module.html">Package&nbsp;bibstuff_dev</a> ::
+        <a href="bibstuff_dev.bibstyles-module.html">Package&nbsp;bibstyles</a> ::
+        <a href="bibstuff_dev.bibstyles.shared-module.html">Module&nbsp;shared</a> ::
+        Class&nbsp;NameFormatter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript: void(0);" class="privatelink"
+    onclick="toggle_private();">hide private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h2 class="class">Class NameFormatter
+<br/><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter">source&nbsp;code</a></span></h2>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">NameFormatter</strong>
+</pre>
+
+<hr />
+<p>Create a NameFormatter object based on a template string.</p>
+<div class="section">
+<h1 class="heading"><a id="name-formatting-templates" name="name-formatting-templates">NAME FORMATTING TEMPLATES</a></h1>
+<p>The name template takes some explanation.
+Name parts are referred to by part-designator, which is just the part's first letter:
+(v)on, (l)last, (j)r or (f)irst.
+Each name part may have one associated section in a name formatting template.
+Sections are separated by '|' and must include a part-designator (one of 'fvlj').
+The presumption is that part-designators will be the only alphabetic characters in a name template.
+A section will generate output iff the name part for that section exists.
+Each section may have a partsep
+(in curly braces, immediately following the part-designator)
+and other characters
+(which may not be any of 'fvlj').
+The partsep indicates what should separate multiple tokens of the same part
+(e.g., two part last names, or 'van der' for the (v)on part).
+A part separator will replace the default space to separate multiple tokens in a part.
+Any other characters are included as is.</p>
+<p>For example:</p>
+<pre class="literal-block">
+&quot;v{~}~|l,| j,| f{. }.&quot; with initials=True produces:
+&quot;McFeely, J. W.&quot; or &quot;van~der~Stadt, jr, C. M.&quot;
+</pre>
+</div><br /><br />
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Instance Methods</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#__init__" class="sig-name">__init__</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">template</span>,
+        <span class="sig-arg">initials</span>=<span class="sig-default">False</span>)</span>
+    <br />x.__init__(...) initializes x; see x.__class__.__doc__ for 
+      signature
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#get_formatted" class="sig-name">get_formatted</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name_data</span>)</span>
+    
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#name_parts2formatted" class="sig-name">name_parts2formatted</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name_parts</span>)</span>
+    <br />Returns one fully formatted name, based on a name_parts tuple.
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#get_template" class="sig-name">get_template</a>(<span class="sig-arg">self</span>)</span>
+    
+  </td>
+</tr>
+<tr>
+  <td width="15%" align="right" valign="top" class="rtype">
+    &nbsp;
+   </td>
+  <td>
+    <span class="sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#set_template" class="sig-name">set_template</a>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">template</span>)</span>
+    
+  </td>
+</tr>
+  <tr>
+    <td colspan="2">
+    <p class="varlist"><span class="varlist-header">Inherited from <code>object</code></span>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<br />
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Class Variables</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2">
+    <p class="varlist"><span class="varlist-header">Inherited from <code>object</code></span>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<br />
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="summary">Properties</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="15%">
+    <strong><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#template">template</a></strong></td>
+  <td>template property</td>
+</tr>
+</table>
+
+<br />
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="details">Method Details</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">template</span>,
+        <span class="sig-arg">initials</span>=<span class="sig-default">False</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter.__init__">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  x.__init__(...) initializes x; see x.__class__.__doc__ for 
+  signature
+  <dl><dt></dt><dd>
+    <dl><dt>Overrides:
+      object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt></dl>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="get_formatted"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">get_formatted</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name_data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter.get_formatted">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="name_parts2formatted"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">name_parts2formatted</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name_parts</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter.name_parts2formatted">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  Returns one fully formatted name, based on a name_parts tuple.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="get_template"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">get_template</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter.get_template">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<a name="set_template"></a>
+<div>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3><span class="sig"><span class="sig-name">set_template</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">template</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="bibstuff_dev.bibstyles.shared-pysrc.html#NameFormatter.set_template">source&nbsp;code</a></span>&nbsp;</span
+    ></td>
+  </table>
+  
+  
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== PROPERTY DETAILS ==================== -->
+<a name="section-PropertyDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <td colspan="2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <th align="left" class="details">Property Details</th>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-PropertyDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="template"></a>
+<div>
+<table width="100%" class="prop-details" bgcolor="#e0e0e0"><tr><td>
+  <h3>template</h3>
+  template property
+  <dl><dt></dt><dd>
+    <dt>Get Method:</dt>
+    <dd><span class="summary-sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#get_template" class="summary-sig-name">bibstuff_dev.bibstyles.shared.NameFormatter.get_template</a>(<span class="summary-sig-arg">self</span>)</span>
+    </dd>
+    <dt>Set Method:</dt>
+    <dd><span class="summary-sig"><a href="bibstuff_dev.bibstyles.shared.NameFormatter-class.html#set_template" class="summary-sig-name">bibstuff_dev.bibstyles.shared.NameFormatter.set_template</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">template</span>)</span>
+    </dd>
+    <dt>Delete Method:</dt>
+    <dd>None
+    </dd>
+  </dd></dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="bibstuff_dev-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar"
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center">
+            <p class="nomargin">
+              BibStuff
+      </p></th></tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">Generated by Epydoc
+        3.0alpha2 on Thu Aug 03 00:37:29 2006</td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sf.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>
