@@ -6,7 +6,7 @@ To fill a BibFile instance, bfi, call bibgrammar.Parse(src, bfi).
 
 
 :author: Dylan Schwilk (esp. BibFile)
-:contact: try@schwilk.org
+:contact: 
 :author: Alan G Isaac (esp. BibEntry)
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Dylan Schwilk and Alan G Isaac
@@ -21,10 +21,8 @@ To fill a BibFile instance, bfi, call bibgrammar.Parse(src, bfi).
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
+__version__ =    '1.13'
 __needs__ = '2.4'
-
-__version__ =    '$Revision$'
-# $Source$
 
 # options:
 # __strict__ = False allows empty citekeys

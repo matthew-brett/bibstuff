@@ -29,10 +29,8 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
+__version__ =    '1.9'
 __needs__ = '2.4'
-
-__version__ =    '$Revision$'
-# $Source$
 
 
 ################ IMPORTS #############################

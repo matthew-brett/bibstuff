@@ -25,10 +25,8 @@ The numbers reflect the order cited (the 'citation_rank').
 """
 __docformat__ = "restructuredtext en"
 __author__  =   "Alan G. Isaac"
+__version__ = "0.5"
 __needs__ = '2.4'
-
-__version__ = "$Revision$"
-# $Source$
 
 # import everything from a useful style
 from default import *

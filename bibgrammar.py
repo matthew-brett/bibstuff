@@ -22,10 +22,9 @@ Greg Ward's btOOL_ documentation.
 """
 __docformat__ = "restructuredtext en"
 __needs__ = '2.4'
+__version__ = "1.6"
 __author__  =    '''Dylan W. Schwilk'''
 
-__version__ =    '$Revision$'
-# $Source$
 
 ###################  IMPORTS  ##################################################
 #import from standard library

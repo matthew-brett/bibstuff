@@ -1,7 +1,10 @@
 #! /usr/bin/env python
 
 # bibstuff setup script
+<<<<<<< .mine
+=======
 # $Revision$
+>>>>>>> .r7
 # $Date: 2006/08/29 15:55:27 $
 
 

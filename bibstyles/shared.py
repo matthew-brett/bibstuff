@@ -12,9 +12,7 @@ especially for bib4txt.py.
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
-
-__version__ = "$Revision$"
-# $Source$
+__version__ = "1.3"
 
 ###################  IMPORTS  ##################################################
 #import from standard library

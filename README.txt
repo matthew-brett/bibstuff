@@ -4,8 +4,9 @@
 
 :authors: Dylan W. Schwilk and Alan G. Isaac
 :web site: http://www.pricklysoft.org
-:date: $Date: 2006/08/29 16:01:27 $
-:version: $Revision: 1.8 $
+:source code: http://code.google.com/p/bibstuff/
+:date: 2006-09-13
+:version: 1.8
 
 BibStuff License
 ================

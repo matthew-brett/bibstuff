@@ -40,12 +40,8 @@ How it works:
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
+__version__ = "1.1"
 __needs__ = '2.4'
-
-__version__ =    '$Revision$'
-# $Source$
-
-
 
 
 ###################  IMPORTS  ##################################################
