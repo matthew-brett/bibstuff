@@ -1,16 +1,12 @@
 #! /usr/bin/env python
 
 # bibstuff setup script
-<<<<<<< .mine
-=======
-# $Revision$
->>>>>>> .r7
-# $Date: 2006/08/29 15:55:27 $
+# Date: 2006-09-13
 
 
 from distutils.core import setup
 setup(name="bibstuff",
-      version="0.7.2",  # should this be auto linked to svn?
+      version="0.7.3",  
       description="Bibtex database utilities",
       author="Dylan W. Schwilk and Alan G. Isaac",
       author_email="point@pricklysoft.org",
