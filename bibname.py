@@ -10,25 +10,26 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Dylan Schwilk and Alan G Isaac
 :license: MIT (see `license.txt`_)
-:date: 2006-08-04
+:date: $Date: 2006/08/29 15:48:05 $
 
-:todo: Change the EBNF description to allow for strings within a name.
-For example, the name {\AA}s currently fails.  The current version
-(2006-08-30) allows strings if they include a whole name part, so
-'{{\AA}s}' works, but only in vl,f format (this second issue is a
-problem with BibName.parse_raw_names_parts and populating the
-names_groups structure.
+:TODO: Change the EBNF description to allow for strings within a name.
+       For example, the name {\AA}s currently fails.  The current version
+       (2006-08-30) allows strings if they include a whole name part, so
+       '{{\AA}s}' works, but only in vl,f format (this second issue is a
+       problem with BibName.parse_raw_names_parts and populating the
+       names_groups structure.
 
-FIXED by dschwilk: (but a bit of a hack) Was not working on capitalized vons parts 
-such as 'Von der Burg, S.'  This capitalized von part was not being
-captured into the names_groups structure, so I did an extra check for
-it.  This could still be cleaned up.
+       Partially fixed by dschwilk: (but a bit of a hack) Was not
+       working on capitalized vons parts such as 'Von der Burg, S.'
+       This capitalized von part was not being captured into the
+       names_groups structure, so I did an extra check for it.  This
+       could still be cleaned up.
 
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
-__version__ =    '$Rev$'
+__version__ =    '$Rev: 1.9$'
 __needs__ = '2.4'
 
 ################ IMPORTS #############################
@@ -65,7 +66,6 @@ comma                := ','
 <sp>             := [ \t\n\r]
 """
 
-
 # old description
 ##ebnf_bibname = r"""
 ##name            := ( (tb, _and_) / (tb, part) / (tb , string) / (tb, comma) )+
@@ -86,7 +86,6 @@ bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 ######################################################
 
 # ----------- Public Functions -----------------#
-
 
 
 #KEEP! and keep as separate bibname function
@@ -219,8 +218,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
                                                 v,l = name_groups
                                         else : # von parts in upper-level list (multi-part last names) --
                                                 # should be caught by
-                                                # parser, but this hack for
-                                                # now
+                                                # parser, but this hack for now
                                                 for g in name_groups[0:-1] : v.extend(g)
                                                 l = name_groups[-1]
 					if len(n) == 3:
