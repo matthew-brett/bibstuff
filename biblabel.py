@@ -18,8 +18,10 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 '''
 __docformat__ = "restructuredtext en"
 __authors__  =    ['Dylan Schwilk','Alan G. Isaac']
-__version__ =    '$Revision: 1.9 $'
 __needs__ = '2.4'
+
+__version__ =    '$Revision$'
+# $Source$
 
 ###################  IMPORTS  ##################################################
 # import from standard library

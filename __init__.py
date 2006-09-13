@@ -21,4 +21,8 @@ Bibstuff is pure Python_ and in that sense will run on any platform.
 .. _Python: http://www.python.org 
 """ 
 __docformat__ = "restructuredtext en"
-__version__ = '0.2'
+
+
+__version__ =    '$Revision$'
+# $Source$
+

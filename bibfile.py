@@ -21,8 +21,10 @@ To fill a BibFile instance, bfi, call bibgrammar.Parse(src, bfi).
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
-__version__ =    '$Revision: 1.13 $'
 __needs__ = '2.4'
+
+__version__ =    '$Revision$'
+# $Source$
 
 # options:
 # __strict__ = False allows empty citekeys

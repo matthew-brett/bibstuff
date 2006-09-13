@@ -42,7 +42,9 @@ misc = '%(year)s.  %(title)s.',
 """
 __docformat__ = "restructuredtext en"
 __author__  =   "Alan G. Isaac"
-__version__ = "1.1"
+
+__version__ = "$Revision$"
+# $Source$
 
 DEFAULT_CITEREF_TEMPLATE = dict(
 max_cite_names = 2,
