@@ -13,8 +13,10 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 :license: MIT (see `license.txt`_)
 :date: 2006-08-14
 :since: 2006-08-04
-:note: 2006-08-04 eliminated that final comma (believe illegal)
-:TODO: fix biblabel to use one name + 'etal'? or just '+'?
+:change: 2006-08-04 eliminated that final comma (believe illegal)
+:change: 2006-08-24 add make_entry_citekey
+:change: 2006-08-24 add label styles
+:TODO: fix make_entry_citekey to use one name + 'etal'? or just '+'?
 :TODO: add checking for unique key
 :TODO: allow multiple entries
 :TODO: allow correcting entries
@@ -26,7 +28,7 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 '''
 __docformat__ = "restructuredtext en"
 __authors__  =    ['Alan G. Isaac']
-__version__ =    '0.3'
+__version__ =    '0.3.1'
 __needs__ = '2.4'
 
 
@@ -39,9 +41,8 @@ logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 add2bib_logger = logging.getLogger('bibstuff_logger')
 
 # bibstuff imports
-import biblabel
 import bibfile
-#import bibstyles
+import bibstyles
 ################################################################################
 
 entry_types = ("article","booklet","book","conference","inbook","incollection","inproceedings","manual","mastersthesis","misc","phdthesis","proceedings","techreport","unpublished")
@@ -195,12 +196,103 @@ def make_entry(choosetype='',options=False,extras=False):
 	if 'k' in fields:
 		entry['key'] = raw_input("key (*not* citekey)? ").strip()
 	if not citekey:
-		citekey = biblabel.make_entry_citekey(entry,[])
+		citekey = make_entry_citekey(entry,[],label_style2)
 		entry.citekey = citekey
 	return entry
 
+
+# for a discussion of name templates, see the NameFormatter docstring
+# a style must always define a default entry_type
+# use_max_names True -> first max_names names included, then etal
+# use_max_names False -> first name included, then etal
+label_style1 = dict(
+name_template = 'v_|l{_}',
+max_names = 2,
+use_max_names = True,
+name_name_sep = ('+','+'),
+etal = 'etal',
+anonymous = 'anon',
+lower_name = False,
+article = "%(names)s:%(year)s",
+book = "%(names)s:%(year)s",
+misc = "%(names)s:%(year)s",
+default_type = "%(names)s:%(year)s",
+)
+
+#style2 shd be rst compatible
+label_style2 = dict(
+name_first = 'l{_}',
+name_other = 'l{_}',
+max_names = 2,
+use_max_names = False,
+name_name_sep = ('.','.'),
+etal = '',
+lower_name = True,
+anonymous = 'anon',
+article = "%(names)s-%(year)s-%(jrnl)s",
+book = "%(names)s-%(year)s",
+misc = "%(names)s-%(year)s",
+default_type = "%(names)s-%(year)s",
+)
+
+#:note: this is a variant of a function in biblabel.py
+#:TODO: make this a BibEntry method
+#:TODO: integrate styles with CITATION_TEMPLATE styles (note: anon, lower_name, templates (names))
+def make_entry_citekey(entry, used_citekeys,style=label_style1):
+	"""return new entry key (as string)
+	"""
+
+	format_dict = {}
+	entry_type = entry.type.lower()
+	try:
+		label_template = style[entry_type]
+	except KeyError:
+		label_template = style[default_type]
+
+	name_template = style['name_first']  #:TODO: ? adjust this ?
+	max_names = style['max_names']
+	name_name_sep = style['name_name_sep'][0] #:TODO: ? adjust this ?
+	#name_parts_sep = style['name_parts_sep'] #superfluous if name templates used correctly; just in case ...
+	lower_name = style['lower_name']
+	etal = style['etal']
+
+	#first, make names
+	name_formatter = bibstyles.shared.NameFormatter(template = name_template)
+	names_dicts = entry.get_names().get_names_dicts()
+	#make list of 'v_|l' last names, which can possibly have multiple tokens (e.g., two piece last names)
+	ls = [name_formatter.format_name(name_dict) for name_dict in names_dicts]
+	if len(ls) > max_names:
+		if use_max_names:
+			ls = ls[:max_names] + [etal]
+		else:
+			ls = ls[0] + [etal]
+	#for each name, join the tokens with an underscore (i.e., split on whitespace and then join with '_').
+	#ls = [name_parts_sep.join( s.split() )  for s in ls]  #shd handle this with name template
+	names =  name_name_sep.join(ls)
+	if lower_name:
+		names = names.lower()
+	format_dict['names'] = names
+	year = entry['year'] or '????'
+	format_dict['year'] = year
+	if entry_type == "article":
+		jrnl = entry['journal']
+		jrnl = ''.join(jrnl.split()).lower()  #keep macro; ow abbreviate (TODO: adjust this)
+		jrnl = jrnl.replace("journal","j",1)
+		format_dict['jrnl'] = jrnl  #short form, no spaces
+
+	#make unique result: if needed, append suffix (sfx) b or c or d . . . to year
+	sfx = ''; c = 1
+	#while result+sfx in used_citekeys:
+	while label_template%format_dict in used_citekeys:
+		sfx = ascii_lowercase[c%26]*(1+c//26)  #:note: lowercase since BibTeX does not distinguish case
+		format_dict['year'] = year+sfx
+		c += 1
+	result = label_template%format_dict
+
+	return result
+
 ###########  HTML formatting  ########################
-templates = dict(
+html_templates = dict(
 journal = '''<p id='%(citekey)s' class='ref'>
 <span class='author'>%(author)s</span>,
 <span class='date'>%(year)s</span>,
@@ -216,60 +308,110 @@ book = '''<p id='%(citekey)s class='ref'>
 </p>
 ''',
 )
+text_templates = dict(
+journal = '''%(author)s, %(year)s,
+"%(title)s"
+%(pubinfo)s.
+''',
+book = '''%(auted)s, %(year)s,
+%(titleinfo)s
+%(pubinfo)s.
+''',
+incollection = '''%(author)s, %(year)s,
+%(titleinfo)s
+%(pubinfo)s.
+''',
+)
 
 #:TODO: !!!!
 def is_macro(s):
 	return False
 
-def html_format(entry):
-	citekey = entry.citekey
-	author = entry['author']
-	journal = entry['journal']
-	editor = entry['editor']
-	title = entry['title']
-	year = entry['year']
-	isbn = entry['isbn']
-	
+def text_format(entry):
+	entry_type = entry.type.lower()
+	info = {}.update(entry)
+	add2bib_logger.info("entry_type = "%(entry_type))
+	if entry_type == "article":
+		info['journal'] = get_journal(entry)
+		volnum = get_volnum(entry)
+		if pages:
+			pubinfo += pages
+		result = text_templates['journal']%info
+	elif entry_type in ["incollection","book"]:
+		if entry_type == "book":
+			if not author and entry['editor']:
+				author = entry['editor'] + " (ed)"
+			info['title'] = "%s,"%(title)
+		else: #-> entry_type == "incollection":
+			if entry['editor']:
+				info['auted'] = "%(author)s, in %(editor)s (ed)"%(entry)
+				info['title']="%(title)s, in %(booktitle)s,"%(entry)
+		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(entry)
+		#result = html_templates[entry_type]%dict(citekey=entry.citekey,auted=auted,year=year,titleinfo=titleinfo,pubinfo=pubinfo)
+		result = html_templates[entry_type]%info
+	return result
+		
+def get_journal(entry,jrnl_lst=None): #TODO: extract fr journal list
+	#if jrnlkey =~ "{.\+}", let journal=substitute(jrnlkey,'[{}]','','g')
 	if entry.type == "article":
-		pass #if jrnlkey =~ "{.\+}", let journal=substitute(jrnlkey,'[{}]','','g')
 		if is_macro(entry['journal']):
-			journal = raw_input("Journal? (no braces) (Press enter to use existing journal key) ")
+			journal = raw_input("Journal? (no braces) (Press enter to use '%s') "%(entry['journal']))
 			if journal:
-				entry.macromap[entry['journal']] = journal
+				info['journal'] = journal
+	return journal
+
+def get_volnum(entry):
+	if volume:
+		volnum = str(volume)
+		if number:
+			volnum = str(volume) + "(" + str(number) + ")"
+	elif number:
+		volnume = str(number)
+	else:
+		volnum = ""
+	return volnum
+
+def get_pages(entry,dash='--',pagespref=('p. ','pp. ')):
+	pages = entry['pages']
+	if pages:
+		if '--' in pages:
+			pages = pagespref[1] + dash.join(pages.split("--"))
+		elif '-' in pages:
+			pages = pagespref[1] + dash.join("-".split(pages))
+		else:
+			pages = pagespref[0] + pages
+	return pages
+
+def html_format(entry):
+	entry_type = entry.type.lower()
+	info = {}.update(entry)
+	add2bib_logger.info("entry_type = "%(entry_type))
+	if entry_type == "article":
+		info['journal'] = get_journal(entry['journal'])
 		pubinfo="<span class='journal'>" + journal + "</span>"
 		volume = entry['volume']
 		number = entry['number']
-		if volume:
-			volnum = str(volume)
-			if number:
-				volnum = str(volume) + "(" + str(number) + ")"
-		elif number:
-			volnume = str(number)
-		else:
-			volnum = ""
+		volnum = get_volnum(entry)
 		if volnum:
 			pubinfo += " " + volnum
-		pages = entry['pages']
+		pages = get_pages(entry,'&ndash;')
 		if pages:
-			if '--' in pages:
-				pages = "pp. " + "&ndash;".join(pages.split("--"))
-			elif '-' in pages:
-				pages = "pp. " + "&ndash;".join("-".split(pages))
-			else:
-				pages = "p. " + pages
 			pubinfo += pages
-		result = templates['journal']%dict(citekey=citekey,author=author,year=year,title=title,pubinfo=pubinfo)
-	elif entry.type.lower() in ["incollection","book"]:
-		if entry.type.lower() == "book":
+		#result = html_templates['journal']%dict(citekey=citekey,author=author,year=year,title=title,pubinfo=pubinfo)
+		info['pubinfo'] = pubinfo
+		result = html_templates[entry_type]%info
+	elif entry_type in ["incollection","book"]:
+		if entry_type == "book":
 			if not author and entry['editor']:
 				author = entry['editor'] + " (ed)"
-			title = "<span class='booktitle'>%(title)</span>,"%(title)
-		else: #-> entry.type.lower() == "incollection":
-			if editor:
-				auted = "%(author)s, in %(editor)s (ed)"%(author,editor)
-				title="<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,"%(title,booktitle)
-		pubinfo="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(address,publisher,isbn)
-		result = templates['book']%dict(citekey=entry.citekey,auted=auted,year=year,titleinfo=titleinfo,pubinfo=pubinfo)
+			title = "<span class='booktitle'>%s</span>,"%(title)
+		else: #-> entry_type == "incollection":
+			if entry['editor']:
+				info['auted'] = "%(author)s, in %(editor)s (ed)"%(entry)
+				info['title']="<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,"%(entry)
+		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(entry)
+		#result = html_templates[entry_type]%dict(citekey=entry.citekey,auted=auted,year=year,titleinfo=titleinfo,pubinfo=pubinfo)
+		result = html_templates[entry_type]%info
 	return result
 
 		  
@@ -295,17 +437,21 @@ def main():
 
 
 	parser = OptionParser(usage=usage, version ="%prog " + __version__)
+	parser.add_option("-f", "--format", action="store",
+	                  dest="format", default='b',
+					  help="set format(s) of output\nb: BibTeX\nh: HTML\nt: text", metavar="FORMAT")
 	parser.add_option("-m", "--more_fields", action="store_true",
 					  dest="more_fields", default = False, help="input less common fields")
 	parser.add_option("-M", "--MORE_FIELDS", action="store_true",
 					  dest="MORE_FIELDS", default = False, help="input all relevant fields")
-	parser.add_option("-H", "--HTML", action="store_true",
-					  dest="HTML", default = False, help="print HTML formatted to stdout")
-	parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
+	parser.add_option("-v", "--verbose", action="store_true",
+	                  dest="verbose", default=False,
 					  help="Print INFO messages to stdout, default=%default")
-	parser.add_option("-V", "--very_verbose", action="store_true", dest="very_verbose", default=False,
+	parser.add_option("-V", "--very_verbose", action="store_true",
+	                  dest="very_verbose", default=False,
 					  help="Print DEBUG messages to stdout, default=%default")
-	parser.add_option("-t", "--type", action="store", dest="entry_type", default='',
+	parser.add_option("-t", "--type", action="store",
+	                  dest="entry_type", default='',
 					  help="set type of entry", metavar="TYPE")
 	parser.add_option("-o", "--outfile", action="store", type="string", dest="outfile",
 					  help="Write formatted references to FILE", metavar="FILE")
@@ -315,7 +461,7 @@ def main():
 					  help="backup FILE to FILE.bak, default=%default")
 
 	"""
-	#not implemented
+	#TODO:
 	example usage: %prog -no new_bibfile BIB_DATABASE
 	parser.add_option("-m", "--maxnames", action="store", type="int",
 					  dest="maxnames",  default = 2, help="Max names to add to key")
@@ -380,14 +526,17 @@ def main():
 		if options.overwrite or not os.path.exists(options.outfile):
 			output = open(options.outfile,'w')
 		else:
-			print "Appending to %s.  (Use -n option to nuke (overwrite) the old output file.)"%options.outfile
+			add2bib_logger.info("Appending to %s.\n(Use -n option to nuke (overwrite) the old output file.)"
+			                     %options.outfile)
 			output = open(options.outfile,'a')
 
 	entry = make_entry(options.entry_type,options.more_fields,options.MORE_FIELDS)
 	output.write(str(entry))
 	print entry
-	if options.HTML:
-		print html_format(entry)
+	if 'h' in options.format:
+		output.write( html_format(entry) )
+	if 't' in options.format:
+		output.write( text_format(entry) )
 
 if __name__ == '__main__':
 	main()
