@@ -15,23 +15,22 @@
 :Address: 123 Example Street
           Example, EX  Canada
           A1B 2C3
-:Contact: try@schwilk.org
-:date: $Date: 2004/020/04 $
+:Contact: http://www.pricklysoft.org
+:date: 2006-09-15
 :status: This is a "work in progress"
-:revision: $Revision: 0.1 $
-:version: 1
-:copyright: This document has been placed in the public domain. You
-            may do with it as you wish. You may copy, modify,
-            redistribute, reattribute, sell, buy, rent, lease,
-            destroy, or improve it, quote it at length, excerpt,
-            incorporate, collate, fold, staple, or mutilate it, or do
-            anything else to it that your or anyone else's heart
-            desires.
+:version: 1.1
+:copyright:
 
 ------------------
 Introduction
 ------------------
 
+This introction will simply demonstrate some citations which can be
+found in the `schwilk.bib` database.  To expand these citations or
+produce a bibliography list, use `bib4txt.py`.  The output should
+look like `testout.txt`.
+
+Now for some citations. 
 The maintenance of diversity stands as one of the great theoretical
 challenges of ecology. The principle of competitive exclusion states
 that two ecologically identical species cannot coexist indefinitely.
@@ -39,15 +38,7 @@ Niche theory provided the first solution to the coexistence problem,
 based on the differentiation in resource use among co-existing
 species and associated reduction in the intensity of interspecific
 competition [MacArthur+Levins:1967, MacArthur:1970, Tilman:1980]_ .
- A variety of other models have been proposed that lead
-to maintenance of diversity, such as competition-colonization
-trade-offs, storage effects, and chaotic oscillations
-A critical feature shared by all of these
-models is that the mechanisms of coexistence are based on differences
-in demographic or ecological attributes of the species, so they
-explicitly predict the maintenance of functional diversity (i.e.,
-differences in resource use or niche parameters) in parallel with
-species diversity.
+
 
 In contrast, non niche-based models of diversity have
 examined the role of stochastic dynamics and intrinsic
@@ -56,34 +47,9 @@ species' ecological parameters. Island biogeography theory was an
 early example of a non niche-based theory.
 Most recently, [Hubbell:2001]_ has introduced a neutral or
 symmetric model of diversity based on stochastic demographic dynamics
-in a large meta-community landscape. In Hubbell's model, speciation
-in the regional species pool counteracts random demographic
-extinctions, and migration between communities maintains diversity in
-the face of random local extirpation [Mutch:1970]_. The neutrality assumption is
-that all species are demographically identical, and therefore species
-diversity is maintained without any contribution of functional or
-demographic diversity among species. This model is the culmination of
-a long debate on the role of stochastic and non-equilibrium processes
-in plant community ecology: processes that can maintain species
-numbers with unstable turnover of species identity and relative
-abundance
+in a large meta-community landscape. 
 
-These contrasting models offer very different explanations [Ackerly:1999, Ackerly:2000]_ for
-diversity, and predictions regarding the factors that will influence
-diversity levels. The symmetric model explains diversity in terms of
-the balance of speciation/extinction in the meta-community and
-immigration/extirpation in the local community.  The key attribute of
-individual communities is their absolute size, in numbers of
-individuals (`J`), and diversity is a monotonically increasing
-function of `J`.  Total population size has long been recognized as
-a key factor in population biology and population genetics, where
-mutation and selection act as the diversity creating and culling
-processes analogous to speciation and extinction. In community
-ecology, however, the number of individuals has played a role in
-empirical analyses implicitly through area or explicitly through
-sample size, but total community size has not played a central role
-in community ecology theory [Bond+van_Wilgen:1996, Schwilk+Kerr:2002, Schwilk:2003]_.
-
+That should be enough for a test.
 
 
 

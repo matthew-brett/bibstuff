@@ -6,7 +6,7 @@ To fill a BibFile instance, bfi, call bibgrammar.Parse(src, bfi).
 
 
 :author: Dylan Schwilk (esp. BibFile)
-:contact: 
+:contact: http://www.schwilk.org
 :author: Alan G Isaac (esp. BibEntry)
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Dylan Schwilk and Alan G Isaac
