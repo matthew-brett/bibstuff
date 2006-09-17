@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # bib4txt.py
 """
 Creates formatted references for a text document (useful for reStructuredText documents).
