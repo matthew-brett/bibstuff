@@ -209,10 +209,8 @@ class BibEntry(dict):
 		:note: self returns None if field missing (-> no KeyError)
 		:TODO: return BibName instance for each available name field??
 		:Parameters:
-		  `try_fields`: list of str
-		    list of field names to try sequentially; none empty filed -> name
-		  `entry_formatter`: EntryFormatter
-		    EntryFormatter instance to provide style information
+		  - `try_fields`: list of field names to try sequentially; none empty filed -> name
+		  - `entry_formatter`: EntryFormatter instance to provide style information
 		"""
 		if entry_formatter is None:
 			for field in try_fields:

@@ -124,13 +124,14 @@ optional2 = 'm',
 #def raw_input(arg,stuff = ['','M. Me and Y. You', '2006', 'My Title', 'jtrix', '2', '3', 'jan', '99--100']): return stuff.pop(0)
 
 
+# requires author *or* editor
 
-#Æ requires author *or* editor
 """
 address(a),author(A),booktitle(b),chapter(c),crossref(x),edition(e),editor(E),howpublished(h),institution(I),isbn(i),journal(j),key(k),month(m),note(z),number(n),organization(O),pages(p),publisher(P),school(S),series(s),title(T),type(t),url(u),volume(v),year(y),unused(fgl)
 
-Will not current provide the crossref field since crossrefs must be *pre*pended. (Just warn?)
+Will not current provide the crossref field since crossrefs must be prepended. (Just warn?)
 """
+
 def make_entry(choosetype='',options=False,extras=False):
 	"""
 	:author: Alan G. Isaac

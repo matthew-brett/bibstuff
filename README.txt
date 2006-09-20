@@ -6,7 +6,7 @@
 :web site: http://www.pricklysoft.org
 :source code: http://code.google.com/p/bibstuff/
 :date: 2006-09-13
-:version: 1.8
+:version: 1.7.3
 
 BibStuff License
 ================
@@ -21,21 +21,19 @@ Simply type 'python setup.py install' in the unpacked directory.
 
 
 Command-line tools (scripts)
-===========================
+============================
  
 These tools are installed in you python scripts directory or they can
 be run directly from where they were unpacked. Each of these tools has
 a command line interface and provides the -h option to describe usage.
 
    * biblabel.py 
-
       Creates unique keys for entries bibtex database(s).  default keys
       look like Schwilk+Isaac:2006 or Smith+Johnson+etal:1999 Command
       line options allow you to change the default behavior.
 
 
    * bibsearch.py
-
       Search through a bibtex database for entries by key or by
       regular expression.  Results can be output as a (minimally)
       formatted reference, a full bibtex entry, or by key.  Note that
@@ -44,7 +42,6 @@ a command line interface and provides the -h option to describe usage.
 
 
    * bib4txt.py
-
       Creates formatted references for a text dodument.  (Useful for
       reStructuredText documents.) Interacts with a Bibtex style
       database file (without using LaTeX or bibtex).  The source text
@@ -57,13 +54,11 @@ a command line interface and provides the -h option to describe usage.
 
 
    * bibname.py
-
       Create list of author/editor names for a bibtex database.
       Options allow you to specify a name template.  See the module
       documentation for details.
 
    * jabbrev.py
-
       Replaces all journal names in a bibtex file with alternative
       names (abbreviations).  The abbreviation file should be in the
       format: <ABBREVIATION> = <LONG_NAME> (see
@@ -74,8 +69,7 @@ a command line interface and provides the -h option to describe usage.
       and produce a format readable by jabbrev.py
 
 
-   * reflist.py -
-
+   * reflist.py
       Creates a list of keys from a latex .bbl file.  This tool simply
       extracts reference keys from the bbl file.  This is useful for
       creating a bibtex database limited to those references which
@@ -100,8 +94,9 @@ No tests available yet
 Related Projects
 ================
 
-See the excellent discussion in chapter 13 section 4 of
-*The Latex Companion*.
+For more information on BibTeX, see the excellent discussion in
+chapter 13 section 4 of `The LaTeX Companion`_.
 
+..	_license.txt: ./license.txt
 
-.. _license.txt: ./license.txt
+..	_`The LaTeX Companion`: http://www.awprofessional.com/bookstore/product.asp?isbn=0201362996&rl=1

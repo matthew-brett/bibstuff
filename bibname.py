@@ -126,10 +126,11 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		"""initialize a BibName instance
 		
 		:Parameters:
-		  `raw_name`: str
-		    the raw name (e.g., unparsed author field of a BibEntry instance)
-		  `from_field`: str
-		    the entry field for the raw name
+		  `raw_name` : str
+			    the raw name (e.g., unparsed author field of a BibEntry instance)
+		  `from_field` : str
+		      the entry field for the raw name
+		  
 		:note: 2006-08-02 add `from_field` argument (set by `BibEntry.make_names`)
 		"""
 		self.from_field = from_field
@@ -182,7 +183,9 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		return self.names_dicts
 
 	def parse_raw_names_parts(self):
-		"""Return None;
+		"""
+		Return None;
+		
 		create list of names_parts tuples in form: first , von, last, jr -> self.names_parts;
 		create list of names_dicts dict with keys: first , von, last, jr -> self.names_dicts.
 
@@ -190,9 +193,9 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		Parts are classified as first, von, last, jr.
 		The 'von' part is determined by lack of capitalization.
 
-		:todo: the names_groups structure is not being populated
-		correctly for all types of names.  This may need a more
-		detailed function than the nice on-liner used below.
+		:todo:	the names_groups structure is not being populated
+				correctly for all types of names.  This may need a more
+				detailed function than the nice on-liner used below.
 		"""
 		tuple_list = []
 		for n in self.raw_names_parts :
