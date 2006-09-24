@@ -195,7 +195,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 
 		:todo:	the names_groups structure is not being populated
 				correctly for all types of names.  This may need a more
-				detailed function than the nice on-liner used below.
+				detailed function than the nice one-liner used below.
 		"""
 		tuple_list = []
 		for n in self.raw_names_parts :

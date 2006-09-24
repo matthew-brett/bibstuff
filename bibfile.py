@@ -192,7 +192,7 @@ class BibEntry(dict):
 		return result
 
 	def get_names(self, entry_formatter=None, try_fields=None):
-		"""return (BibName-object if possible else string
+		"""return (BibName-object if possible else string)
 
 		:note: 2006-08-09 matching change to `make_names`, no longer sets `self._names`
 		"""
@@ -202,15 +202,16 @@ class BibEntry(dict):
 		return self.make_names(entry_formatter, try_fields=try_fields)
 
 	def make_names(self, entry_formatter=None, try_fields=None):
-		""" return BibName-object if possible else string
+		"""return (BibName-object if possible else string)
 		(from "raw" names).
 		
-		:note: 2006-08-02 altered to return BibName instance and not set _names
+		:change: 2006-08-02 altered to return BibName instance and not set _names
 		:note: self returns None if field missing (-> no KeyError)
+		:note: this method introduces the only dependence on simpleparse (via bibname)
 		:TODO: return BibName instance for each available name field??
 		:Parameters:
-		  - `try_fields`: list of field names to try sequentially; none empty filed -> name
 		  - `entry_formatter`: EntryFormatter instance to provide style information
+		  - `try_fields`: list of field names to try sequentially; none empty filed -> name
 		"""
 		if entry_formatter is None:
 			for field in try_fields:
