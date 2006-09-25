@@ -13,6 +13,7 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 :license: MIT (see `license.txt`_)
 :date: 2006-08-14
 :since: 2006-08-04
+:change: 2006-09-24 move isbn to optional2 for books (not strictly correct, but often wanted)
 :change: 2006-08-04 eliminated that final comma (believe illegal)
 :change: 2006-08-24 add make_entry_citekey
 :change: 2006-08-24 add label styles
@@ -58,8 +59,8 @@ extras = 'kiu'
 book = dict(
 required = 'ÆTPY',
 optional1 = 'ae',
-optional2 = 'vnsmz',
-extras = 'kiu'
+optional2 = 'vnsmzi',
+extras = 'ku'
 )
 booklet = dict(
 required = 'T',
@@ -248,7 +249,7 @@ def make_entry_citekey(entry, used_citekeys,style=label_style1):
 	try:
 		label_template = style[entry_type]
 	except KeyError:
-		label_template = style[default_type]
+		label_template = style['default_type']
 
 	name_template = style['name_first']  #:TODO: ? adjust this ?
 	max_names = style['max_names']
