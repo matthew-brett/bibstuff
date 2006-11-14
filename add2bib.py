@@ -11,12 +11,13 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Alan Isaac
 :license: MIT (see `license.txt`_)
-:date: 2006-08-14
+:date: 2006-09-25
 :since: 2006-08-04
 :change: 2006-09-24 move isbn to optional2 for books (not strictly correct, but often wanted)
 :change: 2006-08-04 eliminated that final comma (believe illegal)
 :change: 2006-08-24 add make_entry_citekey
 :change: 2006-08-24 add label styles
+:TODO: eliminate simpleparse dependency (via bibfile.BibEntry)
 :TODO: fix make_entry_citekey to use one name + 'etal'? or just '+'?
 :TODO: add checking for unique key
 :TODO: allow multiple entries

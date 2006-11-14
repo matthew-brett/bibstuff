@@ -262,7 +262,7 @@ class BibFile( DispatchProcessor ):
 			bibfile_logger.warning("Database entries not found for the following keys:\n"+"\n".join(bad_keys))
 		if discard:
 			result = [pair[1] for pair in temp if pair[1]]
-		else: #keep None when occurse in entry list
+		else: #keep None when occurs in entry list
 			result =  [pair[1] for pair in temp]
 		return result
 		

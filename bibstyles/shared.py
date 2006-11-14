@@ -316,9 +316,8 @@ class CitationManager(object):
 		self.citekeys = keys
 		self.citation_template = citation_template
 		self.entry_formatter=EntryFormatter(citation_template)
-		self.sortkey = sortkey
-		if self.sortkey:
-			self._entries.sort(key=sortkey)
+		if sortkey: #TODO: ?? remove this possibility ??
+			self.sortkey = sortkey
 		self.citeref_processor = None
 
 	def __str__(self):
@@ -347,6 +346,7 @@ class CitationManager(object):
 		"""
 		self._keys = keys
 		if keys:
+			#discard keys that do not have an entry
 			self._entries = self.find_entries(keys,discard=True)
 		else:
 			self._entries = []
@@ -355,6 +355,7 @@ class CitationManager(object):
 
 	def find_entries(self,citekeys=None,discard=True):
 		"""return all entries if citekeys==None else matching entries
+		discard=True -> discard keys that do not have a bib entry
 		"""
 		if citekeys is None:
 			citekeys = self.citekeys
@@ -368,7 +369,7 @@ class CitationManager(object):
 			return self._entries[:]
 		else:
 			return self.find_entries(citekeys)
-	#note: citation_rank uses unit-based indexing (so styles don't have to offset it)
+	#note: citation_rank uses unit-based indexing!! (so styles don't have to offset it)
 	def get_citation_rank(self,entry,keys=None):
 		if keys is None:
 			keys = self._keys
@@ -381,13 +382,13 @@ class CitationManager(object):
 
 	def sortkey(self,entry):
 		"""
-		:note:the sort key is a style consideration and so must be provided by the style;
-		      therefore, you must usually OVERRIDE this default sort key
+		:note: the sort key is a style consideration and so must be provided by the style;
+		       therefore, you must usually OVERRIDE this default sort key
 		"""
 		result = entry.get_names().get_last_names()
 		result.append(entry['year'])
 		return result
-	def sort(self,sortkey=None):
+	def sort(self,sortkey=None): #TODO: not currently using this!
 		if sortkey:
 			self.sortkey = sortkey  # NB!
 		if self.sortkey:
@@ -408,10 +409,11 @@ class CitationManager(object):
 		"""
 		shared_logger.debug("make_citations: args are:"+str((entries,citation_template)))
 		if entries is None:
-			if not self._entries:
+			if not self._entries: #get entries matching cite keys found by citeref_processor
 				self._entries = self.find_entries(self.citeref_processor.all_citekeys)
 			entries = self._entries
 			shared_logger.debug("make_citations: entries are:"+str(self._entries))
+		entries.sort(key=self.sortkey)  #TODO!!! use more sensible approach (also: 2.4 dependency)
 		if citation_template is None:
 			citation_template = self.citation_template
 		citation_sep = citation_template['citation_sep']
@@ -436,10 +438,10 @@ class CitationManager(object):
 
 class CiteRefProcessor( simpleparse.dispatchprocessor.DispatchProcessor ):
 	"""Formats inline citations and substitutes them into text.
-	Stores all cite keys in `all_citekeys` (a list, to record citaiton order).
+	Stores all cite keys in `all_citekeys` (a list, to record citation order).
 	Can store `result` as original text with substituted citation references.
 
-	:note: based on the defunct addrefs CitationFormatter class
+	:note: based on the defunct 'addrefs.py' CitationFormatter class
 	"""
 	def __init__(self, citation_manager):
 		"""
@@ -536,7 +538,7 @@ class EntryFormatter(object):
 		#shared_logger.debug("name_name_sep: "+str(template['name_name_sep']))
 		#shared_logger.debug("format_citation_names: result = "+result)
 		return result
-	#TODO: this deserves substantial enhancement
+	#TODO: this deserves substantial enhancement, at the least for journal handling for articles
 	def format_citation_details(self, entry, citation_template=None):
 		if citation_template is None:
 			citation_template = self.citation_template

@@ -1,21 +1,32 @@
 #!/usr/bin/env python
 # bib4txt.py
 """
-Creates formatted references for a text document (useful for reStructuredText documents).
+Creates formatted references for a text document.
+Uuseful for reStructuredText documents.
 Interacts with a Bibtex style database file
 (without using LaTeX or bibtex).
 
+Dependencies:
+
+- Python 2.4 or higher
+- SimpleParse (binaries available!)
+- BibStuff (which you should have if you have this)
+
 The source text file should include citation references in reStructuredText format:
-a citation key enclosed in brackets, followed by an underscore.
+http://docutils.sourceforge.net/docs/user/rst/quickref.html#citations
+Roughly: a citation key enclosed in brackets, followed by an underscore.
 Citation keys cannot be all digits.
+
 The source document can be output with formatted citation references substituted for the citation keys.
 In this case, the reference list is added to the end of the file.   
 
 A slight modification of the reStructuredText ``cite`` directive is currently allowed:
 
 - Most characters are permitted.
-  E.g., ``[Schwilk+Isaac:2006]_`` is not currently legal in reST but will be recognized.
+  E.g., ``[Schwilk+Isaac:2006]_`` is not currently (2006) legal in reST but will be recognized by bib4txt.
+  Comment: it is expected that this will become legal reST in the near future.
 - Comma separted multiple keys are permitted in a cite:  e.g., ``[Schwilk1999,Isaac2000]_``
+  This is not legal reST.
 
 The intent is for the formatted references to be written to a separate file.
 You can then include this in your reST document with an ``include`` directive.
@@ -32,16 +43,18 @@ How it works:
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Alan G. Isaac
 :license: MIT (see `license.txt`_)
-:note: essentially an extensive refactoring and enhancement of addrefs.py, by Dylan Schwilk
+:note: bib4txt is an extensive refactoring and enhancement of addrefs.py, by Dylan Schwilk
 :note: Python 2.4 dependencies: sets, sorted
 :TODO: address the TODOs in the associate BibStuff files, especially in bibstyles/shared.py
+:TODO: allow multiple bibfiles
+:TODO: when assuming 2.5 is finally OK, use 'with' for file handling
 
 .. _EBNF: http://www.garshol.priv.no/download/text/bnf.html
 .. _SimpleParse: http://simpleparse.sourceforge.net/
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
-__version__ = "1.1"
+__version__ = "1.1.1"
 __needs__ = '2.4'
 
 
@@ -86,10 +99,12 @@ def make_text_output(src_as_string,
 	#first: create a citation manager to handle the bibfile(s)
 	citation_manager = style.CitationManager([parsed_bibfile], keys=None, citation_template=style.CITATION_TEMPLATE)
 	#second: create CiteRefProcessor object to process cites during src parsing
+	#        (associate with the citation_manager)
 	cite_processor = bibstyles.shared.CiteRefProcessor(citation_manager)
-	#second: parse the text (taglist is a dummy container)
+	#third: parse the text (taglist is a dummy container)
 	taglist = src_parser.parse(src_as_string,processor=cite_processor)
-	"""The cite_processor now holds the cite keys and the bibliography,
+	"""The cite_processor now holds the cite keys and
+	is associated with citation_manager which holds the bibliography,
 	so we can make a sorted entry list.  To do so need:
 		- the keys for the citations referenced
 		- a sort-key on which to base the sorting
@@ -114,8 +129,8 @@ def make_text_output(src_as_string,
 def main():
 	"""Command-line tool.  See bib4txt.py -h for help.
 	"""
-	# TODO: allow multiple bibfiles
 
+	#set default input and output
 	input = sys.stdin
 	output = sys.stdout
 	
@@ -158,7 +173,7 @@ def main():
 	# open output file for writing (default: stdout)
 	if options.outfile:
 		if os.path.exists(options.outfile) and not options.overwrite:
-			print "File exists:  use -n option to nuke (overwrite) the old output file."
+			print "File %s exists:  use -n option to nuke (overwrite) this file."%(options.outfile)
 			sys.exit(1)
 		output = open(options.outfile,'w')
 

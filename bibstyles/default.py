@@ -73,7 +73,6 @@ CITATION_TEMPLATE = default_templates.DEFAULT_CITATION_TEMPLATE.copy()
 
 
 class CitationManager(shared.CitationManager):
-
 	################### CITEREF FORMATTING #########################
 	#we set the 'format_inline_cite' method equal to the below 'format_inline_cite' function
 	def format_inline_cite(self, cite_key_list):
@@ -107,7 +106,7 @@ def format_inline_cite(entry_list, citation_manager):
 	name_date_sep = ' '
 	formatted_list = []
 	for entry in entry_list:
-		if not entry:
+		if not entry: #None replaces missing entries
 			formatted_list.append('?')
 		else:
 			year = entry['year']
@@ -137,8 +136,8 @@ def make_sort_key(bibentry, field_list):
 		# some special cases
 		if field.lower() in [ 'author','editor','names']:
 			result.append(' '.join(bibentry.get_names().get_last_names()).lower())
-		elif field.lower == "year":
-			result.append(int(year))
+		elif field.lower() == "year":
+			result.append(bibentry['year'])
 		else :
 			w = bibentry[field]
 			if w :
