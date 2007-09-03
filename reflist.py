@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-# File: reflist.py
+
 """
 Script to produces a list of reference keys from a .bbl file created by bibtex.
 
@@ -13,15 +13,16 @@ when submitting to a journal.
 :author: Alan G Isaac (small changes)
 :copyright: 2006 by Dylan Schwilk
 :license: MIT (see `license.txt`_)
-:date: 2006-08-01
+:date: $Date: 2007-09-03 $
 
 .. _license.txt: ./license.txt
 """
 
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
-__version__ = "1.5.1"
+__version__ = "1.5.3"
 __needs__ = '2.4'
+
 
 ###################  IMPORTS  ##################################################
 #import from standard library
@@ -32,7 +33,7 @@ reflist_logger = logging.getLogger('bibstuff_logger')
 ################################################################################
 
 
-if __name__ == '__main__':
+def main():
 	"""Command-line tool"""
         
 	from optparse import OptionParser
@@ -70,3 +71,8 @@ if __name__ == '__main__':
 			e = i.find('}', s)
 			print i[s+2:e]
 
+
+
+if __name__ == '__main__':
+
+        main()

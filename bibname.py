@@ -1,4 +1,4 @@
-#!usr/bin/python
+#! /usr/bin/env python
 #File: bibname.py
 """
 Parses bibtex-formatted author/editor names lists and provides
