@@ -37,6 +37,7 @@ from default import *
 
 
 ######## ADJUST CITATION TEMPLATE FOR NEW STYLE  ###########
+######## note: see help for bibstyles.shared.NameFormatter for name details
 CITATION_TEMPLATE.update(dict(
 indent_left=0,
 name_first = 'f{. }. |v |l|, j',

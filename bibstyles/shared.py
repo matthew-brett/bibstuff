@@ -78,8 +78,9 @@ class NamesFormatter(object):
 	:note: 2006-08-03 add initials keyword to ``__init__``
 	"""
 	def __init__(self, citation_template=None, template_list=None, initials=''):
+		"""Create name formatters for each template."""
 		shared_logger.debug("NamesFormatter.__init__ args: "+str((citation_template,template_list,initials)))
-		assert(template_list or citation_template,"Must provide formatting templates.")
+		assert (template_list or citation_template), "Must provide formatting templates."
 		if citation_template:
 			self.citation_template = citation_template
 			self.template_list = [citation_template['name_first'], citation_template['name_other']]
