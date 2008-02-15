@@ -27,6 +27,8 @@ Example::
 :date: 2006-08-19
 :see: reflist.py (useful in conjuction with bibsearch.py)
 :TODO: add additional search capabilities
+:TODO: add HTML output option
+:TODO: add output options (e.g., to file)
 
 .. _license.txt: ./license.txt
 """
@@ -81,14 +83,14 @@ def main():
 		bibsearch_logger.setLevel(logging.INFO)
 	if options.very_verbose:
 		bibsearch_logger.setLevel(logging.DEBUG)
-	bibsearch_logger.info("Script running.\nargs=%s\nstyle file=%s"
+	bibsearch_logger.debug("Script running.\nargs=%s\nstyle file=%s"
 	             %(args, options.stylefile)
 	            )
 
 	try:
 		src = open(args[0]).read()
 	except :
-		print "No bibtex file found."
+		print("Error: No bibtex file found.")
 		sys.exit(1)
 	# If no search string was sepcified was specified, read search strings from stdin
 	if len(args) < 2 :
@@ -112,23 +114,24 @@ def main():
 	else:
 		entrylist = parsed_bibfile.get_entrylist(searches,discard=True)
 
-	#output the list in desired format
-	result = ""
-	if options.citekey_output:
-		result = "\n".join(e.citekey for e in entrylist )
-	elif options.long_output :
-		result = "\n".join(str(e) for e in entrylist)
-	else :
-		# style based formated references
-		style_stmt = "import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0]
-		exec style_stmt in globals()
-		citation_manager = style.CitationManager([parsed_bibfile,],
-												 [e.citekey for e in entrylist],
-												 style.CITATION_TEMPLATE)
-		cite_processor = bibstyles.shared.CiteRefProcessor(citation_manager)
-		result = citation_manager.make_citations()
-				  
-	print result  #:TODO: add output options
+	if entrylist:  #found some matches -> output the list in desired format
+		result = ""
+		if options.citekey_output:
+			result = "\n".join(e.citekey for e in entrylist )
+		elif options.long_output :
+			result = "\n".join(str(e) for e in entrylist)
+		else :
+			# style based formated references
+			style_stmt = "import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0]
+			exec style_stmt in globals()
+			citation_manager = style.CitationManager([parsed_bibfile,],
+													 [e.citekey for e in entrylist],
+													 style.CITATION_TEMPLATE)
+			cite_processor = bibstyles.shared.CiteRefProcessor(citation_manager)
+			result = citation_manager.make_citations()
+		print(result)
+	else: #did not find any matches
+		bibsearch_logger.info("No matches.")
 
 
  

@@ -81,12 +81,13 @@ class BibEntry(dict):
 				if val.isalpha() and val.islower(): #:TODO: allow punctuation!!
 					addbraces = False  #i.e., assume it is a macro
 			elif key == 'month':
+				# always use month macros if possible
 				if val.lower() in monthslower_en + monthmacros_en:
 					val = val[:3].lower()
-					addbraces = False  #i.e., always use month macros if possible
-			elif key in ["year","number","volume"]:
+					addbraces = False
+			elif key in ("year","number","volume","chapter"):
 				try:
-					addbraces = int(val) and False
+					addbraces = not int(val)
 				except:
 					pass
 			if addbraces:
@@ -95,9 +96,9 @@ class BibEntry(dict):
 		str += ",\n".join(field_list)
 		str += '\n}\n'
 		return str
-	def __setitem__(self, key, val) :
+	def __setitem__(self, key, val):
 		key = key.lower()
-		dict.__setitem__(self,key,val)
+		dict.__setitem__(self, key, val)
 		if key == "key":
 			bibfile_logger.info("Setting 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		if key not in self._fields and key not in ["citekey","type"] and val:

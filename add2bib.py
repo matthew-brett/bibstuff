@@ -51,6 +51,12 @@ entry_types = ("article","booklet","book","conference","inbook","incollection","
 valid_fields = dict(
 )
 
+"""
+author or editor (Æ), author(A), address(a), booktitle(b), chapter(c), crossref(x), edition(e), editor(E), howpublished(h), institution(I), isbn(i), journal(j), key(k), month(m), note(z), number(n), organization(O), pages(p), publisher(P), school(S), series(s), title(T), type(t), url(u), volume(v), year(y), unused(fgl)
+
+Currently will not provide the crossref field since crossrefs must be prepended. (Just warn?)
+"""
+
 article = dict(
 required = 'ATjY',
 optional1 = 'vnpm',
@@ -60,8 +66,8 @@ extras = 'kiu'
 book = dict(
 required = 'ÆTPY',
 optional1 = 'ae',
-optional2 = 'vnsmzi',
-extras = 'ku'
+optional2 = 'vnszi',
+extras = 'kmu'
 )
 booklet = dict(
 required = 'T',
@@ -126,13 +132,6 @@ optional2 = 'm',
 #def raw_input(arg,stuff = ['','M. Me and Y. You', '2006', 'My Title', 'jtrix', '2', '3', 'jan', '99--100']): return stuff.pop(0)
 
 
-# requires author *or* editor
-
-"""
-address(a),author(A),booktitle(b),chapter(c),crossref(x),edition(e),editor(E),howpublished(h),institution(I),isbn(i),journal(j),key(k),month(m),note(z),number(n),organization(O),pages(p),publisher(P),school(S),series(s),title(T),type(t),url(u),volume(v),year(y),unused(fgl)
-
-Will not current provide the crossref field since crossrefs must be prepended. (Just warn?)
-"""
 
 def make_entry(choosetype='',options=False,extras=False):
 	"""
