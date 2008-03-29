@@ -61,6 +61,7 @@ class BibEntry(dict):
 	
 	:note: 2006-07-25 completely refactored; now subclasses dict and no longer uses seqdict.
 	:note: 2006-08-10 use 'citekey' instead of 'key' since BibTeX allows a 'key' field
+	:note: 2008-03-29 'entry_type' instead of 'type' since BibTeX allows a 'type' field
 	"""
 	def __init__(self,*args,**kwargs):
 		dict.__init__(self,*args,**kwargs)
@@ -70,7 +71,7 @@ class BibEntry(dict):
 		
 		:note: 2006-08-11:eliminate final comma, handle months-> macro and journal macros
 		"""
-		str = '@%s{%s,\n' % (self.type.upper() , self.citekey)
+		str = '@%s{%s,\n' % (self.entry_type.upper() , self.citekey)
 		mlen = max( len(key_str) for key_str in self._fields )  # for pretty format
 		field_list = []
 		for key in self._fields:
@@ -101,7 +102,7 @@ class BibEntry(dict):
 		dict.__setitem__(self, key, val)
 		if key == "key":
 			bibfile_logger.info("Setting 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
-		if key not in self._fields and key not in ["citekey","type"] and val:
+		if key not in self._fields and key not in ["citekey","entry_type"] and val:
 			self._fields.append(key)
 	def __getitem__(self, key):
 		if key == "key":
@@ -122,11 +123,11 @@ class BibEntry(dict):
 		except ValueError:
 			pass
 
-	def set_type(self,str):
-		self["type"] = str.lower()  #:note: type stored as lowercase
-	def get_type(self):
-		return self["type"]
-	type = property(get_type, set_type, None, "property: 'type'")
+	def set_entry_type(self,str):
+		self["entry_type"] = str.lower()  #:note: entry_type stored as lowercase
+	def get_entry_type(self):
+		return self["entry_type"]
+	entry_type = property(get_entry_type, set_entry_type, None, "property: 'entry_type'")
 
 	def set_citekey(self, str):
 		self["citekey"] = str
@@ -284,7 +285,7 @@ class BibFile( DispatchProcessor ):
 		"""return a number as a string"""
 		return buffer[start:stop]
 
-	def type( self, (tag,start,stop,subtags), buffer ):
+	def entry_type( self, (tag,start,stop,subtags), buffer ):
 		"""Return the entry type"""
 		return getString((tag,start,stop,subtags), buffer)
 
@@ -309,7 +310,7 @@ class BibFile( DispatchProcessor ):
 		"""Process the bibentry and its children.
 		"""
 		entry = BibEntry()
-		entry.type = dispatch(self, subtags[0], buffer)
+		entry.entry_type = dispatch(self, subtags[0], buffer)
 		entry.citekey  = dispatch(self, subtags[1], buffer)
 		for field in subtags[2][3] :
 			#bibfile_logger.debug("entry: ready to add field: "+str(dispatch(self, field, buffer)))
@@ -325,10 +326,10 @@ class BibFile( DispatchProcessor ):
 		if  the_type.upper() != 'STRING' :
 			# it looks like  a macro, but is not: could be a regular entry with no key
 			lineno = lines(0, start, buffer)+1
-			bibfile_logger.warning("Entry at line %d has macro syntax, but type is %s" % (lineno ,  the_type))
+			bibfile_logger.warning("Entry at line %d has macro syntax, but entry_type is %s" % (lineno ,  the_type))
 			if not __strict__: # we can add a dummy key and treat this entry as a regular entry
 				entry = BibEntry()
-				entry.type = dispatch(self, subtags[0], buffer)
+				entry.entry_type = dispatch(self, subtags[0], buffer)
 				entry.citekey  = 'KEY'  # dummy key -- or should we be strict?
 				for field in subtags[1][3] :
 					k,v = dispatch(self, field, buffer)
@@ -347,7 +348,7 @@ class BibFile( DispatchProcessor ):
 		the_type = getString(subtags[0], buffer)
 		lineno = lines(0,start,buffer)+1
 		if  the_type.upper() != 'PREAMBLE' :
-			bibfile_logger.warning("Entry at line %d has preamble syntax but type is %s" % (lineno,the_type))
+			bibfile_logger.warning("Entry at line %d has preamble syntax but entry_type is %s" % (lineno,the_type))
 		else :
 			bibfile_logger.warning("Preamble entry on line %d:" % lineno + "\n" + buffer[start:stop])
 
@@ -356,7 +357,7 @@ class BibFile( DispatchProcessor ):
 		the_type = getString(subtags[0], buffer)
 		lineno = lines(0,start,buffer)+1
 		if  the_type.upper() != 'COMMENT' :
-			bibfile_logger.warning("Entry at line %d has comment syntax but type is %s" % (lineno,the_type))
+			bibfile_logger.warning("Entry at line %d has comment syntax but entry_type is %s" % (lineno,the_type))
 		else :
 			bibfile_logger.warning("Comment entry on line %d:" % lineno + "\n" + buffer[start:stop])
 

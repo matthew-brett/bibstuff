@@ -544,10 +544,10 @@ class EntryFormatter(object):
 		if citation_template is None:
 			citation_template = self.citation_template
 		try:
-			type_template = citation_template[entry.type]  #:note: recall type was stored as lowercase
-		except KeyError:  #no template exists for this type -> use default
+			type_template = citation_template[entry.entry_type]  #:note: recall entry_type was stored as lowercase
+		except KeyError:  #no template exists for this entry_type -> use default
 			type_template = citation_template['default_type']
-			shared_logger.warning("Unknown entry type: "+entry.type+". Using default format.")
+			shared_logger.warning("Unknown entry type: "+entry.entry_type+". Using default format.")
 		#:note: entry will return None instead of KeyError
 		result = type_template%entry
 		return result
@@ -572,8 +572,8 @@ class EntryFormatter(object):
 			if not raw_names:
 				shared_logger.warning("EntryFormatter.make_names: empty field -> empty BibName object.")
 		#raw_names = self['author'] or self['editor'] #TODO: distinguish author and editor
-		elif entry.type in names_source:
-			for field in names_source[entry.type]:
+		elif entry.entry_type in names_source:
+			for field in names_source[entry.entry_type]:
 				raw_names = entry[field]
 				if raw_names:
 					break

@@ -60,6 +60,7 @@ initials
 DEFAULT_CITATION_TEMPLATE = dict(
 book = '%(year)s. %(title)s.',
 article  = '%(year)s. %(title)s. %(journal)s %(volume)s, %(pages)s.',
+techreport  = '(%(year)s) "%(title)s". %(type)s %(number)s. pp. %(institution)s.',
 misc = '%(year)s.  %(title)s.',
 default_type = '  %(year)s. %(title)s.',
 name_first = 'v |l,| j,| f',
