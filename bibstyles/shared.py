@@ -5,11 +5,12 @@ especially for bib4txt.py.
 
 :author: Alan G Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
-:copyright: 2006 by Alan G. Isaac
+:copyright: 2008 by Alan G. Isaac
 :license: MIT (see `license.txt`_)
-:date: 2006-08-01
+:since: 2006-08-01
+:date: 2008-03-31
 
-.. _license.txt: ./license.txt
+.. _license.txt: ../license.txt
 """
 __docformat__ = "restructuredtext en"
 __version__ = "1.3"
@@ -96,11 +97,6 @@ class NamesFormatter(object):
 			self.name_name_sep = (', ', ', and ')
 		self.formatters = [ NameFormatter(template,self.initials) for template in self.template_list ]
 
-	"""
-	def get_formatted(self,names):
-		shared_logger.warn("NamesFormatter.get_formatted is deprecated; use 'format_names'")
-		return self.format_names(names)
-	"""
 	#get all names, formatted as a string
 	def format_names(self,names):
 		"""Return `names` as a formatted string.
@@ -122,6 +118,7 @@ class NamesFormatter(object):
 		"""
 		shared_logger.debug("NamesFormatter.format: Type of names data is "+str(type(names)))
 		#get the list of name_dicts from the BibName instance
+		#   each name_dict in the list has the keys: first , von, last, jr
 		names_dicts = names.get_names_dicts()
 		num_names = len(names_dicts)
 
@@ -161,16 +158,20 @@ class NameFormatter(object):
 	-------------------------
 
 	The name template takes some explanation.
+
 	Name parts are referred to by part-designator, which is just the part's first letter:
 	(v)on, (l)last, (j)r or (f)irst.
+	The designator may be capitalized for force upper-casing the entire part.
+
 	Each name part may have one associated section in a name formatting template.
-	Sections are separated by '|' and must include a part-designator (one of 'fvlj').
+	Sections are separated by '|' and *must* include a part-designator (one of 'FVLJfvlj').
 	The presumption is that part-designators will be the only alphabetic characters in a name template.
+
 	A section will generate output iff the name part for that section exists.
 	Each section may have a partsep
 	(in curly braces, immediately following the part-designator)
 	and other characters
-	(which may not be any of 'fvlj').
+	(which may not be any of 'fvljFVLJ').
 	The partsep indicates what should separate multiple tokens of the same part
 	(e.g., two part last names, or 'van der' for the (v)on part).
 	A part separator will replace the default space to separate multiple tokens in a part.
@@ -178,10 +179,11 @@ class NameFormatter(object):
 
 	For example::
 
-		   "v{~}~|l,| j,| f{. }." with initials=True produces:
-		   "McFeely, J. W." or "van~der~Stadt, jr, C. M."
+		   "v{~}~|l,| j,| f{. }." with initials='f' produces:
+		   "McFeely, J. W." or "van~der~Stadt, Jr, C. M."
 
 	:note: has a property -> must be new style class, inherit carefully
+	:note: 20080331 allow capital part-designators (FVLJ) to force capitalization
 	"""
 	def __init__(self, template, initials=''):
 		shared_logger.debug("NameFormatter.__init__ args: "+str((template,initials)))
@@ -192,11 +194,6 @@ class NameFormatter(object):
 		self.initials = initials
 		self.set_template(template)
 
-	"""
-	def get_formatted(self,name_data):
-		shared_logger.warn("NameFormatter.get_formatted is deprecated; use 'format_name'")
-		return self.format_name(name_data)
-	"""
 	#get one name, formatted
 	def format_name(self,name_data):
 		"""Return one name (stored in `name_data`) as a formatted string.
@@ -244,25 +241,33 @@ class NameFormatter(object):
 
 	def name_dict2formatted(self,name_dict):
 		"""Returns one fully formatted name, based on a name_dict.
+		#   the name_dict should have the keys: first , von, last, jr
 		"""
 		assert( len(name_dict['last'][0]) > 0 )
 		if name_dict['last'][0] == "others":
 			return "others"
 		shared_logger.debug("name_dict2formatted: name_dict is "+str(name_dict))
+		#get the partdict (that was produced from the name template)
+		#  recall that the partdict has keys: pre, post, partsep, parts_order
+		#  the parts_order value is a string with characters from "FVLJfvlj"
 		partdict = self.partdict
 		shared_logger.debug("name_dict2formatted: partdict is "+str(partdict))
 		result = ''
 		#name_dict has keys, and each value is a list (e.g., of one person's last names)
 		map_names_parts = dict(f='first', v='von', l='last', j='jr')
+		#change names to initials where requested
 		if self.initials:
 			name_dict = name_dict.copy()
-			for partcode in self.initials:
+			for partcode in self.initials.lower():
 				part_key = map_names_parts[partcode]
 				name_dict[part_key] = [s[0] for s in name_dict[part_key]]
 		for partcode in partdict['parts_order']:  #keep the parts in the template determined order
 			partsep = partdict[partcode]['partsep']
-			part = partsep.join(name_dict[map_names_parts[partcode]])
+			part = partsep.join(name_dict[map_names_parts[partcode.lower()]])
 			if part:
+				#force upper case if parcode is uppercase
+				if partcode.isupper():
+					part = part.upper()
 				result += partdict[partcode]['pre'] + part + partdict[partcode]['post']
 			shared_logger.debug("%s: %s"%(partcode,result))
 		return result
@@ -270,9 +275,9 @@ class NameFormatter(object):
 	def get_template(self):
 		return self._template
 	def set_template(self,template):
-		"""
-		sets the name formatting template *and* sets the associated partdict used for actual formatting
+		"""Return None.
 
+		sets the name formatting template *and* sets the associated partdict used for actual formatting 
 		"""
 		shared_logger.debug("NameFormatter.set_template args: "+str(template))
 		assert(isinstance(template,str),"Must provide a name-template string to make a NameFormatter object.")
@@ -282,16 +287,18 @@ class NameFormatter(object):
 
 	def template2dict(self,template):
 		"""
-		parse the name formatting template into a partdict to be used for actual formatting
+		parse the name formatting template into a partdict to be used for the actual formatting
 
-		:note: parsing a name template into a partdict is too trivial to turn to simpleparse, so just do it here
+		:note: parsing a name template into a partdict is trivial, so just do it here
+		:note: allow capital part id (to force capitalization)
 		"""
 		#to keep track of the order of the parts...
 		parts_order = ''
+		#split a name template into parts (each part shd have part-designator)
 		template_parts = template.split('|')
 		partdict = {}
 		for part in template_parts:
-			for partid in 'fvlj':
+			for partid in 'FVLJfvlj':
 				if partid in part:
 					parts_order += partid
 					pre, temp = part.split(partid)
@@ -549,7 +556,7 @@ class EntryFormatter(object):
 			type_template = citation_template['default_type']
 			shared_logger.warning("Unknown entry type: "+entry.entry_type+". Using default format.")
 		#:note: entry will return None instead of KeyError
-		result = type_template%entry
+		result = type_template % entry
 		return result
 	def pick_raw_names(self, entry, fields=None):
 		""" return BibName-object if possible else string

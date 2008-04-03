@@ -1,11 +1,11 @@
 #File: jass_style.py
 """
-Provides an examle of how to easily modify an existing style:
-Just import everything from that style, and then override
-what you wish to change.  In this case, we import from
-default.py, the default style.
-
 Style for the Journal of Artificial Societies and Social Simulation
+The JASSS page for authors__ claims they use the `Oxford style`__,
+but these are clearly different.
+
+__http://jasss.soc.surrey.ac.uk/admin/submit.html
+__http://www.usq.edu.au/library/help/ehelp/ref_guides/oxford.htm
 
 Examples (from the journal website) inconsistent in use of commas, quotes, ...
 
@@ -25,17 +25,16 @@ Examples (from the journal website) inconsistent in use of commas, quotes, ...
 	'A Common Protocol for Agent-Based Social Simulation'.
 	Journal of Artificial Societies and Social Simulation 9(1) http://jasss.soc.surrey.ac.uk/9/1/15.html. 
 
-:author: Alan G Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
-:copyright: 2008 by Alan G Isaac
+:author: Alan G Isaac
 :license: MIT (see `license.txt`_)
 :date: 2006-08-01
 
-.. _license.txt: ./license.txt
+.. _license.txt: ../license.txt
 """
 __docformat__ = "restructuredtext en"
 __author__  =   "Alan G. Isaac"
-__version__ = "0.5"
+__version__ = "0.7"
 __needs__ = '2.4'
 
 # import everything from a useful style
@@ -50,14 +49,17 @@ from default import *
 ######## note: see help for bibstyles.shared.NameFormatter for name details
 CITATION_TEMPLATE.update(dict(
 indent_left=3,
-name_first = 'v |l |f',
+name_first = 'V |L |f',
 name_other = 'v |l |f',
-article  = '(%(year)s) "%(title)s". %(journal)s %(volume)s. pp. %(pages)s. %(url)s',
-book = '(%(year)s) %(title)s. %(address)s: %(publisher)s.',
-techreport  = '(%(year)s) "%(title)s". %(type)s %(number)s. pp. %(institution)s.',
 initials = 'f',
-name_name_sep = (', ',', and '),
-max_citation_names = 3,
+max_citation_names = 5,
+name_name_sep = (', ',' and '),
+names_details_sep = ' ',
+article  = '(%(year)s) "%(title)s". *%(journal)s* %(volume)s, %(month)s %(year)s. pp. %(pages)s. %(url)s',
+inproceedings  = '(%(year)s) "%(title)s". In %(editor)s (Eds.) *%(booktitle)s*, %(address)s: %(publishers)s',
+incollection  = '(%(year)s) "%(title)s". In %(editor)s (Eds.) *%(booktitle)s*, %(address)s: %(publishers)s',
+book = '(%(year)s) *%(title)s*. %(address)s: %(publisher)s.',
+techreport  = '(%(year)s) "%(title)s". %(institution)s %(type)s %(number)s. %(url)s',
 ))
 
 
@@ -75,3 +77,4 @@ class CitationManager(shared.CitationManager):
 	# (choice of field_list is a formatting decision)
 	def sortkey(self,bibentry):
 		return make_sort_key(bibentry,['Author','Year'])
+

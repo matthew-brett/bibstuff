@@ -49,6 +49,7 @@ months_en = ('January','February','March','April','May','June',
              'July','August','September','October','November','December')
 monthslower_en = [m.lower() for m in months_en]
 monthmacros_en = [m[:3] for m in monthslower_en]
+MONTH_DICT = dict( zip(monthmacros_en, months_en) )
 #####################################################################
 
 
@@ -104,14 +105,19 @@ class BibEntry(dict):
 			bibfile_logger.info("Setting 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		if key not in self._fields and key not in ["citekey","entry_type"] and val:
 			self._fields.append(key)
-	def __getitem__(self, key):
-		if key == "key":
+	def __getitem__(self, field):  #field is usually a BibTeX field but can be a citekey
+		if field == "key":
 			bibfile_logger.info("Seeking 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		try:
-			return dict.__getitem__(self, key.lower())
+			result = dict.__getitem__(self, field.lower())
 		#:TODO: rethink this decision (but it is used for formatting)
+		#:note: 20080331 changed KeyError to return '' instead of None
 		except KeyError:
-			return None
+			result = ''
+		#:note: 20080331 add handling of month macros
+		if field == 'month' and result in monthmacros_en:
+			result = MONTH_DICT[result]
+		return result
 	def __delitem__(self,key) :
 		key = key.lower()
 		try:
@@ -224,11 +230,6 @@ class BibEntry(dict):
 			raw_names, field = entry_formatter.pick_raw_names(self,try_fields)
 		return  bibname.BibName(raw_names,from_field=field)  #names are in a BibName object
 
-	"""
-	def get_formatted(self, entry_formatter):
-		bibfile_logger.warning("BibEntry.get_formatted: deprecated; use 'formatted'.")
-		return self.format_with(entry_formatter)
-	"""
 	def format_with(self, entry_formatter):
 		bibfile_logger.debug("BibEntry.format_with: arg is:"+str(entry_formatter))
 		#ask the EntryFormatter to do it

@@ -8,9 +8,10 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
 :contact: http://www.schwilk.org
 :author: Alan G. Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
-:copyright: 2006 by Dylan Schwilk and Alan G Isaac
+:copyright: 2008 by Dylan Schwilk and Alan G Isaac
 :license: MIT (see `license.txt`_)
-:date: $Date: 2006/08/29 15:48:05 $
+:date: 2008-03-31
+:since: 2006-08-29
 
 :TODO: Change the EBNF description to allow for strings within a name.
        For example, the name {\AA}s currently fails.  The current version
@@ -89,9 +90,10 @@ bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 # ----------- Public Functions -----------------#
 
 
+'''
 #KEEP! and keep as separate bibname function
 # dschwilk 2006-09-13: can we delete this now?
-# still used by bibname.py and bibstyle.py (and tf addrefs.py)
+# still used by bibname.py and bibstyle.py?? (and tf addrefs.py??)
 def format_names_parts(names_parts, name_name_sep = (', ',' and '), formatter=None, template = 'v |l,| j,| f{. }.' , initials = True):
 	"""Format a list of names:  `format_name_parts` is applied to each name in list
 	according to `template`.
@@ -109,6 +111,7 @@ def format_names_parts(names_parts, name_name_sep = (', ',' and '), formatter=No
 	else :
 		result = ls[0]
 	return result
+'''
 
 
 # ----------------------------------------------------------
@@ -162,7 +165,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 
 	##############  HELPER FUNCTIONS  ######################
 
-	def get_names_parts(self) :  #:note: renamed
+	def get_names_parts(self):  #:note: renamed
 		"""
 		Return a list of name tuples,
 		one tuple per name,
@@ -172,11 +175,11 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 			self.parse_raw_names_parts()
 		return self.names_parts
 
-	def get_names_dicts(self) :  #:note: renamed
+	def get_names_dicts(self):  #:note: renamed
 		"""
 		Return a list of name dicts,
 		one dict per name,
-		having the fields: first , von, last, jr.
+		having the fields: first , von, last, jr
 		"""
 		if not self.names_dicts:
 			self.parse_raw_names_parts()

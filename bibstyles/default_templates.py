@@ -55,12 +55,15 @@ citeref_sep = ", ",
 """
 initials
 	string containing none, any, or all of f,v,l,j
+:TODO: add separate editor handling
 """
 
 DEFAULT_CITATION_TEMPLATE = dict(
-book = '%(year)s. %(title)s.',
-article  = '%(year)s. %(title)s. %(journal)s %(volume)s, %(pages)s.',
-techreport  = '(%(year)s) "%(title)s". %(type)s %(number)s. pp. %(institution)s.',
+book = '(%(year)s) *%(title)s*. %(address)s: %(publisher)s.',
+article  = '%(year)s. %(title)s. *%(journal)s* %(volume)s, %(pages)s.',
+techreport  = '(%(year)s) "%(title)s". %(institution)s %(type)s %(number)s. %(url)s',
+inproceedings  = '(%(year)s) "%(title)s". In %(editor)s (Eds.) *%(booktitle)s*, %(address)s: %(publishers)s',
+incollection  = '(%(year)s) "%(title)s". In %(editor)s (Eds.) *%(booktitle)s*, %(address)s: %(publishers)s',
 misc = '%(year)s.  %(title)s.',
 default_type = '  %(year)s. %(title)s.',
 name_first = 'v |l,| j,| f',
