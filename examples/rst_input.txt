@@ -12,48 +12,45 @@
 .. bibliographic fields (which also require a transform):
 
 :Author: Dylan Schwilk
+:Author: Alan G. Isaac
 :Address: 123 Example Street
           Example, EX  Canada
           A1B 2C3
-:Contact: http://www.pricklysoft.org
-:date: 2006-09-15
-:status: This is a "work in progress"
+:Contact: http://code.google.com/p/bibstuff/
+:date: 2008-05-21
+:status: for illustration only
 :version: 1.1
 :copyright:
 
-------------------
+
 Introduction
-------------------
+============
 
 This introction will simply demonstrate some citations which can be
-found in the `schwilk.bib` database.  To expand these citations or
-produce a bibliography list, use `bib4txt.py`.  The output should
-look like `testout.txt`.
+found in the ``example.bib`` database.  To expand these citations or
+produce a bibliography list, use ``bib4txt.py``.  The output should
+look like ``testout.txt``.
 
-Now for some citations. 
-The maintenance of diversity stands as one of the great theoretical
-challenges of ecology. The principle of competitive exclusion states
-that two ecologically identical species cannot coexist indefinitely.
-Niche theory provided the first solution to the coexistence problem,
-based on the differentiation in resource use among co-existing
-species and associated reduction in the intensity of interspecific
-competition [MacArthur+Levins:1967, MacArthur:1970, Tilman:1980]_ .
-
-
-In contrast, non niche-based models of diversity have
-examined the role of stochastic dynamics and intrinsic
-frequency-dependence, in the absence of explicit differences in
-species' ecological parameters. Island biogeography theory was an
-early example of a non niche-based theory.
-Most recently, [Hubbell:2001]_ has introduced a neutral or
-symmetric model of diversity based on stochastic demographic dynamics
-in a large meta-community landscape. 
+Now for some citations.  Originally reST only supported citation
+reference names that were valid HTML and XML names [isaac.schwilk-2010]_.
+Recently reST added support for colons and plus signs, since these
+are common in BibTeX databases [schwilk+isaac:2010]_.
+(However, we recommend that you avoid these characters if you are
+creating a new database.)  Naturally ``bib4txt.py`` will recognize
+all valid reST citation references.  However, it will also recognize
+for multiple comma-separated cites
+[isaac.schwilk-2010, schwilk+isaac:2010, man-2010]_.
 
 That should be enough for a test.
 
+Use an `include directive`_ if you want to include the ``testout.txt`` bibliography.
 
-
---------------------------------
 References
---------------------------------
+==========
 
+
+..include:: testout.txt
+
+.. Links
+
+_ include directive: http://docutils.sourceforge.net/docs/ref/rst/directives.html#including-an-external-document-fragment

@@ -1,16 +1,11 @@
-.. [MacArthur+Levins:1967]
-   MacArthur, R H, and R Levins. 1967. The limiting similarity, 
-   convergence and divergence of coexisting species. American Naturalist 
-   101, 377 -- 385. 
+.. [isaac.schwilk-2010]
+   Isaac, Alan G, and Dylan Schwilk. 2010. Using Interoperable Names. 
+   *Journal of Occasionally Reproducible Results* 1, 1--100. 
 
-.. [MacArthur:1970]
-   MacArthur, R H. 1970. Species packing and competetive equilibrium for 
-   many species. Theoretical Population Biology 1, 1 -- 11. 
+.. [man-2010]
+   Man, Nowhere. 2010. Using Dangerous Syntax. *Journal of Occasionally 
+   Reproducible Results* 3, 1--100. 
 
-.. [Tilman:1980]
-   Tilman, D. 1980. RESOURCES --- a graphical-mechanistic approach to 
-   competition and predation. American Naturalist 116, 362 -- 393. 
-
-.. [Hubbell:2001]
-   Hubbell, Stephen P. 2001. The Unified Neutral Theory of Biodiversity 
-   and Biogeography. 
+.. [schwilk+isaac:2010]
+   Schwilk, Dylan, and Alan G Isaac. 2010. Using Dangerous Names. 
+   *Journal of Occasionally Reproducible Results* 2, 1--100. 
