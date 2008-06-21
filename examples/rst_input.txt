@@ -13,9 +13,9 @@
 
 :Author: Dylan Schwilk
 :Author: Alan G. Isaac
-:Address: 123 Example Street
-          Example, EX  Canada
-          A1B 2C3
+:Address: 1 Line
+          Line 2
+          Line 3
 :Contact: http://code.google.com/p/bibstuff/
 :date: 2008-05-21
 :status: for illustration only
@@ -30,6 +30,13 @@ This introction will simply demonstrate some citations which can be
 found in the ``example.bib`` database.  To expand these citations or
 produce a bibliography list, use ``bib4txt.py``.  The output should
 look like ``testout.txt``.
+
+We have noticed that some people running this example
+encounter a simpleparse error with python 2.5.
+For example, Ubuntu users should download the SourceForge
+``simpleparse`` code rather than the Ubuntu packages.
+Uninstall the ``python-simpleparse`` and ``python-simpleparse-mxtexttools`` packages,
+download the SourceForge simpleparse, and do ``python setup.py install``.
 
 Now for some citations.  Originally reST only supported citation
 reference names that were valid HTML and XML names [isaac.schwilk-2010]_.

@@ -26,6 +26,7 @@ Schwilk+Isaac:2002 and Isaac+Schwilk+etal:2006.
 :TODO: check for macros against @string defs in .bib file
 :TODO: macro handling (journals)
 :TODO: add crossreferencing as option for inbook and incollection
+:TODO: change default format to legal HTML names
 
 .. _license.txt: ./license.txt
 '''
