@@ -26,6 +26,9 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
        names_groups structure, so I did an extra check for it.  This
        could still be cleaned up.
 
+       2008-06-23: Added definitions for capital chars and lowercase chars that
+       allow latex accents. This should fix most of problem listed above.
+
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
@@ -53,35 +56,27 @@ import bibstyles, bibfile, bibgrammar
 
 # The EBNF description of a bibtex name list (such as author names)
 
+#  TODO: schwilk on 2008-06-23: is "two_part" definition ok? I'm not sure what
+#  this is supposed to catch.
+
 ebnf_bibname = r"""
 name            := ( (sp, _and_, sp) / part / comma / break )+
-_and_            := 'and' / 'AND' / 'And'
-part           :=   capitalized /  two_part / lowercase / string
-comma                := ','
-<string>              := ('{' , braces_string, '}') 
-<capitalized>         := [A-Z]  , [a-zA-Z~'-]* 
-<lowercase>          := [a-z~'-]+ 
-<two_part>           := [a-zA-Z~'-], [A-Z~'-]+ , [a-zA-Z~'-]+
+_and_           := 'and' / 'AND' / 'And'
+part            :=   capitalized /  two_part / lowercase / string
+comma           := ','
+<latex_accent>  := '\\`' / "\\'" / '\\^' / '\\"'  /  '\\H' / '\\~' / '\\c' / '\\=' / '\\b' / '\\.' / '\\d' / '\\u' / '\\v' / '\\t'
+<capital>       := [A-Z] / (latex_accent, [A-Z]) / (latex_accent, '{' , [A-Z] , '}')
+<lowerc>        := [a-z] / (latex_accent, [a-z]) / (latex_accent, '{' , [a-z] , '}')
+<anyc>          := [a-zA-Z~'-] / (latex_accent, [a-zA-Z]) / (latex_accent, '{' , [a-zA-Z] , '}')
+<string>        := ('{' , braces_string, '}') 
+<capitalized>         := capital  , anyc*    
+<lowercase>          := lowerc, anyc* 
+<two_part>           := anyc, [A-Z~'-]+ , anyc+
 <braces_string>      := (-[{}]+ / nested_string)+
 <nested_string>      := ('{' , braces_string, '}')
 <break>             := [ \t\n\r.]
 <sp>             := [ \t\n\r]
 """
-
-# old description
-##ebnf_bibname = r"""
-##name            := ( (tb, _and_) / (tb, part) / (tb , string) / (tb, comma) )+
-##_and_            := 'and'
-##part           :=   capitalized /  two_part / lowercase
-##comma                := ','
-##string              := ('{' , braces_string, '}') 
-##<capitalized>         := [A-Z] , [a-zA-Z~'-]*
-##<lowercase>          := [a-z~'-]+ 
-##<two_part>           := [a-zA-Z~'-], [A-Z~'-]+ , [a-zA-Z~'-]+
-##<braces_string>      := (-[{}]+ / nested_string)+
-##<nested_string>      := ('{' , braces_string, '}')
-##<tb>             := [ \t\n\r.]*
-##"""
 
 bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 

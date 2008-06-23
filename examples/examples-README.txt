@@ -5,8 +5,8 @@
 :authors: Dylan W. Schwilk and Alan G. Isaac
 :web site: http://www.pricklysoft.org
 :source code: http://code.google.com/p/bibstuff/
-:date: 2006-09-15
-:version: 1.1
+:date: 2008-06-23
+:version: 1.2
 
 Some odds and ends files and scripts
 ====================================
@@ -18,7 +18,7 @@ rst_input.txt
 testout.txt
 	Example output bibliography from running bib4txt.py on
 	rst_input.txt. 
-	`> python bib4txt.py -i examples\rst_input.txt -no examples\testout.txt examples\schwilk.bib`
+	`> python bib4txt.py -i examples/rst_input.txt -no examples/new-testout.txt examples/example.bib`
 
 jmaker.py
 	A little script to translate the list of journal abbreviations
