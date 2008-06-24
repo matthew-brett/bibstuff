@@ -56,18 +56,22 @@ import bibstyles, bibfile, bibgrammar
 
 # The EBNF description of a bibtex name list (such as author names)
 
-#  TODO: schwilk on 2008-06-23: is "two_part" definition ok? I'm not sure what
-#  this is supposed to catch.
+# TODO: The capitalized, lowercase, two_part and string productions should be
+# caught separately so that capitalization information can be passed on for
+# further name parsing
 
 ebnf_bibname = r"""
-name            := ( (sp, _and_, sp) / part / comma / break )+
-_and_           := 'and' / 'AND' / 'And'
-part            :=   capitalized /  two_part / lowercase / string
-comma           := ','
-<latex_accent>  := '\\`' / "\\'" / '\\^' / '\\"'  /  '\\H' / '\\~' / '\\c' / '\\=' / '\\b' / '\\.' / '\\d' / '\\u' / '\\v' / '\\t'
-<capital>       := [A-Z] / (latex_accent, [A-Z]) / (latex_accent, '{' , [A-Z] , '}')
-<lowerc>        := [a-z] / (latex_accent, [a-z]) / (latex_accent, '{' , [a-z] , '}')
-<anyc>          := [a-zA-Z~'-] / (latex_accent, [a-zA-Z]) / (latex_accent, '{' , [a-zA-Z] , '}')
+name              := ( (sp, _and_, sp) / part / comma / break )+
+_and_             := 'and' / 'AND' / 'And'
+part              :=   capitalized /  two_part / lowercase / string
+comma             := ','
+<latex_accent>    := '\\`' / "\\'" / '\\^' / '\\"'  /  '\\H' / '\\~' / '\\c' / '\\=' / '\\b' / '\\.' / '\\d' / '\\u' / '\\v' / '\\t'
+<latex_ij_accent> := '\\^{\\i}' / '\\"{\\i}' / '\\^{\\j}' / '\\"{\\j}'
+<latex_ligature_uc> := '\\AE' / '\\OE' / '\\AA' / '\\O'
+<latex_ligature_lc> := '\\ae' / '\\oe' / '\\aa' / '\\o' / '\\ss'
+<capital>       := [A-Z] / (latex_accent, [A-Z]) / (latex_accent, '{' , [A-Z] , '}') / latex_ligature_uc
+<lowerc>        := [a-z] / (latex_accent, [a-z]) / (latex_accent, '{' , [a-z] , '}') / latex_ij_accent / latex_ligature_lc
+<anyc>          := [a-zA-Z~'-] / (latex_accent, [a-zA-Z]) / (latex_accent, '{' , [a-zA-Z] , '}') / latex_ij_accent / latex_ligature_uc / latex_ligature_lc
 <string>        := ('{' , braces_string, '}') 
 <capitalized>         := capital  , anyc*    
 <lowercase>          := lowerc, anyc* 
@@ -194,13 +198,19 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		:todo:	the names_groups structure is not being populated
 				correctly for all types of names.  This may need a more
 				detailed function than the nice one-liner used below.
+				
+		:todo: have capitalization check for von part handled by parser
+		directly --- capitalization accounting for latex accents and
+		ligatures is already handled by the grammar so this would be
+		cleaner.
 		"""
 		tuple_list = []
 		for n in self.raw_names_parts :
 			f,v,l,j = [],[],[],[]
 			try :
                                 # DS 2006-08-30: this does not work on all names, it chokes on braces strings, for example
-				name_groups = [list(b) for a,b in groupby(n[0],lambda x: x[0].isupper())]
+				# group by lowercase or uppercase in first list
+				name_groups = [list(b) for a,b in groupby(n[0],lambda x: _isCapitalized(x))]
 				if len(n) == 1 :  # implies parts are fvl
 					if len(name_groups) == 1: #-> no v part
 						fl = name_groups[0]
@@ -208,6 +218,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 					elif len(name_groups) == 3:
 						f,v,l = name_groups
 					else:
+						print 
 						bibname_logger.warn("Unrecognized name format for "+str(n))
 
 				else:  # vl,f or vl,j,f 
@@ -223,10 +234,10 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 						j = n[1]
 
 				if f == []:
-					if l[0] == 'others':
-						bibname_logger.debug("found 'others' in "+str(n))
-					else:   # changed to info below, many types of names lack a first name
-						bibname_logger.info("missing first name for "+str(n))
+				#	if l[0] == 'others':
+				#		bibname_logger.debug("found 'others' in "+str(n))
+					 # changed to info below, many types of names lack a first name
+					bibname_logger.info("missing first name for "+str(n))
                                                 
 			except:
 				bibname_logger.error("Unrecognized name format for "+str(n))
@@ -267,6 +278,19 @@ def getNames(src) :
 		bibname_logger.error('Error in name %s' % src)
 		raise
 
+
+def _isCapitalized(s):
+	"""Tests for uppercase first letter allowing for latex accents and
+	ligatures. This won't catch all possible capital accented characters
+	and the better solution will to have capitalization determined in the
+	ebnf parser"""
+	if s[0].isupper() :
+		return True;
+	return (s.lstrip("\\\"'.~^{}")[0].isupper())
+
+
+        
+        
 # command-line version
 if __name__ =="__main__":
 	import sys

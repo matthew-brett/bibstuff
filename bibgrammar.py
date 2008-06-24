@@ -39,15 +39,21 @@ from simpleparse.common import numbers, strings, chartypes
 
 
 # EBNF description of a bibtex file
+
+# Currently there is a bug with fields using quoted rather than braces strings.
+# The grammar is recognizing these as comment entries rather than regular
+# entries --- in other words, it fails to recognize regular entries that use
+# qutation marks around field values.
+
 dec = r"""
 bibfile              := entry_or_junk*
 >entry_or_junk<      := (tb, object) / (tb, junk)
->object<               := entry / macro / preamble / comment_entry
-entry                := '@', entry_type , tb,  ( '{' , tb, contents, tb, '}' ) / ( '(' , tb, contents, tb, ')' )
+>object<             := entry / macro / preamble / comment_entry
+entry                := '@', entry_type, tb,  ( '{' , tb, contents, tb, '}' ) / ( '(' , tb, contents, tb, ')' )
 macro                := '@', entry_type, tb,  ( '{' , tb, macro_contents, tb, '}' ) / ( '(' , tb, macro_contents, tb, ')' )
 preamble             := '@', entry_type, tb,  ( '{' , tb, preamble_contents, tb, '}' ) / ( '(' , tb, preamble_contents, tb, ')' )
 comment_entry        := '@', entry_type, tb, string
->contents<           := key , ',' , fields
+>contents<           := key , tb, ',' , tb, fields
 >macro_contents<     := fields
 >preamble_contents<  := value
 entry_type           := name
@@ -55,14 +61,14 @@ key                  := number / name
 fields               := tb, field_comma+ , field?
 >field_comma<        := field , tb, ','
 field                := tb, name, tb, '=' , tb, value
-value                := simple_value , (tb,'#', tb, simple_value)*
->simple_value<       := string / number / name
+value                := simple_value  / (simple_value, (tb,'#', tb, simple_value)+)
+>simple_value<       :=  string / number / name
 name                 := []-[a-z_A-Z!$&+./:;<>?^`|] , []-[a-z_A-Z0-9!$&+./:;<>?^`|]*
-number               :=  [0-9]+
-string               := ('{' , braces_string?, '}') / ('"' , quotes_string?, '"')
+number               :=  [0-9]+ / ([[0-9]+, tb, [-]+, tb, [0-9]+)
+string               :=  ('"' , quotes_string?, '"') / ('{' , braces_string?, '}')
 <braces_string>      := (-[{}]+ / nested_string)+
 <quotes_string>      := (-["]+ / nested_string)+
-<nested_string>      := ('{' , braces_string, '}') / ('"' , quotes_string, '"')
+<nested_string>      := ("\"" , quotes_string, "\"") / ('{' , braces_string, '}')
 <junk>               := -[ \t\r\n]+
 <tb>                 := (comment / ws)*
 <ws>                 := [ \t\n\r]

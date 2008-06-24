@@ -188,7 +188,7 @@ class BibEntry(dict):
 		:note: 2006-08-08 no longer sets a `_names` attribute
 		:TODO: add default name_template useful for .bib files?
 		"""
-		bibfile_logger.info("BibEntry.format_names: arg is:"+str(names_formatter))
+		bibfile_logger.debug("BibEntry.format_names: arg is:"+str(names_formatter))
 		names = self.get_names()  #get a BibName instance (or possibly, a string)
 		#keep string if stuck with it
 		if isinstance(names,str):
@@ -360,7 +360,7 @@ class BibFile( DispatchProcessor ):
 		if  the_type.upper() != 'COMMENT' :
 			bibfile_logger.warning("Entry at line %d has comment syntax but entry_type is %s" % (lineno,the_type))
 		else :
-			bibfile_logger.warning("Comment entry on line %d:" % lineno + "\n" + buffer[start:stop])
+			bibfile_logger.info("Comment entry on line %d:" % lineno + " " + getString(subtags[1],buffer))
 
 	def search_entries(self, string_or_compiled, field='', ignore_case=True):
 		"""Return list of matching entries.
