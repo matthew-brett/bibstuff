@@ -11,9 +11,8 @@ Greg Ward's btOOL_ documentation.
 :author: Dylan Schwilk
 :contact: http://www.schwilk.org
 :author: Alan G Isaac (minor edits)
-:copyright: 2006 by Dylan Schwilk
 :license: MIT (see `license.txt`_)
-:date: 2006-08-03
+:date: 2008-06-28
 
 
 .. _license.txt: ./license.txt
@@ -22,8 +21,8 @@ Greg Ward's btOOL_ documentation.
 """
 __docformat__ = "restructuredtext en"
 __needs__ = '2.4'
-__version__ = "1.6"
-__author__  =    '''Dylan W. Schwilk'''
+__version__ = "1.7"
+__author__  =    ["Dylan W. Schwilk", "Alan G Isaac"]
 
 
 ###################  IMPORTS  ##################################################
@@ -40,13 +39,13 @@ from simpleparse.common import numbers, strings, chartypes
 
 # EBNF description of a bibtex file
 
-# Currently there is a bug with fields using quoted rather than braces strings.
-# The grammar is recognizing these as comment entries rather than regular
-# entries --- in other words, it fails to recognize regular entries that use
-# qutation marks around field values.
+# 2008-06-27: There may be a bug in simpleparse that sometimes causes certain entries to
+# not be recognized. The problem, however, can disapear if the order of entries
+# in a bibfile is changed! I do not believe it is a problem with the grammar
+# but is a bug in simpleparse itself.
 
 dec = r"""
-bibfile              := entry_or_junk*
+bibfile              := entry_or_junk+
 >entry_or_junk<      := (tb, object) / (tb, junk)
 >object<             := entry / macro / preamble / comment_entry
 entry                := '@', entry_type, tb,  ( '{' , tb, contents, tb, '}' ) / ( '(' , tb, contents, tb, ')' )
@@ -58,17 +57,16 @@ comment_entry        := '@', entry_type, tb, string
 >preamble_contents<  := value
 entry_type           := name
 key                  := number / name
-fields               := tb, field_comma+ , field?
->field_comma<        := field , tb, ','
-field                := tb, name, tb, '=' , tb, value
+fields               := field_comma+ , field?
+>field_comma<        := field , tb, ',', tb
+field                := name, tb, '=' , tb, value
 value                := simple_value  / (simple_value, (tb,'#', tb, simple_value)+)
 >simple_value<       :=  string / number / name
 name                 := []-[a-z_A-Z!$&+./:;<>?^`|] , []-[a-z_A-Z0-9!$&+./:;<>?^`|]*
 number               :=  [0-9]+ / ([[0-9]+, tb, [-]+, tb, [0-9]+)
-string               :=  ('"' , quotes_string?, '"') / ('{' , braces_string?, '}')
-<braces_string>      := (-[{}]+ / nested_string)+
-<quotes_string>      := (-["]+ / nested_string)+
-<nested_string>      := ("\"" , quotes_string, "\"") / ('{' , braces_string, '}')
+string               :=  ('\"' , quotes_string?, '\"') / ('{' , braces_string?, '}')
+<braces_string>      := (-[{}]+ / string)+
+<quotes_string>      := (-[\"]+ / string)+
 <junk>               := -[ \t\r\n]+
 <tb>                 := (comment / ws)*
 <ws>                 := [ \t\n\r]
@@ -81,9 +79,8 @@ entry_parser = Parser(dec,'entry')
 
 ## or a default parse function
 def Parse(src, processor = None) :
-    '''Parse the bibtex string in src, process with processor.'''    
-    return parser.parse(src,  processor =  processor)
-
+	'''Parse the bibtex string in src, process with processor.'''
+	return parser.parse(src,  processor =  processor)
 
 ## self-test
 if __name__ =="__main__":

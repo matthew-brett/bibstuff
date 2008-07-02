@@ -26,27 +26,24 @@
 Introduction
 ============
 
-This introction will simply demonstrate some citations which can be
-found in the ``example.bib`` database.  To expand these citations or
-produce a bibliography list, use ``bib4txt.py``.  The output should
-look like ``testout.txt``.
+This introduction will simply demonstrate some citations which can be found in
+the ``example.bib`` database. To expand these citations or produce a
+bibliography list, use ``bib4txt.py``. The output should look like
+``testout.txt``.
 
-We have noticed that some people running this example
-encounter a simpleparse error with python 2.5.
-For example, Ubuntu users should download the SourceForge
-``simpleparse`` code rather than the Ubuntu packages.
-Uninstall the ``python-simpleparse`` and ``python-simpleparse-mxtexttools`` packages,
-download the SourceForge simpleparse, and do ``python setup.py install``.
+We have noticed that some people running this example encounter a simpleparse
+error with python 2.5. For example, Ubuntu users should download the SourceForge
+``simpleparse`` code rather than the Ubuntu packages. Uninstall the
+``python-simpleparse`` and ``python-simpleparse-mxtexttools`` packages, download
+the SourceForge simpleparse, and do ``python setup.py install``.
 
-Now for some citations.  Originally reST only supported citation
-reference names that were valid HTML and XML names [isaac.schwilk-2010]_.
-Recently reST added support for colons and plus signs, since these
-are common in BibTeX databases [schwilk+isaac:2010]_.
-(However, we recommend that you avoid these characters if you are
-creating a new database.)  Naturally ``bib4txt.py`` will recognize
-all valid reST citation references.  However, it will also recognize
-for multiple comma-separated cites
-[isaac.schwilk-2010, schwilk+isaac:2010, man-2010]_.
+Now for some citations. Originally reST only supported citation reference names
+that were valid HTML and XML names [isaac.schwilk-2010]_. Recently reST added
+support for colons and plus signs, since these are common in BibTeX databases
+[schwilk+isaac:2010]_. (However, we recommend that you avoid these characters if
+you are creating a new database.) Naturally ``bib4txt.py`` will recognize all
+valid reST citation references. However, it will also recognize for multiple
+comma-separated cites [isaac.schwilk-2010, schwilk+isaac:2010, man-2010]_.
 
 That should be enough for a test.
 

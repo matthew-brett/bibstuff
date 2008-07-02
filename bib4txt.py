@@ -117,7 +117,7 @@ def make_text_output(src_as_string,
 	#lastly, prepend the entire document, if desired
 	if not citations_only:
 		result = cite_processor.__repr__() + result
-	return result
+	return result+'\n' # ds added newline 2008-06-27
 
 ################################################################################
 
