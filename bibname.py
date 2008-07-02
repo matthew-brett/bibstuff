@@ -64,17 +64,18 @@ nameparts = ("first","last","von","jr")
 ebnf_bibname = r"""
 namelist := sp*, name, (_and_, name)*
 <_and_>  := sp+, "and", sp+
-name     := vlf / fvl / vljf / fvlj / l
+name     := vlf / fvl / fl / vljf / fvlj / l
 >l<      :=  last
->vlf<    := (von, sp+)?, last, (sp+, last)*, comma, (sp*, first)+
->fvl<    :=  (first, sp+, first, sp+, (von, sp+)? , sp+ , last, sp+, last) /
-             (first, sp+, first, sp+, (von, sp+)?, last) / (first,  sp+, (von, sp+)?, last)
+>vlf<    := (von, sp+)*, last, (sp+, last)*, comma, (sp*, first)+
+>fl<     := first, sp+, (first, sp+, ?(capitalized/capstring))*, last, (sp+, last)*
+>fvl<    := (first, sp+)+, (von, sp+)+, last, (sp+, last)*
 >fvlj<   := fvl, comma, jr
->vljf<   := von, sp+, last, (sp+, last)*, comma, jr,  comma,  first?
-von      := (lowercase, (sp+ , lowercase)*) / lowerstring
+>vljf<   := (von, sp+)*, last, (sp+, last)*, comma, jr,  comma,  first, (sp+ , first)*
+von      := lowercase / lowerstring
 first    := capitalized / capstring
 last     := capitalized / capstring
-jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" / "Sr" / "sr" / "II" / "III" / "IV" / "2nd" / "3rd" / "4th"
+jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" /
+            "Sr" / "sr" / "II" / "III" / "IV" / "2nd" / "3rd" / "4th"
 <comma>           := sp*, ',', sp*
 <capitalized>     := capital  , anyc*    
 <lowercase>       := ?lowerc, -"and ", anyc*  # Mustn't grab the delimiter _and_ for a part
@@ -84,7 +85,8 @@ jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" / "Sr" / "sr" / "II" / "II
 <ltx_ligature_uc> := '\\AE' / '\\OE' / '\\AA' / '\\O'
 <ltx_ligature_lc> := '\\ae' / '\\oe' / '\\aa' / '\\o' / '\\ss'
 <capital>         := [A-Z] / (ltx_accent, [A-Z]) / (ltx_accent, '{' , [A-Z] , '}') / ltx_ligature_uc
-<lowerc>          := [a-z] / (ltx_accent, [a-z]) / (ltx_accent, '{' , [a-z] , '}') / ltx_ij_accent / ltx_ligature_lc
+<lowerc>          := [a-z] / (ltx_accent, [a-z]) / (ltx_accent, '{' , [a-z] , '}') /
+                     ltx_ij_accent / ltx_ligature_lc
 <anyc>            := [a-zA-Z~'-] / (ltx_accent, [a-zA-Z]) / (ltx_accent, '{' , [a-zA-Z] , '}') /
                      ltx_ij_accent / ltx_ligature_uc / ltx_ligature_lc
 <string>              :=  '{' , braces_string?, '}'
@@ -95,6 +97,12 @@ jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" / "Sr" / "sr" / "II" / "II
 <braces_string>       := (-[{}]+ / string)+
 <sp>                  := [ \t\n\r.]
 """
+# old fvl definition with limited number of first parts:
+# >fvl<    :=  (first, sp+, first, sp+, first, sp+, first, sp+,  first, sp+, (von, sp+)* , (last, sp*)+) /
+#              (first, sp+, first, sp+, first, sp+,  first, sp+, (von, sp+)* , (last, sp*)+) /
+#              (first, sp+, first, sp+,  first, sp+, (von, sp+)* ,  (last, sp*)+) /
+#              (first, sp+, first, sp+, (von, sp+)*, last) / (first,  sp+, (von, sp+)*, (last, sp*)+)
+
 
 #bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 bibnamelist_parser = simpleparse.parser.Parser(ebnf_bibname, 'namelist')
@@ -164,9 +172,10 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 
 	def von(self, (tag,start,stop,subtags), buffer ): 
 		"""Processes von name part in a single name of a bibtex names field"""
-		# currently all von parts returned as single string so no need
-		# for appending as in productions above
-		self.names_dicts[-1]["von"] = [ buffer[start:stop],]
+		if self.names_dicts[-1].has_key("von"):
+			self.names_dicts[-1]["von"].append(buffer[start:stop])
+		else:
+			self.names_dicts[-1]["von"] = [buffer[start:stop],]
 
 	def jr(self, (tag,start,stop,subtags), buffer ):
 		"""Processes jr name part in a single name of a bibtex names field"""
