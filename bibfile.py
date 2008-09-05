@@ -73,7 +73,11 @@ class BibEntry(dict):
 		:note: 2006-08-11:eliminate final comma, handle months-> macro and journal macros
 		"""
 		str = '@%s{%s,\n' % (self.entry_type.upper() , self.citekey)
-		mlen = max( len(key_str) for key_str in self._fields )  # for pretty format
+		try:
+			mlen = max( len(key_str) for key_str in self._fields )  # for pretty format
+		except ValueError: #no fields (not a true entry)
+			mlen = 0
+			bibfile_logger.warn("Entry apparently has no fields.")
 		field_list = []
 		for key in self._fields:
 			addbraces = True

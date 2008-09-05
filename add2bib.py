@@ -466,7 +466,8 @@ def main():
 
 	"""
 	#TODO:
-	example usage: %prog -no new_bibfile BIB_DATABASE
+	parser.add_option("-I", "--ISBN", action="store", dest="ISBN", default=False,
+					  help="use pyaws to add one entry by ISBN, default=%default")
 	parser.add_option("-m", "--maxnames", action="store", type="int",
 					  dest="maxnames",  default = 2, help="Max names to add to key")
 	parser.add_option("-e", "--etal", action="store", type="string", \
