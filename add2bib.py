@@ -304,10 +304,15 @@ journal = '''<p id='%(citekey)s' class='ref'>
 %(pubinfo)s.
 </p>
 ''',
-book = '''<p id='%(citekey)s class='ref'>
-<span class='author'>%(auted)s</span>,
-<span class='date'>%(year)s</span>,
-%(titleinfo)s
+book = '''<p id='%(citekey)s' class='ref'>
+<span class='author'>%(auted)s</span>, %(year)s,
+<span class='booktitle'>%(booktitle)s</span>,
+%(pubinfo)s.
+</p>
+''',
+incollection = '''<p id='%(citekey)s' class='ref'>
+<span class='author'>%(auted)s</span>, %(year)s,
+<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,
 %(pubinfo)s.
 </p>
 ''',
@@ -318,12 +323,15 @@ journal = '''%(author)s, %(year)s,
 %(pubinfo)s.
 ''',
 book = '''%(auted)s, %(year)s,
-%(titleinfo)s
-%(pubinfo)s.
+%(booktitle)s
+(%(address)s: %(publisher)s)
+isbn: %(isbn)s
 ''',
 incollection = '''%(author)s, %(year)s,
-%(titleinfo)s
+%(title)s, in %(booktitle)s,
 %(pubinfo)s.
+(%(address)s: %(publisher)s)
+isbn: %(isbn)s
 ''',
 )
 
@@ -332,27 +340,34 @@ def is_macro(s):
 	return False
 
 def text_format(entry):
+	from collections import defaultdict
+	info = defaultdict(str)
+	info.update(entry)
 	entry_type = entry.entry_type.lower()
-	info = {}.update(entry)
-	add2bib_logger.info("entry_type = "%(entry_type))
+	add2bib_logger.info("entry_type = %s"%(entry_type))
 	if entry_type == "article":
 		info['journal'] = get_journal(entry)
-		volnum = get_volnum(entry)
+		pubinfo = get_volnum(entry)
 		if pages:
 			pubinfo += pages
+		info['pubinfo'] = pubinfo #TODO move into template
 		result = text_templates['journal']%info
 	elif entry_type in ["incollection","book"]:
 		if entry_type == "book":
-			if not author and entry['editor']:
-				author = entry['editor'] + " (ed)"
-			info['title'] = "%s,"%(title)
+			info['booktitle'] = info['title']
+			author = info['author']
+			editor = info['editor']
+			if author:
+				auted = author
+			elif editor:
+				auted = editor + " (ed)"
+			else:
+				auted = "unknown"
+			info['auted'] = auted
 		else: #-> entry_type == "incollection":
-			if entry['editor']:
-				info['auted'] = "%(author)s, in %(editor)s (ed)"%(entry)
-				info['title']="%(title)s, in %(booktitle)s,"%(entry)
-		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(entry)
-		#result = html_templates[entry_type]%dict(citekey=entry.citekey,auted=auted,year=year,titleinfo=titleinfo,pubinfo=pubinfo)
-		result = html_templates[entry_type]%info
+			if info['editor']:
+				info['auted'] = "%(author)s, in %(editor)s (ed)" % info
+		result = text_templates[entry_type] % info
 	return result
 		
 def get_journal(entry,jrnl_lst=None): #TODO: extract fr journal list
@@ -387,9 +402,11 @@ def get_pages(entry,dash='--',pagespref=('p. ','pp. ')):
 	return pages
 
 def html_format(entry):
+	from collections import defaultdict
 	entry_type = entry.entry_type.lower()
-	info = {}.update(entry)
-	add2bib_logger.info("entry_type = "%(entry_type))
+	info = defaultdict(str)
+	info.update(entry)
+	add2bib_logger.info("entry_type: %s"%(entry_type))
 	if entry_type == "article":
 		info['journal'] = get_journal(entry['journal'])
 		pubinfo="<span class='journal'>" + journal + "</span>"
@@ -403,19 +420,25 @@ def html_format(entry):
 			pubinfo += pages
 		#result = html_templates['journal']%dict(citekey=citekey,author=author,year=year,title=title,pubinfo=pubinfo)
 		info['pubinfo'] = pubinfo
-		result = html_templates[entry_type]%info
+		result = html_templates[entry_type] % info
 	elif entry_type in ["incollection","book"]:
 		if entry_type == "book":
-			if not author and entry['editor']:
-				author = entry['editor'] + " (ed)"
-			title = "<span class='booktitle'>%s</span>,"%(title)
+			info['booktitle'] = info['title']
+			author = info['author']
+			editor = info['editor']
+			if author:
+				auted = author
+			elif editor:
+				auted = editor + " (ed)"
+			else:
+				auted = "unknown"
+			info['auted'] = auted
 		else: #-> entry_type == "incollection":
-			if entry['editor']:
-				info['auted'] = "%(author)s, in %(editor)s (ed)"%(entry)
-				info['title']="<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,"%(entry)
-		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(entry)
-		#result = html_templates[entry_type]%dict(citekey=entry.citekey,auted=auted,year=year,titleinfo=titleinfo,pubinfo=pubinfo)
-		result = html_templates[entry_type]%info
+			if info['editor']:
+				info['auted'] = "%(author)s, in %(editor)s (ed)"%(info)
+				info['titleinfo']="<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,"%(entry)
+		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(info)
+		result = html_templates[entry_type] % info
 	return result
 
 		  

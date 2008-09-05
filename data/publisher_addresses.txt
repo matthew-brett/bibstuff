@@ -1,9 +1,9 @@
-#one address per line: name[real_name]|details|bibliographic_address|zip_or_other
+#one address per line: name[real_name]|comma_separated_details|bibliographic_address|zip_or_other
 #must be able to match name, will used bibliographic_address in the -2 position
 #WARNING: consider these addresses "best guesses" (and possibly out of date)
 #         when possible, they are contemporary rather than historical addresses
 
-Abingdon Press | 201 Eighth Avenue South | P.O. B. 801 | Nashville, TN | 37202
+Abingdon Press | 201 Eighth Avenue South, P.O. B. 801 | Nashville, TN | 37202
 Academic Press | | New York |
 Addison-Wesley | | Reading, MA |
 Addison-Wesley Publishing Company | | Reading, MA |
@@ -17,12 +17,13 @@ Altamira Press | 4501 Forbes Boulevard, Suite 200 | Lanham, MD | 20706
 American Enterprise Institute | | Washington, DC |
 American Psychological Foundation | 750 First Street, N.E. | Washington, DC | 20002
 AMS Press | Brooklyn Navy Yard, Building 292, Suite 417, 63 Flushing Avenue | Brooklyn, NY | 10205
-Amsterdam University Press | Prinsengracht 747-751, Amsterdam, 1017 JX
+Amsterdam University Press | Prinsengracht 747-751 | Amsterdam | 1017 JX
 Apress | | Berkeley, CA |
 Arizona Center for Medieval and Renaissance Studies | Arizona State University,  P.O. Box 872508 | Tempe, AZ | 85287
 Ashgate Publishing Company | 101 Cherry Street, Suite 420 | Burlington, VT | 05401
 Aspen Publishers | | New York |
 Atlantic Monthly Press | 841 Broadway | New York, NY | 10003
+Attic Press | Youngline Industrial Estate, Pouladuff Road, Togher | Cork, Ireland |
 Ballinger | | Cambridge, MA |
 Ballinger Publishing Co. | | Cambridge, MA |
 Bank for International Settlements | | Basle |
@@ -51,7 +52,7 @@ Brookings Institution Press | | Washington, D.C. |
 Brookings Institution Press | 1775 Massachusetts Avenue, N.W. | Washington, DC | 20036
 Bucknell University Press Associated University Presses | 440 Forsgate Drive | Cranbury, NJ | 08512
 C.D. Howe Institute | | Toronto |
-Cambridge Scholars Publishing | 12 Back Chapman Street, Newcastle upon Tyne, NE6 2XX
+Cambridge Scholars Publishing | 12 Back Chapman Street | Newcastle upon Tyne, UK | NE6 2XX
 Cambridge University Press | | Cambridge, UK |
 Cambridge University Press | 32 Avenue of the Americas | New York, NY | 10013
 Camden House Drawer | 2025 | Columbia, SC | 29202
@@ -69,7 +70,8 @@ Columbia University Press | 61 West 62nd Street, Third Floor | New York, NY | 10
 Congressional Quarterly Press | 1414 22nd Street, N.W. | Washington, DC | 20037
 Continuum | 80 Maiden Lane, Suite 704 | New York, NY | 10038
 Cooper Square Press | 150 Fifth Avenue, Suite 911 | New York, NY | 10011
-Cork University Press | University College, Cork
+Cork University Press | Youngline Industrial Estate, Pouladuff Road, Togher | Cork, Ireland |
+Cork University Press/Attic Press | Youngline Industrial Estate, Pouladuff Road, Togher | Cork, Ireland |
 Cornell University East Asia Program | 140 Uris Hall | Ithaca, NY | 14853
 Cornell University Press Sage House | 512 East State Street | Ithaca, NY | 14850
 Cornwall Books | 440 Forsgate Drive | Cranbury, NJ | 08512
@@ -87,7 +89,7 @@ Dumbarton Oaks | 1703 32nd Street, NW | Washington, DC | 20007
 Duquesne University Press | 600 Forbes Avenue | Pittsburgh, PA | 15282
 Earthscan Publications | 8-12 Camden High Street | London, UK | NW1 OJH, UK
 East European Monographs | c/o Columbia University Press, 61 West 62nd Street | New York, NY | 10023
-Edinburgh University Press | 22 George Square, Edinburgh EH 8, Scotland
+Edinburgh University Press | 22 George Square, Edinburgh EH 8 | Edinburgh, Scotland |
 Edward Arnold Ltd. | | London |
 Edward Elgar | | Aldershot, UK |
 Edward Elgar Publishing | 136 West Stree, Suite 202 | Northampton, MA | 01060
@@ -133,7 +135,7 @@ Hill & Wang | 19 Union Square West | New York, NY | 10003
 Hogarth Press | | London |
 Holden-Day | | San Francisco |
 Holmes & Meier | 160 Broadway, East Building | New York, NY | 10038
-Hong Kong University Press | 7 Tin Wan Praya Road, Aberdeen, Hong Kong
+Hong Kong University Press | 7 Tin Wan Praya Road | Aberdeen, Hong Kong |
 Houghton Mifflin | 222 Berkeley Street | Boston, MA | 02116
 Humanity Books | 59 John Glenn Drive | Amherst, NY | 14228
 I.B.Tauris & Co Ltd | 6 Salem Road | London, UK | W2 4BU
@@ -162,11 +164,11 @@ Kluwer Academic Publishers | | Norwell, MA |
 Kluwer Academic Publishers | 233 Spring Street, Seventh Floor | New York, NY | 10013-1578
 Kumarian Press | 1294 Blue Hills Avenue | Bloomfield, CT | 06002
 League of Nations | | Geneva |
-Left Coast Press | 1630 North Main Street, #400 | Walnut Creek, CA | 94596
+Left Coast Press | 1630 North Main Street #400 | Walnut Creek, CA | 94596
 Lehigh University Press | Associated University Presses, 440 Forsgate Drive | Cranbury, NJ | 08512
 Lexington Books | 4501 Forbes Boulevard | Lanham, MD | 20706
 Little, Brown & Company | 1271 Avenue of the Americas | New York, NY | 10020
-Liverpool University Press | 4 Cambridge Street, Liverpool L69 7ZU
+Liverpool University Press | 4 Cambridge Street, Liverpool L69 7ZU | Liverpool, UK | 
 Locust Hill Press | P.O. Box 260 | West Cornwall, CT | 06796
 Louisiana State University Press | 3990 W. Lakeshore Drive | Baton Rouge, LA | 70808
 Lynne Rienner Publishers | 1800 30th Street, Suite 314 | Boulder, CO | 80301
@@ -177,7 +179,7 @@ Macmillan Press, Ltd | | London, UK |
 Madison Books | 4720 Boston Way | Lanham, MD | 20706
 Markus Wiener Publishers | 231 Nassau Street | Princeton, NJ | 08542
 McFarland & Company | Box 611 | Jefferson, NC | 28640
-McGill-Queen's University Press | 3430 McTavish Street, Montreal, H3A 1X9
+McGill-Queen's University Press | 3430 McTavish Street |  Montreal, Canada | H3A 1X9
 McGraw-Hill | | New York, NY |
 McGraw-Hill Companies | 1221 Avenue of the Americas | New York, NY | 10020
 McGraw-Hill, Inc. | | New York |
@@ -229,7 +231,7 @@ Penn State University Press | 820 North University Drive | University Park, PA |
 Pergamon Press | | Oxford, UK |
 Perseus Books Group | 387 Park Avenue South | New York, NY | 10016
 Peter Lang Publishing | 275 Seventh Avenue, 28th Floor | New York, NY | 10001
-Philip Wilson Publishers | 109 Drysdale Street, the Timber Yard, London
+Philip Wilson Publishers | 109 Drysdale Street, the Timber Yard | London, UK |
 Picador | 175 Fifth Avenue | New York, NY | 10010
 Plumbago Books | P.O. Box 27832 | London, UK | SE24 9YG
 Potomac Books | 22841 Quicksilver Drive | Dulles, VA | 20166
@@ -271,7 +273,7 @@ Smithsonian Books | 750 Ninth Street, Suite 4300 | Washington, DC | 20560
 Society of Biblical Literature | 825 Houston Mill Road, Suite 350 | Atlanta, GA | 30329
 South-Western | | Cincinnati, OH |
 South-Western College Publishing | | Cincinnati, OH |
-South End Press | 7 Brookline Street, #1 | Cambridge, MA | 02139
+South End Press | 7 Brookline Street #1 | Cambridge, MA | 02139
 Southern Illinois University Press | 1915 University Press Drive, MC 6806 | Carbondale, IL | 62901
 Southern Methodist University Press | P. O. Box | 750415 | Dallas, TX | 75275
 Spon Press | 29 West 35th Street | New York, NY | 10001
