@@ -2,7 +2,7 @@
 # -*- coding: latin-1 -*-
 # File: isbn2bib.py
 """
-:requires: pyaws v.0.3+ (see below)
+:requires: pyaws v.0.3+ (installation is easy; see below)
 :requires: free Amazon web services key http://www.amazon.com/gp/browse.html?node=3435361
 :license: MIT
 :contact: alan dot isaac at gmail dot com 
@@ -20,6 +20,18 @@ If you use SVN, I'll assume you want the latest version.
 - Change to your new ``pyaws`` directory.
 - Use your python to execute: setup.py install
 
+Your Amazon Web Services key
+----------------------------
+
+- it is free from Amazon web services
+  http://www.amazon.com/gp/browse.html?node=3435361
+- right now I only look for it in bibstuff.cfg,
+  which must be in the directory from which you
+  call your script, and which must contain the lines::
+
+	[isbn2bib]
+	aws_key : your_AWS_key_here 
+
 """
 __docformat__ = "restructuredtext en"
 __authors__  =    ['Alan G. Isaac']
@@ -31,60 +43,24 @@ import logging
 logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 isbn2bib_logger = logging.getLogger('bibstuff_logger')
 
+#we need pyaws to get data from Amazon
 from pyaws import ecs
-OUTPUT_TYPE = "bibtex"
 
-html_start = """
-<html>
-<head>
-<style type="text/css">
-dt.getbook {padding-top:15px; font-weight:bold;}
-</style>
-</head>
-<body>
-<dl>
-"""
-
-html_end = """
-</dl>
-</body>
-</html>
-"""
- 
-html_item = """
-<dt class="getbook">%(title)s</dt>
-<dd>
-	<img src="%(url_mediumimage)s" />
-	<ul>
-		<li>ISBN/ASIN: %(isbn)s/%(asin)s</li>
-		<li>Author: %(author)s</li>
-		<li>Publisher: %(publisher)s</li>
-		<li>Publication Year: %(year)s</li>
-	</ul>
-</dd>
-"""
-
-text_item = """
-Title: %(title)s
-ISBN/ASIN: %(isbn)s/%(asin)s
-Author: %(author)s
-Publisher: %(publisher)s
-Publication Year: %(year)s
-"""
 
 #need an AWS key to proceed (see above)
-fh = open('data/aws_key.txt','r')
-for line in fh:
-	line = line.strip()
-	if line:
-		key = line
-fh.close()
+import ConfigParser as configparser #anticipate name change
+cfg = configparser.ConfigParser()
+cfg.read('bibstuff.cfg')
+aws_key = cfg.get('isbn2bib','aws_key')
 try:
-	ecs.setLicenseKey(key)
+	ecs.setLicenseKey(aws_key)
 except AWSException:
-	print "failed to set key; missing key?"
+	print """Failed to set key.
+	Do you have a bibstuff.cfg file
+	in your current directory?
+	"""
 
-#unfortunately, addresses not in bookinfo
+#unfortunately, addresses are not available in bookinfo
 # hope it's in my list ...
 publisher_addresses = dict()
 fh = open('data/publisher_addresses.txt','r')
@@ -102,9 +78,12 @@ fh.close()
 
 def make_entry(isbn):
 	"""
-	:todo: this is reusing too much add2bib code
-	:author: Alan G. Isaac
+	Return a bibfile.BibEntry instance.
+	Calls `make_bookdict`;
+	called by `main`.
+
 	:date: 2008-08-31
+	:todo: this is reusing too much add2bib code
 	"""
 	import bibfile
 	entry = bibfile.BibEntry()
@@ -119,8 +98,8 @@ def make_entry(isbn):
 	entry.citekey = bkdict['citekey']
 	del bkdict['citekey']  #leaving only real field
 	#entry.update(bkdict) #TODO: why does this not work?
-	for key in bkdict:
-		entry[key] = bkdict[key]
+	for k,v in bkdict.items():
+		entry[k] = v
 	return entry
 
 
@@ -154,22 +133,6 @@ def make_bookdict(bkinfo):
 		bd['address'] = publisher_addresses[best_pub_matches[0]]	   
 	return bd
 
-
-def print_bkinfo(bkinfo):
-	bkdict = make_bookdict(bkinfo)
-	if OUTPUT_TYPE.lower() == 'html':
-		print html_item % bkdict
-	elif OUTPUT_TYPE.lower() == 'bibtex':
-		print bkinfo2bibtex(bkdict)
-	else:
-		print text_item%bkdict
-
-if OUTPUT_TYPE.lower() == 'html':
-	print html_start
-
-
-if OUTPUT_TYPE=='html':
-	print html_end
 
 # some test ISBNs:
 testISBNS = "0-324-23583-6 9780596529321 0231071949"
