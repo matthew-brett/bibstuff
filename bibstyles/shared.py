@@ -8,7 +8,7 @@ especially for bib4txt.py.
 :copyright: 2008 by Alan G. Isaac
 :license: MIT (see `license.txt`_)
 :since: 2006-08-01
-:date: 2008-03-31
+:date: 2008-10-14
 
 .. _license.txt: ../license.txt
 """
@@ -74,6 +74,18 @@ def reformat_para(para='',left=0,right=72,just='LEFT'):
 
 class NamesFormatter(object):
 	"""Provides a formatter for BibName instances.
+	Instances are initialized with formatting information.
+	Use the `format_names` method to produce
+	a formatted string representing a BibName instance.
+
+	Sample usage::
+
+		#create an author entry
+		n = bibname.BibName('One, Test and Test Two','author') 
+		#create a formatter
+		nf = bibstyles.shared.NamesFormatter(template_list=['f| v| l| j']*2,initials=False)
+		#print the formatted names
+		print nf.format_names(n)
 
 	:see: documentation for the `NameFormatter` class
 	:note: 2006-08-03 add initials keyword to ``__init__``
@@ -99,9 +111,9 @@ class NamesFormatter(object):
 
 	#get all names, formatted as a string
 	def format_names(self,names):
-		"""Return `names` as a formatted string.
-
-		Formats `names` according to the `NamesFormatter` template.
+		"""Return string,
+		which represents the BibName instance `names`
+		formatted as determined by the `NamesFormatter` attributes.
 
 		`NAME FORMATTING TEMPLATES`_ are explained in some detail
 		in the doc string for the NameFormatter class.  Briefly:
