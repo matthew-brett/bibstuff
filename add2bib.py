@@ -135,7 +135,7 @@ optional2 = 'm',
 
 
 
-def make_entry(choosetype='',options=False,extras=False):
+def make_entry(choosetype='', options=False, extras=False):
 	"""
 	:author: Alan G. Isaac
 	:date: 2006-08-11
@@ -304,6 +304,13 @@ journal = '''<p id='%(citekey)s' class='ref'>
 %(pubinfo)s.
 </p>
 ''',
+techreport = '''<p id='%(citekey)s' class='ref'>
+<span class='author'>%(author)s</span>,
+<span class='date'>%(year)s</span>,
+&ldquo;<span class='title'>%(title)s</span>,&rdquo;
+%(pubinfo)s.
+</p>
+''',
 book = '''<p id='%(citekey)s' class='ref'>
 <span class='author'>%(auted)s</span>, %(year)s,
 <span class='booktitle'>%(booktitle)s</span>,
@@ -322,6 +329,10 @@ journal = '''%(author)s, %(year)s,
 "%(title)s"
 %(pubinfo)s.
 ''',
+techreport = '''%(author)s, %(year)s,
+"%(title)s"
+%(pubinfo)s.
+''',
 book = '''%(auted)s, %(year)s,
 %(booktitle)s
 (%(address)s: %(publisher)s)
@@ -335,9 +346,13 @@ isbn: %(isbn)s
 ''',
 )
 
-#:TODO: !!!!
+
 def is_macro(s):
-	return False
+	"""Return bool,
+	a crude guess if this is a macro.
+	TODO: rethink this."""
+	oneword = not (' ' in s )
+	return oneword and (s.islower() or s.isupper())
 
 def text_format(entry):
 	from collections import defaultdict
@@ -351,7 +366,12 @@ def text_format(entry):
 		if pages:
 			pubinfo += pages
 		info['pubinfo'] = pubinfo #TODO move into template
-		result = text_templates['journal']%info
+	if entry_type == "techreport":
+		institution = entry['institution']
+		type = entry['type']
+		number = entry['number']
+		pubinfo= "%s %s, %s"%(type, number, institution)
+		info['pubinfo'] = pubinfo #TODO move into template
 	elif entry_type in ["incollection","book"]:
 		if entry_type == "book":
 			info['booktitle'] = info['title']
@@ -367,16 +387,21 @@ def text_format(entry):
 		else: #-> entry_type == "incollection":
 			if info['editor']:
 				info['auted'] = "%(author)s, in %(editor)s (ed)" % info
-		result = text_templates[entry_type] % info
+	result = text_templates[entry_type] % info
 	return result
 		
-def get_journal(entry,jrnl_lst=None): #TODO: extract fr journal list
+def get_journal(entry, jrnl_lst=None): #TODO: extract fr journal list
+	"""Return string representation of journal,
+	allowing opportunity to provide name to replace macro.
+	TODO: automate macro substitution."""
 	#if jrnlkey =~ "{.\+}", let journal=substitute(jrnlkey,'[{}]','','g')
-	if entry.entry_type == "article":
-		if is_macro(entry['journal']):
-			journal = raw_input("Journal? (no braces) (Press enter to use '%s') "%(entry['journal']))
-			if journal:
-				info['journal'] = journal
+	journal = entry['journal'] #might be a macro
+	if is_macro(journal):
+		if journal.islower():
+			journal = journal.upper()
+		jrnl = raw_input("Journal? (no braces) (Press enter to use '%s') "%(journal) )
+		if jrnl:
+			journal = jrnl
 	return journal
 
 def get_volnum(entry):
@@ -407,8 +432,10 @@ def html_format(entry):
 	info = defaultdict(str)
 	info.update(entry)
 	add2bib_logger.info("entry_type: %s"%(entry_type))
+	#next we aggregate the publication information and apply formatting template
 	if entry_type == "article":
-		info['journal'] = get_journal(entry['journal'])
+		#journal may be a macro; ask to replace
+		info['journal'] = get_journal(entry)
 		pubinfo="<span class='journal'>" + journal + "</span>"
 		volume = entry['volume']
 		number = entry['number']
@@ -420,7 +447,12 @@ def html_format(entry):
 			pubinfo += pages
 		#result = html_templates['journal']%dict(citekey=citekey,author=author,year=year,title=title,pubinfo=pubinfo)
 		info['pubinfo'] = pubinfo
-		result = html_templates[entry_type] % info
+	if entry_type == "techreport":
+		institution = entry['institution']
+		type = entry['type']
+		number = entry['number']
+		pubinfo= "%s %s, %s"%(type, number, institution)
+		info['pubinfo'] = pubinfo
 	elif entry_type in ["incollection","book"]:
 		if entry_type == "book":
 			info['booktitle'] = info['title']
@@ -438,7 +470,8 @@ def html_format(entry):
 				info['auted'] = "%(author)s, in %(editor)s (ed)"%(info)
 				info['titleinfo']="<em>%(title)s</em>, in <span class='booktitle'>%(booktitle)s</span>,"%(entry)
 		info['pubinfo']="(%(address)s: %(publisher)s)\nisbn: %(isbn)s"%(info)
-		result = html_templates[entry_type] % info
+	#apply template to aggregated information
+	result = html_templates[entry_type] % info
 	return result
 
 		  
@@ -558,9 +591,10 @@ def main():
 			                     %options.outfile)
 			output = open(options.outfile,'a')
 
-	entry = make_entry(options.entry_type,options.more_fields,options.MORE_FIELDS)
+	entry = make_entry(options.entry_type, options.more_fields, options.MORE_FIELDS)
 	output.write(str(entry))
 	print entry
+	print type(entry)
 	if 'h' in options.format:
 		output.write( html_format(entry) )
 	if 't' in options.format:
