@@ -42,10 +42,10 @@ that were valid HTML and XML names [isaac.schwilk-2010]_. Recently reST added
 support for colons and plus signs, since these are common in BibTeX databases
 [schwilk+isaac:2010]_. (However, we recommend that you avoid these characters if
 you are creating a new database.) Naturally ``bib4txt.py`` will recognize all
-valid reST citation references. However, it will also recognize for multiple
+valid reST citation references. However, it will also recognize multiple
 comma-separated cites [isaac.schwilk-2010, schwilk+isaac:2010, man-2010]_.
 Bibstuff will process these into your reference list, but since this remains illegal
-as reStructuredText, they citation references will be missed by most
+as reStructuredText, such multiple citation references will be missed by most
 reStructuredText readers.
 
 That should be enough for a test.
@@ -61,3 +61,4 @@ References
 .. Links
 
 .. _include directive: http://docutils.sourceforge.net/docs/ref/rst/directives.html#including-an-external-document-fragment
+

@@ -23,10 +23,9 @@ In this case, the reference list is added to the end of the file.
 A slight modification of the reStructuredText ``cite`` directive is currently allowed:
 
 - Most characters are permitted.
-  E.g., ``[Schwilk+Isaac:2006]_`` is not currently (2006) legal in reST but will be recognized by bib4txt.
-  Comment: it is expected that this will become legal reST in the near future.
+  E.g., ``[Schwilk+Isaac:2006]_`` is now (2008) legal in reST and will be recognized by bib4txt.
 - Comma separted multiple keys are permitted in a cite:  e.g., ``[Schwilk1999,Isaac2000]_``
-  This is not legal reST.
+  This is *not* legal reST.
 
 The intent is for the formatted references to be written to a separate file.
 You can then include this in your reST document with an ``include`` directive.
@@ -43,19 +42,20 @@ How it works:
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Alan G. Isaac
 :license: MIT (see `license.txt`_)
-:note: bib4txt is an extensive refactoring and enhancement of addrefs.py, by Dylan Schwilk
+:note: now allows multiple database (.bib) files
+:note: bib4txt supercedes addrefs.py, by Dylan Schwilk
 :note: Python 2.4 dependencies: sets, sorted
+:note: Python 2.5 dependencies: with
 :TODO: address the TODOs in the associate BibStuff files, especially in bibstyles/shared.py
-:TODO: allow multiple bibfiles
-:TODO: when assuming 2.5 is finally OK, use 'with' for file handling
 
 .. _EBNF: http://www.garshol.priv.no/download/text/bnf.html
 .. _SimpleParse: http://simpleparse.sourceforge.net/
 .. _license.txt: ./license.txt
 """
+from __future__ import with_statement
 __docformat__ = "restructuredtext en"
 __version__ = "1.1.1"
-__needs__ = '2.4'
+__needs__ = '2.5+'
 
 
 ###################  IMPORTS  ##################################################
@@ -165,9 +165,10 @@ def main():
 		bib4txt_logger.setLevel(logging.INFO)
 	if options.very_verbose:
 		bib4txt_logger.setLevel(logging.DEBUG)
-	bib4txt_logger.info("Script running.\nargs=%s\ninfile=%s\noutfile=%s\nstyle file=%s"
-	             %(args, options.infile, options.outfile,options.stylefile)
-	            )
+	bib4txt_logger.info(
+			"Script running.\nargs=%s\ninfile=%s\noutfile=%s\nstyle file=%s"
+			%(args, options.infile, options.outfile,options.stylefile)
+			)
 	exec("import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0])
 
 	# open output file for writing (default: stdout)
@@ -177,17 +178,20 @@ def main():
 			sys.exit(1)
 		output = open(options.outfile,'w')
 
-	# read database (.bib) file
-	if len(args) != 1:
-		print "Wrong number of arguments>"
-		sys.exit(1)
-	bibfile_name = args[-1]
-	if (os.path.splitext(bibfile_name)[-1]).lower() != ".bib":
-		bib4txt_logger.warning(bibfile_name + " does not appear to be a .bib file")
-	try :
-		bibfile_as_string = open(bibfile_name,'r').read()
-	except :
-		print "Database file not found."
+	# read database (.bib) files
+	bibfile_names = args
+	bibfiles_as_strings = list()
+	for bibfile_name in bibfile_names:
+		if (os.path.splitext(bibfile_name)[-1]).lower() != ".bib":
+			bib4txt_logger.warning("%s does not appear to be a .bib file."%bibfile_name )
+		try:
+			with open(bibfile_name,'r') as fh:
+				bibfiles_as_strings.append( fh.read() )
+		except IOError:
+			bib4txt_logger.warning("%s not found."%bibfile_name )
+	bibfile_as_string = '\n'.join( bibfiles_as_strings )
+	if not bibfile_as_string:
+		bib4txt_logger.warning("No BibTeX databases found.")
 		sys.exit(1)
 
 
