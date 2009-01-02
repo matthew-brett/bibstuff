@@ -543,6 +543,7 @@ def main():
 	add2bib_logger.info("Script running.\nargs=%s"%(args))
 
 	'''
+	#TODO: error check cite keys, insert (v. append), sort
 	# get database as text from .bib file(s) or stdin
 	if len(args) > 0 :
 		try :
@@ -580,6 +581,9 @@ def main():
 	bibgrammar.Parse(src, bfile)
 	used_citekeys = [] # stores created keys
 	'''
+
+	entry = make_entry(options.entry_type, options.more_fields, options.MORE_FIELDS)
+
 	# open output file for writing (default: stdout)
 	if options.outfile:
 		if options.backup and os.path.exists(options.outfile):
@@ -590,15 +594,13 @@ def main():
 			add2bib_logger.info("Appending to %s.\n(Use -n option to nuke (overwrite) the old output file.)"
 			                     %options.outfile)
 			output = open(options.outfile,'a')
-
-	entry = make_entry(options.entry_type, options.more_fields, options.MORE_FIELDS)
 	output.write(str(entry))
 	print entry
-	print type(entry)
 	if 'h' in options.format:
 		output.write( html_format(entry) )
 	if 't' in options.format:
 		output.write( text_format(entry) )
+	output.close()
 
 if __name__ == '__main__':
 	main()
