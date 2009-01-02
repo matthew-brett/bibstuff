@@ -32,6 +32,7 @@ __strict__ = False # should we be strict with bibtex format?
 ####################### IMPORTS #####################################
 # import from standard library
 import re
+import sys
 
 # import dependencies
 from simpleparse.dispatchprocessor import dispatch, DispatchProcessor, getString, lines
@@ -294,8 +295,8 @@ class BibFile( DispatchProcessor ):
 		"""Return the entry type"""
 		return getString((tag,start,stop,subtags), buffer)
 
-	def key( self, (tag,start,stop,subtags), buffer ):
-		"""Return the entry key"""
+	def citekey( self, (tag,start,stop,subtags), buffer ):
+		"""Return the entry's citekey"""
 		return getString((tag,start,stop,subtags), buffer)
 
 	# macro name
@@ -327,6 +328,8 @@ class BibFile( DispatchProcessor ):
 
 	def macro( self, (tag,start,stop,subtags), buffer ):
 		"""Process a macro entry and add macros to macro map"""
+		name, str = dispatch(self, subtags[0], buffer)
+		"""
 		the_type = getString(subtags[0], buffer)
 		if  the_type.upper() != 'STRING' :
 			# it looks like  a macro, but is not: could be a regular entry with no key
@@ -346,6 +349,8 @@ class BibFile( DispatchProcessor ):
 			for field in subtags[1][3]:
 				name, str = dispatch(self, field, buffer)
 				self._macroMap[name] = str  
+		"""
+		self._macroMap[name] = str  
 		
 
 	def preamble( self, (tag,start,stop,subtags), buffer ):
