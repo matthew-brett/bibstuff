@@ -73,7 +73,7 @@ class BibEntry(dict):
 		
 		:note: 2006-08-11:eliminate final comma, handle months-> macro and journal macros
 		"""
-		str = '@%s{%s,\n' % (self.entry_type.upper() , self.citekey)
+		stringrep = '@%s{%s,\n' % (self.entry_type.upper() , self.citekey)
 		try:
 			mlen = max( len(key_str) for key_str in self._fields )  # for pretty format
 		except ValueError: #no fields (not a true entry)
@@ -84,7 +84,11 @@ class BibEntry(dict):
 			addbraces = True
 			spacer = ' '*(mlen - len(key) )
 			val = self[key]
-			if key == 'journal':
+			#handle crossref
+			if key == 'crossref':
+				try: val = val['citekey'] #might be an entry
+				except TypeError: pass    #->must be a string
+			elif key == 'journal':
 				if val.isalpha() and val.islower(): #:TODO: allow punctuation!!
 					addbraces = False  #i.e., assume it is a macro
 			elif key == 'month':
@@ -100,9 +104,9 @@ class BibEntry(dict):
 			if addbraces:
 				val = "{" + val + "}"
 			field_list.append("  %-*s = %s" % (mlen, key, val))
-		str += ",\n".join(field_list)
-		str += '\n}\n'
-		return str
+		stringrep += ",\n".join(field_list)
+		stringrep += '\n}\n'
+		return stringrep
 	def __setitem__(self, key, val):
 		key = key.lower()
 		dict.__setitem__(self, key, val)
@@ -111,14 +115,19 @@ class BibEntry(dict):
 		if key not in self._fields and key not in ["citekey","entry_type"] and val:
 			self._fields.append(key)
 	def __getitem__(self, field):  #field is usually a BibTeX field but can be a citekey
+		field = field.lower()
 		if field == "key":
 			bibfile_logger.info("Seeking 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		try:
-			result = dict.__getitem__(self, field.lower())
+			result = dict.__getitem__(self, field)
 		#:TODO: rethink this decision (but it is used for formatting)
 		#:note: 20080331 changed KeyError to return '' instead of None
 		except KeyError:
-			result = ''
+			crossref = self.get('crossref', '')
+			if isinstance(crossref, self.__class__):
+				result = crossref[field]
+			else:
+				result = ''
 		#:note: 20080331 add handling of month macros
 		if field == 'month' and result in monthmacros_en:
 			result = MONTH_DICT[result]
@@ -134,14 +143,14 @@ class BibEntry(dict):
 		except ValueError:
 			pass
 
-	def set_entry_type(self,str):
-		self["entry_type"] = str.lower()  #:note: entry_type stored as lowercase
+	def set_entry_type(self, val):
+		self["entry_type"] = val.lower()  #:note: entry_type stored as lowercase
 	def get_entry_type(self):
 		return self["entry_type"]
 	entry_type = property(get_entry_type, set_entry_type, None, "property: 'entry_type'")
 
-	def set_citekey(self, str):
-		self["citekey"] = str
+	def set_citekey(self, val):
+		self["citekey"] = val
 	def get_citekey(self):
 		return self["citekey"]
 	citekey = property(get_citekey,set_citekey,None,"property: 'citekey'")
@@ -258,8 +267,8 @@ class BibFile( DispatchProcessor ):
 		self._macroMap = {}
 
 	def get_entrylist(self, citekeys, discard=True):
-		"""
-		return list of **found** entries
+		"""Return list, the BibEntry instances that were found
+		(and None for entries not found, unless discarded).
 		"""
 		if not citekeys:
 			bibfile_logger.warning("get_entrylist: No keys provided; returning empty cited-entry list.")
@@ -272,9 +281,18 @@ class BibFile( DispatchProcessor ):
 			result = [pair[1] for pair in temp if pair[1]]
 		else: #keep None when occurs in entry list
 			result =  [pair[1] for pair in temp]
+		#attach cross references
+		for entry in result:
+			if entry:
+				crossref = entry.get('crossref', None)
+				if isinstance(crossref, str):
+					crossref = self.get_entry_by_citekey(crossref)
+					if crossref:
+						entry['crossref'] = crossref
 		return result
 		
 	def get_entry_by_citekey(self, citekey):
+		"""Return entry or None."""
 		for entry in self.entries:
 			if entry.citekey == citekey:
 				return entry
