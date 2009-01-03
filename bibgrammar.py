@@ -49,13 +49,13 @@ from simpleparse.common import numbers, strings, chartypes
 #  add `alpha_name`
 #  change `macro` def (use case insenstive string)
 #  change `macro_contents` def (field instead of fields)
-#  change `fields` def (comma is allowed after last field)
+#  change `fields` def (since comma is allowed after last field)
 dec = r"""
 bibfile              := entry_or_junk+
 >entry_or_junk<      := (tb, object) / (tb, junk)
 >object<             := entry / macro / preamble / comment_entry
 entry                := '@', entry_type, tb,  ( '{' , tb, contents, tb, '}' ) / ( '(' , tb, contents, tb, ')' )
-macro                := c'@string', tb,  ( '{' , tb, macro_contents, tb, '}' ) / ( '\"' , tb, macro_contents, tb, '\"' )
+macro                := c'@string', tb,  ( '{' , tb, macro_contents, tb, '}' ) / ( '(' , tb, macro_contents, tb, ')' )
 preamble             := '@', entry_type, tb,  ( '{' , tb, preamble_contents, tb, '}' ) / ( '(' , tb, preamble_contents, tb, ')' )
 comment_entry        := '@', entry_type, tb, string
 >contents<           := citekey , tb, ',' , tb, fields

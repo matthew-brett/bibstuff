@@ -84,11 +84,13 @@ jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" /
 <ltx_ij_accent>   := '\\^{\\i}' / '\\"{\\i}' / '\\^{\\j}' / '\\"{\\j}'
 <ltx_ligature_uc> := '\\AE' / '\\OE' / '\\AA' / '\\O'
 <ltx_ligature_lc> := '\\ae' / '\\oe' / '\\aa' / '\\o' / '\\ss'
-<capital>         := [A-Z] / (ltx_accent, [A-Z]) / (ltx_accent, '{' , [A-Z] , '}') / ltx_ligature_uc
-<lowerc>          := [a-z] / (ltx_accent, [a-z]) / (ltx_accent, '{' , [a-z] , '}') /
+<capital>         := ('{',capital,'}') / [A-Z] /
+                     (ltx_accent, [A-Z]) / (ltx_accent, '{' , [A-Z] , '}') /
+                     ltx_ligature_uc
+<lowerc>          := ('{',lowerc,'}') / [a-z] / (ltx_accent, [a-z]) /
+                     (ltx_accent, '{' , [a-z] , '}') /
                      ltx_ij_accent / ltx_ligature_lc
-<anyc>            := [a-zA-Z~'-] / (ltx_accent, [a-zA-Z]) / (ltx_accent, '{' , [a-zA-Z] , '}') /
-                     ltx_ij_accent / ltx_ligature_uc / ltx_ligature_lc
+<anyc>            := [~'-] / capital / lowerc
 <string>              :=  '{' , braces_string?, '}'
 <capstring>           := '{' , cap_braces_string?, '}'
 <lowerstring>         := '{' , lower_braces_string?, '}'

@@ -40,6 +40,7 @@ style_logger = logging.getLogger('bibstuff_logger')
 # :IMPORTANT: every style must import shared!
 import shared
 # most styles with start with the default templates:
+#  in default_templates.py
 import default_templates
 ########################################################
 
@@ -82,11 +83,13 @@ class CitationManager(shared.CitationManager):
 		"""
 		#:note: need entry to be None if cite_key not found, so discard=False
 		entry_list = self.find_entries(cite_key_list,discard=False)
+		for entry in entry_list:
+			print entry
 		return format_inline_cite(entry_list, self)
 
 	################### CITATION FORMATTING ########################
 	def get_citation_label(self,entry,citation_template=None):
-		return '.. ['+entry.citekey+']\n'  #:TODO: ? allow use of key in place of citekey ?
+		return '.. [' + entry.citekey + ']\n'
 
 	#sort_key for sorting list of references
 	# (choice of field_list is a formatting decision)
