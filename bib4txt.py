@@ -153,18 +153,22 @@ def main():
 					  help="Specify user-chosen style file",metavar="FILE")
 	parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
 					  help="Print INFO messages to stdout, default=%default")
-	parser.add_option("-V", "--very_verbose", action="store_true", dest="very_verbose", default=False,
+	parser.add_option("-V", "--very-verbose", action="store_true", dest="very_verbose", default=False,
 					  help="Print DEBUG messages to stdout, default=%default")
 	parser.add_option("-a", "--all", action="store_true", dest="entire_doc",
 		              default=False, help="Output entire document, making citation reference substitutions, default=%default")
 	parser.add_option("-x", "--xp", action="store_true", dest="xp_parse",
 		              default=False, help="Use experimental document parser, default=%default")
+	parser.add_option("-L", "--logger-level", action="store", type="int", dest="logger_level",
+					  help="Set logging level to integer value.")
 
 	(options, args) = parser.parse_args()
-	if options.verbose:
-		bib4txt_logger.setLevel(logging.INFO)
-	if options.very_verbose:
+	if options.logger_level:
+		bib4txt_logger.setLevel(options.logger_level)
+	elif options.very_verbose:
 		bib4txt_logger.setLevel(logging.DEBUG)
+	elif options.verbose:
+		bib4txt_logger.setLevel(logging.INFO)
 	bib4txt_logger.info(
 			"Script running.\nargs=%s\ninfile=%s\noutfile=%s\nstyle file=%s"
 			%(args, options.infile, options.outfile,options.stylefile)
