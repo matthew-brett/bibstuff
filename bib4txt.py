@@ -175,6 +175,7 @@ def main():
 	if options.outfile:
 		if os.path.exists(options.outfile) and not options.overwrite:
 			print "File %s exists:  use -n option to nuke (overwrite) this file."%(options.outfile)
+			print "PLEASE CHECK FILE NAME CAREFULLY!"
 			sys.exit(1)
 		output = open(options.outfile,'w')
 

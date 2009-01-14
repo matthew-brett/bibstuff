@@ -69,7 +69,7 @@ field                := name, tb, '=' , tb, value
 value                := simple_value  / (simple_value, (tb,'#', tb, simple_value)+)
 >simple_value<       :=  string / number / name
 alpha_name           := [a-zA-Z]+
-name                 := []-[a-z_A-Z!$&+./:;<>?^`|] , []-[a-z_A-Z0-9!$&+./:;<>?^`|]*
+name                 := []-[a-z_A-Z!$&+./:;<>?^`|'] , []-[a-z_A-Z0-9!$&+./:;<>?^`|']*
 number               :=  [0-9]+ / ([[0-9]+, tb, [-]+, tb, [0-9]+)
 string               :=  ('\"' , quotes_string?, '\"') / ('{' , braces_string?, '}')
 <braces_string>      := (-[{}]+ / string)+
