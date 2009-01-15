@@ -8,9 +8,9 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
 :contact: http://www.schwilk.org
 :author: Alan G. Isaac
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
-:copyright: 2008 by Dylan Schwilk and Alan G Isaac
+:copyright: 2009 by Dylan Schwilk and Alan G Isaac
 :license: MIT (see `license.txt`_)
-:date: 2008-07-02
+:date: 2009-01-14
 :since: 2006-08-29
 
 
@@ -130,9 +130,9 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		
 		:Parameters:
 		  `raw_name` : str
-			    the raw name (e.g., unparsed author field of a BibEntry instance)
+			the raw name (e.g., unparsed author field of a BibEntry instance)
 		  `from_field` : str
-		      the entry field for the raw name
+		    the entry field for the raw name
 		  
 		:note: 2006-08-02 add `from_field` argument (set by `BibEntry.make_names`)
 		"""
@@ -144,7 +144,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 			self.parse_raw_names(raw_name)
 
 	###############  PRODUCTION FUNCTIONS  #######################
-        # Handle each name by adding new dict to list "names_dicts", then
+	# Handle each name by adding new dict to list "names_dicts", then
 	# handle each name part by adding to last dict in names_dict list.
 
 	def name(self, (tag,start,stop,subtags), buffer):
@@ -152,12 +152,11 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		self.names_dicts.append({}) # add new dict to list
 		for part in subtags:
 			dispatch(self, part, buffer)
-                        
-                # Create empty lists for missing parts
+				# Create empty lists for missing parts
 		for p in nameparts:
 			if not self.names_dicts[-1].has_key(p):
 				self.names_dicts[-1][p] = []
-                
+
 	def last(self, (tag,start,stop,subtags), buffer ):
 		"""Processes last name part in a single name of a bibtex names field"""
 		if self.names_dicts[-1].has_key("last"):
@@ -181,7 +180,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 
 	def jr(self, (tag,start,stop,subtags), buffer ):
 		"""Processes jr name part in a single name of a bibtex names field"""
-                # Just on jr part so simple add list with one item
+		# Just on jr part so simple add list with one item
 		self.names_dicts[-1]["jr"] = [ buffer[start:stop],]
 		
 	##############  HELPER FUNCTIONS  ######################
@@ -235,8 +234,8 @@ def getNames(src) :
 	except :
 		bibname_logger.error('Error in name %s' % src)
 		raise
-     
-        
+
+
 # command-line version
 if __name__ =="__main__":
 	import sys
@@ -262,29 +261,31 @@ if __name__ =="__main__":
 		bibname_logger.setLevel(logging.INFO)
 	if options.last_names:
 		options.template = 'l'
-
-	if len(args) > 0 :
-		try :
-		   rfile = lambda f : f.read()
-		   src = '\n'.join(map(rfile , map(open,args)))
-		except:
-			print 'Error in filelist'
-	else :
-		src = sys.stdin.read()
-
-	bfile = bibfile.BibFile()
-
-        try:
-                bibgrammar.Parse(src, bfile)
-        except NameError:
-                print "No bibtex source database found"
-                exit(1)
-                
 	if options.initials :
 		initials = 'f'  # only first names.  Does any style ever use initials for anything else?
 	else :
 		initials = ''
 
+	if len(args) == 0 :
+		src = sys.stdin.read()
+	else :
+		flist = list()
+		for fname in args:
+			try:
+				flist.append(open(fname,'r'))
+			except IOError :
+				bibname_logger.warn('Error in filelist: %s.'%fname)
+		src = '\n'.join(f.read() for f in flist)
+		map(lambda f: f.close(), flist)
+
+	if not src:
+		bibname_logger.error("No bibtex source database found")
+		sys.exit(1)
+	else:
+		bfile = bibfile.BibFile()
+		bibgrammar.Parse(src, bfile)
+
 	names_formatter = bibstyles.shared.NamesFormatter(template_list=[options.template]*2,initials=initials)
 	for entry in bfile.entries:
 		print entry.format_names(names_formatter)
+
