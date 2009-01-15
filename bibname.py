@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 #File: bibname.py
 """
-Parses bibtex-formatted author/editor names lists and provides
-formatting functions (often via bibstyles/shared.NamesFormatter).
+Parses bibtex-formatted author/editor raw names and provides
+formatting functions (e.g., via bibstyles/shared.NamesFormatter).
 
 :author: Dylan W. Schwilk
 :contact: http://www.schwilk.org
@@ -22,14 +22,11 @@ formatting functions (often via bibstyles/shared.NamesFormatter).
        grammar handles latex accents and ligatures as well as braces strings so
        that a name such as {Barnes and Noble, Inc} is parsed as a single name
        and not split on the " and ".
-
 :todo: The dispatch processor does not currently strip the leading and trailing
        braces from latex/bibtex strings. Not hard to add (see bibfile.py). This
        should be done eventually.
-
 :todo: The grammar does not support quoted strings, only braces strings. Could
        be added fairly simply
-
 
 .. _license.txt: ./license.txt
 """
@@ -99,14 +96,7 @@ jr       := "jr" / "Jr" / "JR" /  "Junior" / "junior" /
 <braces_string>       := (-[{}]+ / string)+
 <sp>                  := [ \t\n\r.]
 """
-# old fvl definition with limited number of first parts:
-# >fvl<    :=  (first, sp+, first, sp+, first, sp+, first, sp+,  first, sp+, (von, sp+)* , (last, sp*)+) /
-#              (first, sp+, first, sp+, first, sp+,  first, sp+, (von, sp+)* , (last, sp*)+) /
-#              (first, sp+, first, sp+,  first, sp+, (von, sp+)* ,  (last, sp*)+) /
-#              (first, sp+, first, sp+, (von, sp+)*, last) / (first,  sp+, (von, sp+)*, (last, sp*)+)
 
-
-#bibname_parser = simpleparse.parser.Parser(ebnf_bibname, 'name')
 bibnamelist_parser = simpleparse.parser.Parser(ebnf_bibname, 'namelist')
 
 ######################################################
@@ -125,23 +115,23 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 	
 	:note: a BibName object should be bibstyle independent.
 	"""
-	def __init__(self,raw_name=None,from_field=None) :  #:note: 2006-07-25 add initialization based on raw name
+	def __init__(self, raw_names=None, from_field=None) :  #:note: 2006-07-25 add initialization based on raw name
 		"""initialize a BibName instance
 		
 		:Parameters:
-		  `raw_name` : str
-			the raw name (e.g., unparsed author field of a BibEntry instance)
-		  `from_field` : str
-		    the entry field for the raw name
-		  
+			`raw_names` : str
+				the raw names (e.g., unparsed author field of a BibEntry instance)
+			`from_field` : str
+				the entry field for the raw name
+
 		:note: 2006-08-02 add `from_field` argument (set by `BibEntry.make_names`)
 		"""
 		self.from_field = from_field
-		#self.raw_names_parts = [[[]]] # list of names, a name is a list of up to three lists
-		#self.names_parts = [] # list of names, a name is a tuple of four lists (f,v,l,j)
-		self.names_dicts = []  #:TODO: switch to use of names_dicts  (begun)
-		if raw_name:
-			self.parse_raw_names(raw_name)
+		self.raw_names = raw_names
+		self.names_dicts = []
+		#populate self.names_dicts from raw_names
+		if raw_names:
+			self.parse_raw_names(raw_names)
 
 	###############  PRODUCTION FUNCTIONS  #######################
 	# Handle each name by adding new dict to list "names_dicts", then
@@ -152,7 +142,7 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		self.names_dicts.append({}) # add new dict to list
 		for part in subtags:
 			dispatch(self, part, buffer)
-				# Create empty lists for missing parts
+		# Create empty lists for missing parts
 		for p in nameparts:
 			if not self.names_dicts[-1].has_key(p):
 				self.names_dicts[-1][p] = []
@@ -189,18 +179,15 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		"""This function can be used to populate an empty BibName
 		instance or replace all the name values currently contained in
 		an instance. It parses the names field with the bibname grammar"""
-		if len(self.names_dicts) >= 1 : self.names_dicts = []  # Replace current list of  names
+		self.names_dicts = []  # Replace extant list of  names
 		bibnamelist_parser.parse(raw_name,  processor =  self)
 
-	
 	def get_names_dicts(self):  #:note: renamed
 		"""
 		Return a list of name dicts,
 		one dict per name,
 		having the fields: first , von, last, jr
 		"""
-# 		if not self.names_dicts:
-# 			self.parse_raw_names_parts()
 		return self.names_dicts
 
 	
@@ -211,16 +198,17 @@ class BibName( simpleparse.dispatchprocessor.DispatchProcessor ):
 		
 		:TODO: graceful handling of missing names parts
 		"""
-# 		if not self.names_dicts:
-# 			self.parse_raw_names_parts() #this will make the names_dicts
-		result = [' '.join(name_dict['last']) for name_dict in self.names_dicts]
+		result = list(' '.join(name_dict['last']) for name_dict in self.names_dicts)
 		#bibname_logger.debug("BibName.get_last_names result: "+str(result))
 		return result
 
-	#format a BibName object into a string useful for citations
-	#ai: called by the BibEntry class in bibfile.py when entry formatting
-	#is requested
 	def format(self, names_formatter):
+		"""
+		format a BibName object into a string useful for citations
+
+		:note: called by the BibEntry class in bibfile.py when entry formatting
+			is requested
+		"""
 		return names_formatter.format_names(self)
 
 

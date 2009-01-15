@@ -253,7 +253,7 @@ class NameFormatter(object):
 
 	def name_dict2formatted(self,name_dict):
 		"""Returns one fully formatted name, based on a name_dict.
-		#   the name_dict should have the keys: first , von, last, jr
+		the name_dict should have the keys: first , von, last, jr
 		"""
 		assert( len(name_dict['last'][0]) > 0 )
 		if name_dict['last'][0] == "others":
@@ -403,7 +403,7 @@ class CitationManager(object):
 	def sortkey(self,entry):
 		"""
 		:note: the sort key is a style consideration and so must be provided by the style;
-		       therefore, you must usually OVERRIDE this default sort key
+			therefore, you must usually OVERRIDE this default sort key
 		"""
 		result = entry.get_names().get_last_names()
 		result.append(entry['year'])
