@@ -37,15 +37,21 @@ misc = '%(year)s.  %(title)s.',
 :contact: http://www.american.edu/cas/econ/faculty/isaac/isaac1.htm
 :copyright: 2006 by Alan G Isaac
 :license: MIT (see `license.txt`_)
-:date: 2006-08-19
+:since: 2006-08-19
 
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
-__author__  =   "Alan G. Isaac"
+import re
 
-__version__ = "$Revision$"
-# $Source$
+
+#default post processing of citations
+# remove braces
+_deletechars = re.compile('[\\\\{}]')
+
+def default_post_processor(citations_as_string):
+	result = _deletechars.sub('',citations_as_string)
+	return result
 
 DEFAULT_CITEREF_TEMPLATE = dict(
 max_cite_names = 2,
@@ -75,5 +81,6 @@ max_citation_names = 3,
 indent_left = 3,
 citation_sep = "\n\n",
 names_details_sep = '. ',
+post_processor = default_post_processor
 )
 

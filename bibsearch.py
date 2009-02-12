@@ -39,7 +39,7 @@ __needs__ = '2.4'
 
 
 ###################  IMPORTS  ##################################################
-#import from standard library
+#imports from standard library
 import string, sys, os
 import logging
 logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
@@ -112,7 +112,7 @@ def main():
 		for s in searches:
 			entrylist.extend(parsed_bibfile.search_entries(s))
 	else:
-		entrylist = parsed_bibfile.get_entrylist(searches,discard=True)
+		entrylist = parsed_bibfile.get_entrylist(searches, discard=True)
 
 	if entrylist:  #found some matches -> output the list in desired format
 		result = ""

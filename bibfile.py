@@ -20,8 +20,8 @@ To fill a BibFile instance, bfi, call bibgrammar.Parse(src, bfi).
 .. _license.txt: ./license.txt
 """
 __docformat__ = "restructuredtext en"
-__authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
-__version__ =    '1.13'
+__authors__  = ["Dylan W. Schwilk", "Alan G. Isaac"]
+__version__ = '1.13'
 __needs__ = '2.4'
 
 # options:
@@ -61,7 +61,6 @@ class BibEntry(dict):
 	field keys are case-insensitive and fields are stored
 	in the order added.
 	
-	:note: 2006-07-25 completely refactored; now subclasses dict and no longer uses seqdict.
 	:note: 2006-08-10 use 'citekey' instead of 'key' since BibTeX allows a 'key' field
 	:note: 2008-03-29 'entry_type' instead of 'type' since BibTeX allows a 'type' field
 	"""
@@ -111,13 +110,15 @@ class BibEntry(dict):
 		key = key.lower()
 		dict.__setitem__(self, key, val)
 		if key == "key":
-			bibfile_logger.info("Setting 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
+			bibfile_logger.info(
+			"Setting 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		if key not in self._fields and key not in ["citekey","entry_type"] and val:
 			self._fields.append(key)
 	def __getitem__(self, field):  #field is usually a BibTeX field but can be a citekey
 		field = field.lower()
 		if field == "key":
-			bibfile_logger.info("Seeking 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
+			bibfile_logger.info(
+			"Seeking 'key' as an entry *field*. (Recall 'citekey' holds the entry id.)")
 		try:
 			result = dict.__getitem__(self, field)
 		#:TODO: rethink this decision (but it is used for formatting)
@@ -415,7 +416,7 @@ class BibFile( DispatchProcessor ):
 		:note: used by bibsearch.py
 		"""
 		ls = [entry for entry in self.entries
-		      if entry.search_fields(string_or_compiled=reo, field=field, ignore_case=ignore_case)]
+			if entry.search_fields(string_or_compiled=reo, field=field, ignore_case=ignore_case)]
 		return ls
 
 

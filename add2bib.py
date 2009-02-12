@@ -587,7 +587,7 @@ def main():
 	# open output file for writing (default: stdout)
 	if options.outfile:
 		if options.backup and os.path.exists(options.outfile):
-			shutil.copyfile(options.outfile,options.outfile+".bak")
+			shutil.copyfile(options.outfile, options.outfile+".bak")
 		if options.overwrite or not os.path.exists(options.outfile):
 			output = open(options.outfile,'w')
 		else:
@@ -595,7 +595,7 @@ def main():
 			                     %options.outfile)
 			output = open(options.outfile,'a')
 	output.write(str(entry))
-	print entry
+	#print entry
 	if 'h' in options.format:
 		output.write( html_format(entry) )
 	if 't' in options.format:

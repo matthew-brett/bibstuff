@@ -10,7 +10,8 @@ Greg Ward's btOOL_ documentation.
 
 :author: Dylan Schwilk
 :contact: http://www.schwilk.org
-:author: Alan G Isaac (minor edits)
+:author: Alan G Isaac
+:contact: http://www.american.edu/cas/econ/faculty/faculty.htm#isaac
 :license: MIT (see `license.txt`_)
 :date: 2008-06-28
 
@@ -44,12 +45,17 @@ from simpleparse.common import numbers, strings, chartypes
 # in a bibfile is changed! I do not believe it is a problem with the grammar
 # but is a bug in simpleparse itself.
 
-# modification 2009-01-01
+#modification 2009-01-01
 #  change `key` to `citekey`
 #  add `alpha_name`
 #  change `macro` def (use case insenstive string)
 #  change `macro_contents` def (field instead of fields)
 #  change `fields` def (since comma is allowed after last field)
+#modification 2009-02-11
+#  change braces_string and esp. quotes_string def bec old def *very* slow
+#  also, gives better match to format described at
+#  http://artis.imag.fr/~Xavier.Decoret/resources/xdkbibtex/bibtex_summary.html
+
 dec = r"""
 bibfile              := entry_or_junk+
 >entry_or_junk<      := (tb, object) / (tb, junk)
@@ -72,22 +78,23 @@ alpha_name           := [a-zA-Z]+
 name                 := []-[a-z_A-Z!$&+./:;<>?^`|'] , []-[a-z_A-Z0-9!$&+./:;<>?^`|']*
 number               :=  [0-9]+ / ([[0-9]+, tb, [-]+, tb, [0-9]+)
 string               :=  ('\"' , quotes_string?, '\"') / ('{' , braces_string?, '}')
-<braces_string>      := (-[{}]+ / string)+
-<quotes_string>      := (-[\"]+ / string)+
+<braces_string>      := (-[{}@]+ / string)+
+<quotes_string>      := (-[\"]+ / ('{', braces_string,'}'))+
 <junk>               := -[ \t\r\n]+
 <tb>                 := (comment / ws)*
 <ws>                 := [ \t\n\r]
 <comment>            := '%' , -[\n]*, '\n'
 """
 
-## The parsers
-parser = Parser(dec,'bibfile')
-entry_parser = Parser(dec,'entry')
 
-## or a default parse function
-def Parse(src, processor = None) :
+## instantiate SimpleParse parsers
+parser = Parser(dec, 'bibfile')
+entry_parser = Parser(dec, 'entry')
+
+## offer a default parse function
+def Parse(src, processor=None) :
 	'''Parse the bibtex string in src, process with processor.'''
-	return parser.parse(src,  processor =  processor)
+	return parser.parse(src,  processor=processor)
 
 ## self-test
 if __name__ =="__main__":

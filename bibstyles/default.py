@@ -81,10 +81,13 @@ class CitationManager(shared.CitationManager):
 		Usually you will need to write a 'format_inline_cite' function
 		that the CiteRefProcessor will use to substitute inline for citation references.
 		"""
+		style_logger.debug('default: enter CitationManager.format_inline_cite')
 		#:note: need entry to be None if cite_key not found, so discard=False
 		entry_list = self.find_entries(cite_key_list,discard=False)
+		"""
 		for entry in entry_list:
 			print entry
+		"""
 		return format_inline_cite(entry_list, self)
 
 	################### CITATION FORMATTING ########################
@@ -97,15 +100,19 @@ class CitationManager(shared.CitationManager):
 		return make_sort_key(bibentry,['Author','Year'])
 
 def format_inline_cite(entry_list, citation_manager):
-	"""Format in-text citations, allowing for multiple citations.
-	`entry_list` is a list of entries
+	"""Return string, formatted in-text citation (allows *multiple* citations).
+
+	`entry_list` : list
+		entries to be formatted
+	`citation_manager` : CitationManager instance
+		handles name formatting
 
 	:note: need the entry formatter bc its determines the field of the names for the cite
-	:note: much of the following functionality was in Bibstyle's formatCitation() method
+	:note: much of the following functionality was in the old Bibstyle's formatCitation() method
 	:TODO: rewrite
 	:TODO: ? entries shd be more featureful ? (conflicts with core goal of BibEntry class)
 	"""
-	style_logger.debug("Entering format_inline_cite.")
+	style_logger.debug("default.py: Entering format_inline_cite.")
 	name_date_sep = ' '
 	formatted_list = []
 	for entry in entry_list:

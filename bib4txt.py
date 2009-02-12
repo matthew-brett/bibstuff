@@ -97,13 +97,16 @@ def make_text_output(src_as_string,
                      citations_only=True):
 	"""Create intext citations and the bibliography"""
 	#first: create a citation manager to handle the bibfile(s)
+	bib4txt_logger.debug('create citation manager')
 	citation_manager = style.CitationManager([parsed_bibfile], keys=None, citation_template=style.CITATION_TEMPLATE)
 	#second: create CiteRefProcessor object to process cites during src parsing
 	#        (associate with the citation_manager)
+	bib4txt_logger.debug('create cite processor')
 	cite_processor = bibstyles.shared.CiteRefProcessor(citation_manager)
 	#third: parse the text (taglist is a dummy container)
-	taglist = src_parser.parse(src_as_string,processor=cite_processor)
-	"""The cite_processor now holds the cite keys and
+	bib4txt_logger.info('fill cite processor with keys')
+	taglist = src_parser.parse(src_as_string, processor=cite_processor)
+	"""cite_processor.all_citekeys now holds the cite keys and
 	is associated with citation_manager which holds the bibliography,
 	so we can make a sorted entry list.  To do so need:
 		- the keys for the citations referenced
@@ -113,6 +116,7 @@ def make_text_output(src_as_string,
 	#set the citation manager citekeys to all found keys (an ordered list)
 	#citation_manager.citekeys = cite_processor.all_citekeys
 	#make the citation definitions for a list of References
+	bib4txt_logger.info('make citations')
 	result = citation_manager.make_citations()
 	#lastly, prepend the entire document, if desired
 	if not citations_only:
@@ -123,6 +127,18 @@ def make_text_output(src_as_string,
 
 
 
+
+def bibfiles2string(bibfile_names):
+	bibfiles_as_strings = list()
+	for bibfile_name in bibfile_names:
+		if (os.path.splitext(bibfile_name)[-1]).lower() != ".bib":
+			bib4txt_logger.warning("%s does not appear to be a .bib file."%bibfile_name )
+		try:
+			with open(bibfile_name,'r') as fh:
+				bibfiles_as_strings.append( fh.read() )
+		except IOError:
+			bib4txt_logger.warning("%s not found."%bibfile_name )
+	return '\n'.join( bibfiles_as_strings )
 		
 		
 
@@ -185,16 +201,7 @@ def main():
 
 	# read database (.bib) files
 	bibfile_names = args
-	bibfiles_as_strings = list()
-	for bibfile_name in bibfile_names:
-		if (os.path.splitext(bibfile_name)[-1]).lower() != ".bib":
-			bib4txt_logger.warning("%s does not appear to be a .bib file."%bibfile_name )
-		try:
-			with open(bibfile_name,'r') as fh:
-				bibfiles_as_strings.append( fh.read() )
-		except IOError:
-			bib4txt_logger.warning("%s not found."%bibfile_name )
-	bibfile_as_string = '\n'.join( bibfiles_as_strings )
+	bibfile_as_string = bibfiles2string(bibfile_names)
 	if not bibfile_as_string:
 		bib4txt_logger.warning("No BibTeX databases found.")
 		sys.exit(1)
@@ -220,16 +227,17 @@ def main():
 
 	# create object to store parsed .bib file
 	bibfile_processor = bibfile.BibFile()
-	#store parsed .bib file in the bibfile_processor
-	#  TODO: allow multiple .bib files
+	bib4txt_logger.debug('Ready to parse bib file.')
+	#store parsed .bib files in the bibfile_processor
 	bibgrammar.Parse(bibfile_as_string, bibfile_processor)
+	bib4txt_logger.info('bib file parsed.')
 
-
-	result = make_text_output(input.read(),
-									cite_parser,
-									bibfile_processor,
-									style,
-									citations_only = not options.entire_doc)
+	result = make_text_output(
+		input.read(),
+		cite_parser,
+		bibfile_processor,
+		style,
+		citations_only = not options.entire_doc)
 
 	output.write(result)        
 	output.close()

@@ -17,8 +17,10 @@ __version__ = "1.3"
 
 ###################  IMPORTS  ##################################################
 #import from standard library
+import logging, re
+#import dependencies
 import simpleparse
-import logging
+#create globals
 shared_logger = logging.getLogger('bibstuff_logger')
 ################################################################################
 
@@ -36,14 +38,14 @@ def append_sep(s,sep):
 		sep = sep[1:]
 	return s+sep
 
-def reformat_para(para='',left=0,right=72,just='LEFT'):
+def reformat_para(para='', left=0, right=72, just='LEFT'):
 	"""Simple paragraph reformatter.  Allows specification
 	of left and right margins, and of justification style
 	(using constants defined in module).
 	:note: Adopted by Schwilk from David Mertz's example in TPiP
 	:see:  Mertz, David,  *Text Processing in Python* (TPiP)
 	"""
-	LEFT,RIGHT,CENTER = 'LEFT','RIGHT','CENTER'
+	LEFT, RIGHT, CENTER = 'LEFT', 'RIGHT', 'CENTER'
 	words = para.split()
 	lines = []
 	line  = ''
@@ -446,7 +448,7 @@ class CitationManager(object):
 		citation_template = self.citation_template
 		formatter = self.entry_formatter
 		result = formatter.format_entry(entry)
-		citation_label = self.get_citation_label(entry,citation_template)
+		citation_label = self.get_citation_label(entry, citation_template)
 		#result = citation_label + reformat_para( append_sep(names,sep)+details, left=citation_template['indent_left'] )
 		result = citation_label + reformat_para( result, left=citation_template['indent_left'] )
 		return result
@@ -505,19 +507,18 @@ class CiteRefProcessor( simpleparse.dispatchprocessor.DispatchProcessor ):
 		entry_list = self.citation_manager.find_entries(cite_key_list,discard=False)
 		#substitute formatted citation reference into document text
 		self.result.append( self.citation_manager.format_inline_cite(cite_key_list) )
-		self.log_msg("The following is parsed as cite:\n" + buffer[start:stop])
 
-	def inline_literal(self, (tag,start,stop,subtags), buffer ):
+	def inline_literal(self, (tag,start,stop,subtags), buffer):
 		"Return everything."
 		self.result.append( buffer[start:stop] )
 		self.log_msg("The following is parsed as inline_literal:\n" + buffer[start:stop])
 
-	def fn(self, (tag,start,stop,subtags), buffer ):
+	def fn(self, (tag,start,stop,subtags), buffer):
 		"Return everything."
 		self.result.append( buffer[start:stop])
 		self.log_msg("The following is parsed as fn:\n" + buffer[start:stop])
 
-	def plain(self, (tag,start,stop,subtags), buffer ):
+	def plain(self, (tag,start,stop,subtags), buffer):
 		"Return everything."
 		self.result.append( buffer[start:stop])
 		self.log_msg("The following is parsed as plain:\n" + buffer[start:stop])
@@ -528,8 +529,9 @@ class EntryFormatter(object):
 		self.citation_template = citation_template
 		self.names_formatter=NamesFormatter(citation_template)
 
-	def format_entry(self,entry,citation_template=None):
-		"""Format an entry (e.g., as a citation, i.e., a single bibliography reference).
+	def format_entry(self, entry, citation_template=None):
+		"""Return string.
+		Format an entry (e.g., as a citation, i.e., a single bibliography reference).
 		Note that a BibEntry object acts like a dict for Bib fields
 		*except* no KeyError (returns None instead).
 		`citation_template` holds templates for entry types
@@ -545,7 +547,11 @@ class EntryFormatter(object):
 		names = self.format_citation_names(entry, citation_template)
 		details = self.format_citation_details(entry, citation_template)
 		sep = citation_template['names_details_sep']
-		result = append_sep(names,sep)+details
+		result = append_sep(names, sep) + details
+		#ai 2009-02-11 by request but, good idea? think about it
+		post_processor = citation_template.get('post_processor', None)
+		if post_processor:
+			result = post_processor(result)
 		shared_logger.debug("EntryFormatter.format_citation: result = "+result)
 		return result
 	def format_citation_names(self, entry, citation_template=None):
@@ -560,6 +566,7 @@ class EntryFormatter(object):
 		return result
 	#TODO: this deserves substantial enhancement, at the least for journal handling for articles
 	def format_citation_details(self, entry, citation_template=None):
+		"""Return string."""
 		if citation_template is None:
 			citation_template = self.citation_template
 		try:
@@ -571,7 +578,7 @@ class EntryFormatter(object):
 		result = type_template % entry
 		return result
 	def pick_raw_names(self, entry, fields=None):
-		""" return BibName-object if possible else string
+		"""Return BibName-object if possible else string
 		(from "raw" names).
 		
 		:type `field`: str
