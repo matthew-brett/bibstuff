@@ -5,8 +5,8 @@
 :authors: Dylan W. Schwilk and Alan G. Isaac
 :web site: http://www.pricklysoft.org
 :source code: http://code.google.com/p/bibstuff/
-:date: 2008-06-23
-:version: 1.2
+:date: 2009-02-13
+:version: 1.0
 
 Some odds and ends files and scripts
 ====================================

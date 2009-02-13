@@ -1,11 +1,11 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 # bibstuff setup script
-# Date: 2007-09-03
+# Date: 2009-02-13
 
 from distutils.core import setup
 setup(name="bibstuff",
-      version="0.7.5",  
+      version="1.0.0",  
       description="Bibtex database utilities",
       author="Dylan W. Schwilk and Alan G. Isaac",
       author_email="point@pricklysoft.org",
