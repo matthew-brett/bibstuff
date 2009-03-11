@@ -48,7 +48,8 @@ Bibstuff will process these into your reference list, but since this remains ill
 as reStructuredText, such multiple citation references will be missed by most
 reStructuredText readers.
 
-That should be enough for a test.
+That should be enough for a test, but here are a couple more:
+[martin-2008-jds]_, [doe-2525-tq]_.
 
 Use an `include directive`_ if you want to include the ``testout.txt`` bibliography.
 

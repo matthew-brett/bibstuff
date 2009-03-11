@@ -46,7 +46,7 @@ import re
 
 
 #default post processing of citations
-# remove braces
+# remove accents and braces
 _aigu = re.compile(r"\\'")
 _specialchars = re.compile(r'{\\([a-zA-Z])}')
 _deletechars = re.compile(r'[\\{}]')
