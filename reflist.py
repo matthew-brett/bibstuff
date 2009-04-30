@@ -1,12 +1,12 @@
 #! /usr/bin/env python
-
 """
-Script to produces a list of reference keys from a .bbl file created by bibtex.
+Script to produce a list of reference keys from a .bbl file created by bibtex.
 
-The output is useful for then feeding to bibsearch.py to create a
+The output is useful in combination with bibsearch.py.
+(Pass the output to bibsearch.py to create a
 custom database for a particular latex document. This avoids the
 necessity of sending a huge bibtex database along with a manuscript
-when submitting to a journal.
+when submitting to a journal.)
 
 :author: Dylan Schwilk
 :contact: http://www.schwilk.org
@@ -17,7 +17,6 @@ when submitting to a journal.
 
 .. _license.txt: ./license.txt
 """
-
 __docformat__ = "restructuredtext en"
 __authors__  =    ["Dylan W. Schwilk", "Alan G. Isaac"]
 __version__ = "1.5.3"
@@ -28,6 +27,8 @@ __needs__ = '2.4'
 #import from standard library
 import sys
 import logging
+
+#configure logger
 logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 reflist_logger = logging.getLogger('bibstuff_logger')
 ################################################################################
@@ -66,13 +67,12 @@ def main():
 	items = src.split('\n\n')
 	for i in items :
 		i = i.strip()
-		if i[:8] == '\\bibitem':
+		if (i[:8] == '\\bibitem') :
 			s = i.find(']')
 			e = i.find('}', s)
 			print i[s+2:e]
 
 
-
 if __name__ == '__main__':
-
         main()
+
