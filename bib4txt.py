@@ -98,7 +98,9 @@ def make_text_output(src_as_string,
 	"""Create intext citations and the bibliography"""
 	#first: create a citation manager to handle the bibfile(s)
 	bib4txt_logger.debug('create citation manager')
-	citation_manager = style.CitationManager([parsed_bibfile], keys=None, citation_template=style.CITATION_TEMPLATE)
+	citation_manager = style.CitationManager([parsed_bibfile],
+											citekeys=None,
+											citation_template=style.CITATION_TEMPLATE)
 	#second: create CiteRefProcessor object to process cites during src parsing
 	#        (associate with the citation_manager)
 	bib4txt_logger.debug('create cite processor')

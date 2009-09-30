@@ -124,9 +124,9 @@ def main():
 			# style based formated references
 			style_stmt = "import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0]
 			exec style_stmt in globals()
-			citation_manager = style.CitationManager([parsed_bibfile,],
-													 [e.citekey for e in entrylist],
-													 style.CITATION_TEMPLATE)
+			citation_manager = style.CitationManager([parsed_bibfile],
+													 citekeys=[e.citekey for e in entrylist],
+													 citation_template=style.CITATION_TEMPLATE)
 			cite_processor = bibstyles.shared.CiteRefProcessor(citation_manager)
 			result = citation_manager.make_citations()
 		print(result)

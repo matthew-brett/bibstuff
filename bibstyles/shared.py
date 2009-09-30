@@ -332,12 +332,12 @@ class CitationManager(object):
 	"""
 	:TODO: possibly useful for bibsearch.py
 	"""
-	def __init__(self, biblist, keys=None, citation_template=None, sortkey=None):
+	def __init__(self, biblist, citekeys=None, citation_template=None, sortkey=None):
 		self.biblist = biblist
-		#:alert: use citekeys property -> self._entries created!
-		self.citekeys = keys
+		#:alert: set_citekeys -> self._entries created!
+		self.set_citekeys(citekeys)
 		self.citation_template = citation_template
-		self.entry_formatter=EntryFormatter(citation_template)
+		self.entry_formatter = EntryFormatter(citation_template)
 		if sortkey: #TODO: ?? remove this possibility ??
 			self.sortkey = sortkey
 		self.citeref_processor = None
@@ -349,7 +349,7 @@ class CitationManager(object):
 			citation_sep = "\n\n"
 		return citation_sep.join( [str(entry)  for entry in self._entries] )
 
-	def set_citeref_processor(self,processor):
+	def set_citeref_processor(self, processor):
 		self.citeref_processor = processor
 	def format_inline_cite(self, cite_key_list):
 		"""Returns a formatted inline citation reference.
@@ -362,20 +362,21 @@ class CitationManager(object):
 
 
 	def get_citekeys(self):
-		return self._keys
-	def set_citekeys(self,keys):
-		"""set self._keys to keys **and** make associated entries
+		return self._citekeys
+	def set_citekeys(self, citekeys):
+		"""set self._citekeys to keys **and** make associated entries
 		"""
-		self._keys = keys
-		if keys:
+		shared_logger.debug("shared.CitationManager.set_citekeys %s."%citekeys)
+		self._citekeys = citekeys
+		if citekeys:
 			#discard keys that do not have an entry
-			self._entries = self.find_entries(keys,discard=True)
+			self._entries = self.find_entries(citekeys, discard=True)
 		else:
 			self._entries = []
-	citekeys = property(get_citekeys,set_citekeys,None,"citekeys property")
+	citekeys = property(get_citekeys, set_citekeys, None, "citekeys property")
 
 
-	def find_entries(self,citekeys=None,discard=True):
+	def find_entries(self, citekeys=None, discard=True):
 		"""return all entries if citekeys==None else matching entries
 		discard=True -> discard keys that do not have a bib entry
 		"""
@@ -386,23 +387,28 @@ class CitationManager(object):
 		for bib in self.biblist:
 			result.extend(bib.get_entrylist(citekeys,discard=discard))
 		return result
-	def get_entries(self,citekeys=None):
+	def get_entries(self, citekeys=None):
 		if not citekeys:
 			return self._entries[:]
 		else:
 			return self.find_entries(citekeys)
 	#note: citation_rank uses unit-based indexing!! (so styles don't have to offset it)
-	def get_citation_rank(self,entry,keys=None):
-		if keys is None:
-			keys = self._keys
-		if entry.citekey not in keys:
+	def get_citation_rank(self, entry, citekeys=None):
+		if citekeys is None:
+			citekeys = self._citekeys
+		if citekeys is None:  #chk
+			citekeys = self.citeref_processor.all_citekeys
+			self._citekeys = citekeys
+		shared_logger.debug("shared.CitationManager.get_citation_rank citekeys %s."%citekeys)
+		if entry.citekey not in citekeys:
 			rank = None
-			shared_logger.error("Entry key not in keys; citation_rank set to None.")
-		else: # found the key in the cite-key list
-			rank = 1 + self._keys.index(entry.citekey)
+			msg = 'Entry citekey not in citekeys; citation_rank set to None.'
+			shared_logger.error(msg)
+		else: # found the citekey in the cite-key list
+			rank = 1 + self._citekeys.index(entry.citekey)
 		return rank
 
-	def sortkey(self,entry):
+	def sortkey(self, entry):
 		"""
 		:note: the sort key is a style consideration and so must be provided by the style;
 			therefore, you must usually OVERRIDE this default sort key
@@ -410,7 +416,7 @@ class CitationManager(object):
 		result = entry.get_names().get_last_names()
 		result.append(entry['year'])
 		return result
-	def sort(self,sortkey=None): #TODO: not currently using this!
+	def sort(self, sortkey=None): #TODO: not currently using this!
 		if sortkey:
 			self.sortkey = sortkey  # NB!
 		if self.sortkey:
@@ -429,12 +435,13 @@ class CitationManager(object):
 		:note: citation order based on order of entries (so must sort ahead of time)
 		:note: related functionality was in the old CitationFormatter's FormatReferences() method
 		"""
-		shared_logger.debug("make_citations: args are:"+str((entries,citation_template)))
+		shared_logger.debug("shared.CitationManager.make_citations: args are:"+str((entries,citation_template)))
 		if entries is None:
 			if not self._entries: #get entries matching cite keys found by citeref_processor
 				self._entries = self.find_entries(self.citeref_processor.all_citekeys)
 			entries = self._entries
-			shared_logger.debug("make_citations: entries are:"+str(self._entries))
+			msg = "make_citations: entries are: %s"%(self._entries)
+			shared_logger.debug(msg)
 		entries.sort(key=self.sortkey)  #TODO!!! use more sensible approach (also: 2.4 dependency)
 		if citation_template is None:
 			citation_template = self.citation_template

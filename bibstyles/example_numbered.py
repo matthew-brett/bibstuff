@@ -58,10 +58,10 @@ class CitationManager(shared.CitationManager):
 		return format_inline_cite(entry_list,cite_key_list,all_keys)
 
 	################### CITATION FORMATTING ########################
-	def get_citation_label(self,entry,template=None):
+	def get_citation_label(self, entry, template=None):
 		return ("%d."%self.get_citation_rank(entry)).ljust(5)
 
-	def sortkey(self,bibentry):
+	def sortkey(self, bibentry):
 		return self.get_citation_rank(bibentry)
 
 
