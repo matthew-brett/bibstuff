@@ -62,7 +62,7 @@ class CitationManager(shared.CitationManager):
 		return ("%d."%self.get_citation_rank(entry)).ljust(5)
 
 	def sortkey(self,bibentry):
-		return self.get_citation_rank(entry)
+		return self.get_citation_rank(bibentry)
 
 
 
