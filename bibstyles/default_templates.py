@@ -50,12 +50,14 @@ import re
 _aigu = re.compile(r"\\'")
 _specialchars = re.compile(r'{\\([a-zA-Z])}')
 _deletechars = re.compile(r'[\\{}]')
+_ldquote = re.compile(r'``')
 
 def default_post_processor(citations_as_string):
 	result = citations_as_string
 	result = _aigu.sub('', result)
 	result = _specialchars.sub(r'\1', result)
 	result = _deletechars.sub('', result)
+	result = _ldquote.sub('"', result)
 	return result
 
 DEFAULT_CITEREF_TEMPLATE = dict(

@@ -159,7 +159,7 @@ class NamesFormatter(object):
 				result = append_sep(result,self.name_name_sep[1]) + final_name
 			else:
 				result = append_sep(result,self.etal)
-		assert(len(formatted_name_list) == 0)  #obviously
+		assert (len(formatted_name_list) == 0)  #obviously
 		if num_names > self.max_citation_names:
 			result = append_sep(result,self.etal)
 		return result
@@ -257,7 +257,7 @@ class NameFormatter(object):
 		"""Returns one fully formatted name, based on a name_dict.
 		the name_dict should have the keys: first , von, last, jr
 		"""
-		assert( len(name_dict['last'][0]) > 0 )
+		assert ( len(name_dict['last'][0]) > 0 )
 		if name_dict['last'][0] == "others":
 			return "others"
 		shared_logger.debug("name_dict2formatted: name_dict is "+str(name_dict))
@@ -294,7 +294,7 @@ class NameFormatter(object):
 		sets the name formatting template *and* sets the associated partdict used for actual formatting 
 		"""
 		shared_logger.debug("NameFormatter.set_template args: "+str(template))
-		assert(isinstance(template,str),"Must provide a name-template string to make a NameFormatter object.")
+		assert isinstance(template,str), "Provide a name-template string to make a NameFormatter object."
 		self._template = template
 		self.partdict = self.template2dict(template)
 	template = property(get_template,set_template,None,"template property")
