@@ -84,6 +84,11 @@ Package: bibstuff
 
 Package: bibstuff/bibstyles
 
+Spinx extension
+===============
+
+There's a sphinx extension using bibstuff in the ``sphinxext`` directory. See
+the comments in ``sphinext/bibref.py`` for more details.
 
 Testing
 =======
