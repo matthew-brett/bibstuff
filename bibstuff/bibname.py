@@ -1,6 +1,9 @@
 #! /usr/bin/env python
 #File: bibname.py
 """
+:mod:`bibstuff.bibname` --- Name Parser and Formatter
+=====================================================
+
 Parses bibtex-formatted author/editor raw names and provides
 formatting functions (e.g., via bibstyles/shared.NamesFormatter).
 

@@ -13,6 +13,7 @@ Contents:
 
    bibgrammar
    bibfile
+   bibname
 
 Indices and tables
 ==================
