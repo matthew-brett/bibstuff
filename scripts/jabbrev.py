@@ -24,7 +24,7 @@ import string, sys, re
 from simpleparse.parser import Parser
 from simpleparse.dispatchprocessor import * 
 
-import bibfile,  bibgrammar
+from bibstuff import bibfile,  bibgrammar
 
 
 def MakeMap(jlist):
