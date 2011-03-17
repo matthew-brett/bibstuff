@@ -1,4 +1,6 @@
-""" sphinx extension to implement bibtex blocks
+"""
+:mod:`bibstuff.sphinxext.bibref` --- BibTeX Sphinx Extension
+============================================================
 
 Implements two new directives::
 
@@ -12,8 +14,10 @@ Implements two new directives::
 which results in the generation of 3 citation targets with the references
 extracted from myrefs.bib and formatted according to the `default` style.
 
-.. bibmissing:: myrefs.bib
-    :style: default
+::
+
+    .. bibmissing:: myrefs.bib
+        :style: default
 
 This directive takes no content, and watches for missing citations during the
 build.  If it has a citation for the missing reference, it inserts the citation
@@ -70,8 +74,6 @@ class CiteMaker(object):
     It has to be possible to pickle this class because it will be saved with the
     doctree.
 
-    Parameters
-    ----------
     bib_str : str
         string with bibtex bibliography text
     style_str : str, optional
@@ -293,8 +295,8 @@ class BibListedDirective(Directive):
         It just reads the bibtex files with the given encoding, makes an object
         to contain them.
 
-        Returns
-        -------
+        Returns:
+
         cite_maker : ``CiteMaker`` instance, or None
             object wrapping read bibliography, or None if there was an error
             creating the instance

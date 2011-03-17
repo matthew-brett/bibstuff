@@ -14,6 +14,7 @@ Contents:
    bibgrammar
    bibfile
    bibname
+   sphinxext
 
 Indices and tables
 ==================
