@@ -1,0 +1,2 @@
+.. automodule:: bibstuff.bibgrammar
+    :members:
