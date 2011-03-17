@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    bibgrammar
+   bibfile
 
 Indices and tables
 ==================
