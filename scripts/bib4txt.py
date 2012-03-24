@@ -69,8 +69,7 @@ bib4txt_logger = logging.getLogger('bibstuff_logger')
 import simpleparse
 
 #local imports
-import bibfile, bibgrammar, bibstyles
-import ebnf_sp
+from bibstuff import bibfile, bibgrammar, bibstyles, ebnf_sp
 ################################################################################
 
 
