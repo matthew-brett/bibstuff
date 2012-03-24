@@ -41,9 +41,12 @@ library, by Alan Isaac.
 """
 DEBUG = True
 if DEBUG:
-    # This is ipython 0.10 (not 0.11, for which the interface has changed)
-    from IPython.Shell import IPShellEmbed
-    ipshell = IPShellEmbed([])
+    # This is ipython 0.10
+    try:
+        from IPython.Shell import IPShellEmbed
+        ipshell = IPShellEmbed([])
+    except ImportError: # 0.11 and later
+        from IPython import embed as ipshell
 
 import os
 from os import path
