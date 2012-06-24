@@ -81,6 +81,7 @@ class BibEntry(dict):
 		field_list = []
 		for key in self._fields:
 			addbraces = True
+                        addquotes = False
 			spacer = ' '*(mlen - len(key) )
 			val = self[key]
 			#handle crossref
@@ -100,7 +101,11 @@ class BibEntry(dict):
 					addbraces = not int(val)
 				except:
 					pass
-			if addbraces:
+                        if '@' in val:  # need to protect '@'
+                                addquotes = True
+                        if addquotes:
+                                val = '"' + val + '"'
+			elif addbraces:
 				val = "{" + val + "}"
 			field_list.append("  %-*s = %s" % (mlen, key, val))
 		stringrep += ",\n".join(field_list)

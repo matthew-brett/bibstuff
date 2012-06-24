@@ -13,4 +13,4 @@ setup(name="bibstuff",
       license = "MIT",
       packages = ["bibstyles"],
       py_modules=["bibfile","bibgrammar", "bibname", "ebnf_sp"],
-      scripts=["add2bib.py", "bib4txt.py", "bibsearch.py", "biblabel.py", "jabbrev.py", "reflist.py"] )
+      scripts=["add2bib.py", "bib4txt.py", "bibsearch.py", "biblabel.py", "jabbrev.py", "reflist.py", "bibname.py"] )
