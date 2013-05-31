@@ -48,6 +48,7 @@ if DEBUG:
     except ImportError: # 0.11 and later
         from IPython import embed as ipshell
 
+import re
 import os
 from os import path
 import sys
@@ -233,6 +234,19 @@ class BibListedDirective(Directive):
         'encoding': directives.encoding,
     }
 
+    def _get_refs(self, cite_maker):
+        """Return known to directive references
+
+        Might be overridden in derived classes
+        """
+        # Refs are just not-blank lines that don't start with #
+        refs = []
+        for line in self.content:
+            ref = line.strip()
+            if ref != '' and not ref.startswith('#'):
+                refs.append(ref)
+        return refs
+
     def run(self):
         """ Extract references from directive content and insert citations
 
@@ -244,12 +258,10 @@ class BibListedDirective(Directive):
         cite_maker, sort_flag, message = self.get_bibs_opts()
         if cite_maker is None:
             return [document.reporter.warning(message, line=self.lineno)]
+
         # Refs are just not-blank lines that don't start with #
-        refs = []
-        for line in self.content:
-            ref = line.strip()
-            if ref != '' and not ref.startswith('#'):
-                refs.append(ref)
+        refs = self._get_refs(cite_maker)
+
         # Find corresponding refs
         entries = []
         warnings = []
@@ -320,6 +332,47 @@ class BibListedDirective(Directive):
         extra_styles = env.config.bibref_styles
         cite_maker = CiteMaker(bib_str, style_str, extra_styles)
         return cite_maker, sort_flag, ''
+
+
+class BibMatchingDirective(BibListedDirective):
+
+    option_spec = {
+        'filter': directives.unchanged
+    }
+    # And all options of the parent
+    option_spec.update(BibListedDirective.option_spec)
+
+    def _get_refs(self, cite_maker):
+        """Returns references matching specified filter(s)
+        """
+        filters = []
+        for f in self.options.get('filter', '').split('\n'):
+            if not f: continue          # skip empty
+            field, regexp_str = f.split(':', 1)
+            # so we could specify e.g. HowPublished to indicate that do not want
+            # to ignore case
+            re_flags = re.MULTILINE
+            if field.lower() == field:
+                re_flags |= re.IGNORECASE
+            regexp = re.compile(regexp_str.strip(), re_flags)
+            filters.append((field.strip(), regexp))
+
+        # Select entries which match all provided filters
+        entries = []
+        for e in cite_maker.bibobj.entries:
+            full_match = True
+            for field, regexp in filters:
+                negate = field.startswith('!')
+                matches = e.search_fields(regexp, field=field.lstrip('!'))
+                if bool(negate) == bool(matches): # XOR
+                    # (not negate and not matches) or (negate and matches)
+                    full_match = False
+                    break
+
+            if full_match:
+                entries.append(e.get_citekey())
+
+        return entries
 
 
 class BibrefProvider(nodes.General, nodes.Element):
@@ -484,6 +537,7 @@ def setup(app):
     app.add_config_value('bibref_styles', {}, False)
     app.add_node(BibrefProvider)
     app.add_directive('biblisted', BibListedDirective)
+    app.add_directive('bibmatching', BibMatchingDirective)
     app.add_directive('bibmissing', BibMissingDirective)
     app.connect('env-purge-doc', env_purge_doc)
     app.connect('doctree-read', doctree_read)
