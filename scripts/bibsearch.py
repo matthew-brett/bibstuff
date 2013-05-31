@@ -46,8 +46,7 @@ logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 bibsearch_logger = logging.getLogger('bibstuff_logger')
 
 #local imports
-import bibfile, bibgrammar
-import bibstyles
+from bibstuff import bibfile, bibgrammar, bibstyles
 ################################################################################
 
  
@@ -122,7 +121,7 @@ def main():
 			result = "\n".join(str(e) for e in entrylist)
 		else :
 			# style based formated references
-			style_stmt = "import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0]
+			style_stmt = "import bibstuff.bibstyles.%s as style"%os.path.splitext(options.stylefile)[0]
 			exec style_stmt in globals()
 			citation_manager = style.CitationManager([parsed_bibfile],
 													 citekeys=[e.citekey for e in entrylist],

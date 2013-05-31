@@ -30,8 +30,8 @@ logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 biblabel_logger = logging.getLogger('bibstuff_logger')
 
 # bibstuff imports
-import bibfile, bibname
-import bibstyles
+from bibstuff import bibfile, bibname, bibstyles
+
 ################################################################################
 
 
@@ -68,7 +68,7 @@ def make_entry_citekey(entry, used_citekeys, name_template = 'v_|l', max_names =
 def main():
 	'''Command line version of tool'''
 	import sys
-	import bibgrammar
+	from bibstuff import bibgrammar
 
 	from optparse import OptionParser
 	
