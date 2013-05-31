@@ -6,14 +6,13 @@ from os.path import abspath, dirname, join as pjoin
 import sys
 from subprocess import check_call
 
-_my_path = dirname(__file__)
-doc_path = abspath(pjoin(_my_path, 'doc'))
-# path to extension
-sys.path.insert(0, abspath(pjoin(_my_path, '..')))
-# path to custom style
-sys.path.insert(0, abspath(_my_path))
+_my_path = abspath(dirname(__file__))
+doc_path = pjoin(_my_path, 'doc')
 
-import bibref as bs
+# path to custom style
+sys.path.insert(0, _my_path)
+
+from .. import bibref as bs
 
 from nose.tools import assert_true, assert_equal, assert_raises
 
@@ -26,6 +25,7 @@ def test_custom_styles():
     cs = bs.custom_styles({'test-style': 'style1'})
     assert_true(hasattr(cs['test-style'], 'CitationManager'))
     # Test nested package.module
+    sys.path.insert(0, pjoin(_my_path, '..'))
     cs = bs.custom_styles({'test-style': 'tests.style1'})
     assert_true(hasattr(cs['test-style'], 'CitationManager'))
 

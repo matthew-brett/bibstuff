@@ -1,2 +1,3 @@
 *.pyc
 build/
+bibstuff/sphinxext/tests/doc/_build/

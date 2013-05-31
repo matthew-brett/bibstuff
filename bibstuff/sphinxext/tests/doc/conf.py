@@ -18,7 +18,6 @@ import sys, os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 from os.path import abspath, join as pjoin
-sys.path.insert(0, abspath(pjoin('..', '..', 'sphinxext')))
 
 # Insert path for custom styles
 sys.path.insert(0, abspath('..'))
@@ -30,7 +29,7 @@ sys.path.insert(0, abspath('..'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['bibref']
+extensions = ['bibstuff.sphinxext.bibref']
 
 # This is the new configuration variable
 bibref_styles = {'test-style': 'style1'}
