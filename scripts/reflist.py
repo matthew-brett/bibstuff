@@ -33,6 +33,19 @@ logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 reflist_logger = logging.getLogger('bibstuff_logger')
 ################################################################################
 
+def get_braces_contents(s):
+	result = list()
+	word = list()
+	lvl = 0
+	for c in s:
+		if c == '}': lvl -= 1
+		if lvl > 0:
+			word.append(c)
+		if c == '{': lvl += 1
+		if lvl==0 and word:
+			result.append(''.join(word))
+			word = list()
+	return result
 
 def main():
 	"""Command-line tool"""
@@ -61,16 +74,20 @@ def main():
 
 	try :
 		src = open(args[0]).read()
+		reflist_logger.debug('successfully read %s'%args[0])
 	except :
 		src = sys.stdin.read()
 
 	items = src.split('\n\n')
 	for i in items :
 		i = i.strip()
-		if (i[:8] == '\\bibitem') :
-			s = i.find(']')
-			e = i.find('}', s)
-			print i[s+2:e]
+		if (i.startswith('\\bibitem')) :
+			i = i[8:].strip()
+			if i[0] == '[':
+				i = i[i.find(']') + 1:]
+			print(get_braces_contents(i)[0])
+		elif (i.startswith('\\harvarditem')) :
+			print(get_braces_contents(i)[2])
 
 
 if __name__ == '__main__':
