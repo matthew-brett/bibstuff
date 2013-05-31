@@ -190,7 +190,7 @@ def main():
 			"Script running.\nargs=%s\ninfile=%s\noutfile=%s\nstyle file=%s"
 			%(args, options.infile, options.outfile,options.stylefile)
 			)
-	exec("import bibstyles.%s as style"%os.path.splitext(options.stylefile)[0])
+	exec("import bibstuff.bibstyles.%s as style"%os.path.splitext(options.stylefile)[0])
 
 	# open output file for writing (default: stdout)
 	if options.outfile:
