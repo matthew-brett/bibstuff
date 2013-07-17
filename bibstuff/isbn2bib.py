@@ -38,43 +38,60 @@ __authors__  =    ['Alan G. Isaac']
 __version__ =    '0.1'
 __needs__ = '2.4'
 
+import os
+from os.path import join as pjoin, dirname
+import shutil
+
 #prepare a logger
 import logging
 logging.basicConfig(format='\n%(levelname)s:\n%(message)s\n')
 isbn2bib_logger = logging.getLogger('bibstuff_logger')
 
-#we need pyaws to get data from Amazon
-from pyaws import ecs
+# we need pyaws to get data from Amazon
+def import_pyaws_ecs():
+    try:
+        from pyaws import ecs
+    except ImportError:
+        raise RuntimeError('Need pyaws to read book data')
+    return ecs
 
 
-#need an AWS key to proceed (see above)
-import ConfigParser as configparser #anticipate name change
-cfg = configparser.ConfigParser()
-cfg.read('bibstuff.cfg')
-aws_key = cfg.get('isbn2bib','aws_key')
-try:
-	ecs.setLicenseKey(aws_key)
-except AWSException:
-	print """Failed to set key.
-	Do you have a bibstuff.cfg file
-	in your current directory?
-	"""
+def set_license_key():
+    ecs = import_pyaws_ecs()
+    # need an AWS key to proceed (see above)
+    import ConfigParser as configparser #anticipate name change
+    cfg = configparser.ConfigParser()
+    cfg.read('bibstuff.cfg')
+    aws_key = cfg.get('isbn2bib','aws_key')
+    try:
+        ecs.setLicenseKey(aws_key)
+    except ecs.AWSException:
+        raise RuntimeError("Failed to set key.  Do you have a bibstuff.cfg "
+                           " file in your current directory?")
 
-#unfortunately, addresses are not available in bookinfo
-# hope it's in my list ...
-publisher_addresses = dict()
-fh = open('data/publisher_addresses.txt','r')
-for line in fh:
-	if line.startswith('#') or not line.strip():
-		continue
-	info = tuple(item.strip() for item in line.split('|') )
-	try:
-		name = info[0].strip()
-		address = info[2].strip()
-	except:
-		continue #TODO: log error
-	publisher_addresses[name] = address
-fh.close()
+
+def read_publisher_dict():
+    #unfortunately, addresses are not available in bookinfo
+    # hope it's in my list ...
+    publisher_addresses = dict()
+    my_path = dirname(__file__)
+    fh = open(pjoin(my_path, 'data', 'publisher_addresses.txt'),'rt')
+    for line in fh:
+        if line.startswith('#') or not line.strip():
+            continue
+        info = tuple(item.strip() for item in line.split('|') )
+        try:
+            name = info[0].strip()
+            address = info[2].strip()
+        except:
+            continue #TODO: log error
+        publisher_addresses[name] = address
+    fh.close()
+    return publisher_addresses
+
+
+PUBLISHER_ADDRESSES = read_publisher_dict()
+
 
 def make_entry(isbn):
 	"""
@@ -85,6 +102,7 @@ def make_entry(isbn):
 	:date: 2008-08-31
 	:todo: this is reusing too much add2bib code
 	"""
+	ecs = import_pyaws_ecs()
 	import bibfile
 	entry = bibfile.BibEntry()
 	entry.entry_type = 'book'
@@ -103,35 +121,37 @@ def make_entry(isbn):
 	return entry
 
 
-def make_bookdict(bkinfo):
-	from collections import defaultdict
-	import difflib
-	bd = defaultdict(str)
-	try:
-		author = bkinfo.Author.strip()
-		author_last = author.split()[-1].lower()
-	except AttributeError:
-		author = "unknown"
-		author_last = "unknown"
-	try:
-		date = bkinfo.PublicationDate.strip().split()[-1]
-		year = date.strip().split('-')[0]
-	except AttributeError:
-		date = "unknown"
-		year = "unknown"
-	bd['citekey'] = "%s-%s"%(author_last,date)
-	bd['author'] = author
-	bd['date'] = date
-	bd['year'] = year
-	bd['title'] = bkinfo.Title
-	bd['isbn'] = bkinfo.ISBN
-	publisher = bkinfo.Manufacturer.strip() #?att name??
-	bd['publisher'] = publisher
-	#thanks to Greg Pinero for nicer address matching:
-	best_pub_matches = difflib.get_close_matches(publisher,publisher_addresses.keys(),1)
-	if best_pub_matches:
-		bd['address'] = publisher_addresses[best_pub_matches[0]]	   
-	return bd
+def make_bookdict(bkinfo, publisher_addresses=None):
+    from collections import defaultdict
+    import difflib
+    if publisher_addresses is None:
+        publisher_addresses = PUBLISHER_ADDRESSES
+    bd = defaultdict(str)
+    try:
+        author = bkinfo.Author.strip()
+        author_last = author.split()[-1].lower()
+    except AttributeError:
+        author = "unknown"
+        author_last = "unknown"
+    try:
+        date = bkinfo.PublicationDate.strip().split()[-1]
+        year = date.strip().split('-')[0]
+    except AttributeError:
+        date = "unknown"
+        year = "unknown"
+    bd['citekey'] = "%s-%s"%(author_last,date)
+    bd['author'] = author
+    bd['date'] = date
+    bd['year'] = year
+    bd['title'] = bkinfo.Title
+    bd['isbn'] = bkinfo.ISBN
+    publisher = bkinfo.Manufacturer.strip() #?att name??
+    bd['publisher'] = publisher
+    #thanks to Greg Pinero for nicer address matching:
+    best_pub_matches = difflib.get_close_matches(publisher,publisher_addresses.keys(),1)
+    if best_pub_matches:
+        bd['address'] = publisher_addresses[best_pub_matches[0]]       
+    return bd
 
 
 # some test ISBNs:
@@ -145,9 +165,8 @@ def main():
 	"""
 
 	import sys
-	import add2bib, bibgrammar
+	import add2bib
 
-	input = sys.stdin
 	output = sys.stdout
 	
 	from optparse import OptionParser
@@ -177,6 +196,8 @@ def main():
 
 	#parse options
 	(options, args) = parser.parse_args()
+	# set license, also checking imports
+	set_license_key()
 
 	# open output file for writing (default: stdout)
 	if options.outfile:
