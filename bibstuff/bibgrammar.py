@@ -2,6 +2,9 @@
 # File: bibgrammar.py
 
 """
+:mod:`bibstuff.bibgrammar` --- BibTeX Parser
+============================================
+
 Provides an EBNF description of the bibtex bibliography format.
 The grammar draws largely from
 the grammar description in Nelson Beebe's `Lex/Yacc parser`_
@@ -93,7 +96,7 @@ entry_parser = Parser(dec, 'entry')
 
 ## offer a default parse function
 def Parse(src, processor=None) :
-	'''Parse the bibtex string in src, process with processor.'''
+	'''Parse the bibtex string *src*, process with *processor*.'''
 	return parser.parse(src,  processor=processor)
 
 ## self-test

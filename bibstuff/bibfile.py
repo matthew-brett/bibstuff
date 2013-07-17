@@ -1,4 +1,7 @@
 """
+:mod:`bibstuff.bibfile` --- High Level BibTeX File Interface
+============================================================
+
 Provides two classes, BibFile and BibEntry for
 accessing the parts of a bibtex database.
 BibFile inherits from ``simpleparse.dispatchprocessor``.
