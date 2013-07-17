@@ -330,6 +330,15 @@ class BibListedDirective(Directive):
                         (filename, encoding))
             finally:
                 fp.close()
+            # XXX parser does not support unicode so force ascii
+            # XXX for bibfiles
+            try:
+                bibcontents = str(bibcontents)
+            except UnicodeDecodeError:
+                return (None,
+                        False,
+                        'bibtex file %s has non-ascii characters' %
+                        filename)
             bib_str += bibcontents
         extra_styles = env.config.bibref_styles
         cite_maker = CiteMaker(bib_str, style_str, extra_styles)
