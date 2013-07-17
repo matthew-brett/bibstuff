@@ -66,7 +66,7 @@ from sphinx import addnodes
 from sphinx.util.compat import Directive
 from sphinx.util.nodes import make_refnode
 
-from .. import bibfile, bibgrammar, bibstyles
+from bibstuff import bibfile, bibgrammar, bibstyles
 
 class CiteMaker(object):
     """ Class to make citations from bibliographies

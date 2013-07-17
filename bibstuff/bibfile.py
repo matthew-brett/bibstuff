@@ -41,9 +41,8 @@ import sys
 from simpleparse.dispatchprocessor import dispatch, DispatchProcessor, getString, lines
 
 #bibstuff imports
-import bibgrammar
-import bibname #ai: shd move all bibname into here? possibly
-from bibstyles.shared import reformat_para
+from bibstuff import bibgrammar
+from bibstuff.bibstyles.shared import reformat_para
 import logging
 bibfile_logger = logging.getLogger('bibstuff_logger')
 #####################################################################
@@ -244,6 +243,8 @@ class BibEntry(dict):
 		  - `entry_formatter`: EntryFormatter instance to provide style information
 		  - `try_fields`: list of field names to try sequentially; none empty filed -> name
 		"""
+		# importing bibname here to avoid recursive import
+		from bibstuff import bibname #ai: shd move all bibname into here? possibly
 		if entry_formatter is None:
 			for field in try_fields:
 				raw_names = self[field]
