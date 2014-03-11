@@ -330,10 +330,10 @@ class BibListedDirective(Directive):
                         (filename, encoding))
             finally:
                 fp.close()
-            # XXX parser does not support unicode so force ascii
-            # XXX for bibfiles
+            # XXX parser does not support unicode so force latin-1
+            # hoping there's no Chinese in there.
             try:
-                bibcontents = str(bibcontents)
+                bibcontents = bibcontents.encode('latin-1')
             except UnicodeDecodeError:
                 return (None,
                         False,
