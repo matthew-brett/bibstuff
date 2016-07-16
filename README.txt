@@ -1,3 +1,26 @@
+################################
+Matthew Brett's fork of BibStuff
+################################
+
+This is my own fork of bibstuff.  You'll find the original source from the
+links below.
+
+The fork was mainly to add the sphinx ``bibref`` extension.
+
+I'm retiring that extension now, because `sphinxcomtrib_bibtex
+<https://github.com/mcmtroffaes/sphinxcontrib-bibtex>`_ does a better job of
+the same thing, is better maintained, and is working from more modern
+foundations.
+
+So, if you are using the ``bibref`` extension here, I humbly beg that you
+switch to using ``sphinxcontrib_bibtex`` instead.
+
+My `personal site <http://matthew.dynevor.org>`_ used to use ``bibref``, but
+now uses ``sphinxcontrib_bibtex``, so you may want to check out `the site
+source <https://bitbucket.org/matthewbrett/dyneweb>`_ for hints on porting.
+
+The original README follows.
+
 ================================
      README: BibStuff (TM)
 ================================
