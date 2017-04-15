@@ -2,8 +2,8 @@
 Matthew Brett's fork of BibStuff
 ################################
 
-This is my own fork of bibstuff.  You'll find the original source from the
-links below.
+This is my own fork of ``bibstuff``. The original project can now be found
+at `github.com/dschwilk/bibstuff <https://github.com/dschwilk/bibstuff>`_.
 
 The fork was mainly to add the sphinx ``bibref`` extension.
 
@@ -45,12 +45,12 @@ Simply type 'python setup.py install' in the unpacked directory.
 
 Command-line tools (scripts)
 ============================
- 
+
 These tools are installed in you python scripts directory or they can
 be run directly from where they were unpacked. Each of these tools has
 a command line interface and provides the -h option to describe usage.
 
-   * biblabel.py 
+   * biblabel.py
       Creates unique keys for entries bibtex database(s).  default keys
       look like Schwilk+Isaac:2006 or Smith+Johnson+etal:1999 Command
       line options allow you to change the default behavior.
@@ -97,7 +97,7 @@ a command line interface and provides the -h option to describe usage.
       extracts reference keys from the bbl file.  This is useful for
       creating a bibtex database limited to those references which
       occur only in a single latex file.
-      
+
       example: reflist.py my_doc.bbl | bibsearch.py -l my_db.bib > new_db.bib
 
 Modules
